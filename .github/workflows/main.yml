@@ -1,5 +1,5 @@
 #! Name of the workflow
-name: Lint Workflow
+name: Linting Workflow
 #! Trigger workflow on all pull requests to the develop (dev) or main branches
 on:
   pull_request:
