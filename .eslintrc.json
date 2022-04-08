@@ -37,6 +37,5 @@
     "semi": ["error", "always"],
     "radix": "off"
   },
-  "extends": ["eslint:recommended", "plugin:react/jsx-runtime", "plugin:prettier/recommended"]
+  "extends": ["eslint:recommended", "plugin:react/jsx-runtime", "prettier"]
 }
-
