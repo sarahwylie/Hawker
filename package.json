@@ -1,0 +1,30 @@
+{
+  "name": "hawker",
+  "version": "1.0.0",
+  "description": "A marketplace where users can buy or sell items",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicnolen/hawker.git"
+  },
+  "keywords": [
+    "marketplace",
+    "buy",
+    "sell",
+    "items"
+  ],
+  "author": "Nicholas Nolen, Craig Jensen, Jide Ogunbanjo, Nigel Loch, Samantha Chavez, Sarah Wylie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicnolen/hawker/issues"
+  },
+  "homepage": "https://github.com/nicnolen/hawker#readme",
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2"
+  }
+}
