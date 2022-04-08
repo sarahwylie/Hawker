@@ -3,6 +3,13 @@
   "tabWidth": 2,
   "printWidth": 100,
   "singleQuote": true,
-  "trailingComma": "none",
-  "jsxBracketSameLine": true
+  "overrides": [
+    {
+      "files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.html"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ],
+  "trailingComma": "none"
 }

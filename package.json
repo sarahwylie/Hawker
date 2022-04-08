@@ -2,9 +2,14 @@
   "name": "hawker",
   "version": "1.0.0",
   "description": "A marketplace where users can buy or sell items",
-  "main": "server.js",
+  "main": "Develop/server/server.js",
   "scripts": {
-    "test": "npm test"
+    "start": "concurrently \"cd Develop/server && npm start\" \"cd client && npm start\"",
+    "build": "cd Develop/client && npm run build",
+    "test": "cd Develop/client && npm run test",
+    "install": "cd Develop/client && npm i && cd ../server && npm i",
+    "eject": "cd Develop/client && npm run eject",
+    "eslint": "cd Develop/client && npm run eslint && cd ../server && npm run eslint"
   },
   "repository": {
     "type": "git",
@@ -23,8 +28,11 @@
   },
   "homepage": "https://github.com/nicnolen/hawker#readme",
   "devDependencies": {
+    "concurrently": "^7.1.0",
+    "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
     "prettier": "^2.6.2"
   }
 }
