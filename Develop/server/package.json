@@ -16,5 +16,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
     "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.6.7"
   }
 }
