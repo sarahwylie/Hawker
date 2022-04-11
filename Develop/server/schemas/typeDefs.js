@@ -1,21 +1,48 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  # Define User mutation
+  type Item {
+    _id: ID
+    title: String
+    description: String
+    image: String
+    price: Float
+    quantity: Int
+    category: Category
+  }
+
+  type Category {
+    _id: ID
+    name: String
+  }
+
   type User {
     _id: ID
-    username: String
+    firstName: String
+    lastName: String
+    userName: String
     email: String
+    address: String
+  }
+
+  scalar DateTime
+
+  type Order {
+    purchaseDate: DateTime
   }
 
   type Query {
-    me: User
-    users: [User]
+    categories: [Category]
+    item: [Item]
+    user: [User]
+    orders: [Order]
   }
-  # Define mutations
+
   type Mutation {
     login(email: String!, password: String!): User
-    addUser(username: String!, email: String!, password: String!): User
+    addUser(firstName: String!, lastName: String!, email: String!, userName: String!, password: String!, address: String!): User
+    addItem(title: String, description: String, image: String, price: Float, quantity: Int, category: ID): Item
+
   }
 `;
 
