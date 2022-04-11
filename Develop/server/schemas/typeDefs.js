@@ -7,6 +7,11 @@ const typeDefs = gql`
     username: String
     email: String
   }
+
+  type Query {
+    me: User
+    users: [User]
+  }
   # Define mutations
   type Mutation {
     login(email: String!, password: String!): User
