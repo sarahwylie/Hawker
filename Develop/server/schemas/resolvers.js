@@ -2,6 +2,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Item, Category, Order } = require('../models');
 const { DateTime } = require('./DateTime');
+const { signToken } = require('../utils/auth'); // Import signToken() function from utils/auth.js
 
 const resolvers = {
   DateTime: DateTime,
@@ -24,7 +25,8 @@ const resolvers = {
     addUser: async (parent, args) => {
       const user = await User.create(args);
 
-      return user;
+      const token = signToken(user);
+      return { token, user };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -37,6 +39,8 @@ const resolvers = {
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');
       }
+      const token = signToken(user);
+      return { token, user };
     },
     // add item
     addItem: async (parent, args) => {
