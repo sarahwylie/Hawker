@@ -20,23 +20,23 @@ const startServer = async () => {
 
   server.applyMiddleware({ app });
 
-  // eslint-disable-next-line no-console
-  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+  console.info(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 };
 startServer();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 db.once('open', () => {
   app.listen(PORT, () => {
-    // eslint-disable-next-line no-console
-    console.log(`API server running on port ${PORT}!`);
+    console.info(`API server running on port ${PORT}!`);
   });
 });
