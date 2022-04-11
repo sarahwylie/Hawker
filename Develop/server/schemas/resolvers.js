@@ -1,7 +1,9 @@
+// Import dependencies
+const { AuthenticationError } = require('apollo-server-express');
 const { User, Item, Category, Order } = require('../models');
 const { DateTime } = require('./DateTime');
-const resolvers = {
 
+const resolvers = {
   DateTime: DateTime,
 
   Query: {
@@ -24,13 +26,20 @@ const resolvers = {
 
       return { user };
     },
-    login: async (parent, {email}) => {
+    login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
+      if (!user) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
 
-      return user;
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
     },
     // add item
-    addItem: async(parent, args) => {
+    addItem: async (parent, args) => {
       console.info(args);
       const item = await Item.create(args);
 
