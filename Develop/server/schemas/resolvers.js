@@ -27,14 +27,14 @@ const resolvers = {
     login: async (parent, {email}) => {
       const user = await User.findOne({ email });
 
-      return { user };
+      return user;
     },
     // add item
     addItem: async(parent, args) => {
       console.info(args);
       const item = await Item.create(args);
 
-      return { item };
+      return item;
     }
   }
 };
