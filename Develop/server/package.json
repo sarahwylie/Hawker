@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "apollo-server-express": "^3.6.7",
+    "faker": "^6.6.6",
     "graphql": "^16.3.0"
   }
 }

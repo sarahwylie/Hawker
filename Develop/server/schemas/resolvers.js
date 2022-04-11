@@ -24,7 +24,7 @@ const resolvers = {
     addUser: async (parent, args) => {
       const user = await User.create(args);
 
-      return user ;
+      return user;
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -43,7 +43,7 @@ const resolvers = {
       console.info(args);
       const item = await Item.create(args);
 
-      return { item };
+      return item;
     }
   }
 };
