@@ -20,7 +20,6 @@ db.once('open', async () => {
   }
 
   console.info('Users seeded.');
-  process.exit(0);
 });
 
 db.once('open', async () => {
