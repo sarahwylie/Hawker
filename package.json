@@ -9,7 +9,8 @@
     "test": "cd Develop/client && npm run test",
     "install": "cd Develop/client && npm i && cd ../server && npm i",
     "eject": "cd Develop/client && npm run eject",
-    "eslint": "cd Develop/client && npm run eslint && cd ../server && npm run eslint"
+    "eslint": "cd Develop/client && npm run eslint && cd ../server && npm run eslint",
+    "seed": "cd Develop/server && npm run seed"
   },
   "repository": {
     "type": "git",
