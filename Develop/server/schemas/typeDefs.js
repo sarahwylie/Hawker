@@ -31,6 +31,11 @@ const typeDefs = gql`
     purchaseDate: DateTime
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     categories: [Category]
     item: [Item]
@@ -39,10 +44,23 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    login(email: String!, password: String!): User
-    addUser(firstName: String!, lastName: String!, email: String!, userName: String!, password: String!, address: String!): User
-    addItem(title: String, description: String, image: String, price: Float, quantity: Int, category: ID): Item
-
+    login(email: String!, password: String!): Auth
+    addUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      userName: String!
+      password: String!
+      address: String!
+    ): Auth
+    addItem(
+      title: String
+      description: String
+      image: String
+      price: Float
+      quantity: Int
+      category: ID
+    ): Item
   }
 `;
 
