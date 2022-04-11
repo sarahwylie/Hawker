@@ -19,13 +19,13 @@ db.once('open', async () => {
     userData.push({ username, email, password });
   }
 
-  console.info('Data successfully generated!');
+  console.info('Users seeded.');
   process.exit(0);
 });
 
 db.once('open', async () => {
   await Category.deleteMany();
-
+  // eslint-disable-next-line no-unused-vars
   const categories = await Category.insertMany([
     { name: 'Outdoor' },
     { name: 'Transportation' },
@@ -33,6 +33,6 @@ db.once('open', async () => {
     { name: 'Sports' }
   ]);
 
-  console.info('categories seeded.');
+  console.info('Categories seeded.');
   process.exit();
 });
