@@ -12,15 +12,18 @@ db.once('open', async () => {
   const userData = [];
 
   for (let i = 0; i < 50; i += 1) {
-    const username = faker.internet.userName();
-    const email = faker.internet.email(username);
+    const firstName = faker.name.firstName();
+    const lastName = faker.name.lastName();
+    const address = faker.address.streetAddress(true);
+    const userName = faker.internet.userName(`${firstName} ${lastName}}`);
+    const email = faker.internet.email(userName);
     const password = faker.internet.password();
 
-    userData.push({ username, email, password });
+    userData.push({ firstName, lastName, address, userName, email, password });
   }
-
+  User.collection.insertMany(userData);
+  console.log(userData);
   console.info('Users seeded.');
-  process.exit(0);
 });
 
 db.once('open', async () => {
