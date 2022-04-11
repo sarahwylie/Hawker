@@ -20,6 +20,11 @@ const itemSchema = new Schema({
     required: true,
     min: 1.0
   },
+  quantity: {
+    type: Number,
+    min: 0,
+    default: 0
+  },
   category: {
     type: Schema.Types.ObjectId,
     ref: 'Category',
