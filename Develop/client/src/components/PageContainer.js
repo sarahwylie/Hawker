@@ -4,7 +4,8 @@ import Header from './Header';
 import Buyer from './pages/Buyer';
 import Checkout from './pages/Checkout';
 import Homepage from './pages/Homepage';
-import LoginSignup from './pages/LoginSignup';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import PostItem from './pages/PostItem';
 import Seller from './pages/Seller';
 import SingleItem from './pages/SingleItem';
@@ -19,8 +20,11 @@ function PageContainer() {
     if (currentPage === 'Checkout') {
       return <Checkout />;
     }
-    if (currentPage === 'LoginSignup') {
-      return <LoginSignup />;
+    if (currentPage === 'Login') {
+      return <Login />;
+    }
+    if (currentPage === 'Signup') {
+      return <Signup />;
     }
     if (currentPage === 'PostItem') {
       return <PostItem />;
