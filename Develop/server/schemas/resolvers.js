@@ -28,6 +28,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       return { user };
+    },
+    // add item
+    addItem: async(parent, args) => {
+      console.info(args);
+      const item = await Item.create(args);
+
+      return { item };
     }
   }
 };
