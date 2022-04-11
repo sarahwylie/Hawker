@@ -22,6 +22,11 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minLength: 5
+  },
+  address: {
+    type: String,
+    required: true,
+    trim: true
   }
 });
 
