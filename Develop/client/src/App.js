@@ -4,6 +4,8 @@ import Clothing from './pages/Clothing';
 import Household from './pages/Household';
 import Outdoor from './pages/Outdoor';
 import Tech from './pages/Tech';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import {
   ApolloClient,
   InMemoryCache,
