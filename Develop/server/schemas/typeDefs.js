@@ -38,6 +38,7 @@ type Category {
   }
 
   type Query {
+    me: User
     categories: [Category]
     item(category: ID, name: String): [Item]
     user: [User]
