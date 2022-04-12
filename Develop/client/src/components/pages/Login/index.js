@@ -23,6 +23,14 @@ function Login() {
     }
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
+
   return (
     <div>
       <h2>Login</h2>
