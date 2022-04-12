@@ -23,6 +23,7 @@ const typeDefs = gql`
     userName: String
     email: String
     address: String
+    orders: [Order]
   }
 
   scalar DateTime
@@ -35,7 +36,7 @@ const typeDefs = gql`
     categories: [Category]
     item: [Item]
     user: [User]
-    orders: [Order]
+    order(_id: ID!): Order
   }
 
   type Mutation {

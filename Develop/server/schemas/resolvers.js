@@ -16,10 +16,13 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    orders: async () => {
+    order: async () => {
       return await Order.find();
     }
   },
+
+ 
+
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
