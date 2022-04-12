@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Buyer() {
+function Tech() {
   return (
     <div>
-      <h2>Buyer</h2>
+      <h2>Tech</h2>
     </div>
   );
 }
 
-export default Buyer;
+export default Tech;

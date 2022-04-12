@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Checkout() {
-  return <div></div>;
+  return (
+    <div>
+      <h2>Checkout</h2>
+    </div>
+  );
 }
 
 export default Checkout;
