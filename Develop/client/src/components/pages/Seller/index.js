@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Seller() {
-  return <div></div>;
+  return (
+    <div>
+      <h2>Seller</h2>
+    </div>
+  );
 }
 
 export default Seller;

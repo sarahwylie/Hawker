@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "apollo-server-express": "^3.6.7",
-    "faker": "^6.6.6",
-    "graphql": "^16.3.0"
+    "dotenv": "^16.0.0",
+    "faker": "^5.5.3",
+    "graphql": "^16.3.0",
+    "jsonwebtoken": "^8.5.1"
   }
 }
