@@ -21,13 +21,13 @@ const resolvers = {
     },
     // item query
     item: async () => {
-      return await Item.find().populate('category');
+      return await Item.find().populate('category').populate('items');
     },
     categories: async () => {
       return await Category.find();
     },
     order: async () => {
-      return await Order.find();
+      return await Order.find().populate('users');
     }
   },
 
