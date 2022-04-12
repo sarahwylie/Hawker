@@ -22,7 +22,6 @@ db.once('open', async () => {
     userData.push({ firstName, lastName, address, userName, email, password });
   }
   User.collection.insertMany(userData);
-  console.log(userData);
   console.info('Users seeded.');
 });
 
