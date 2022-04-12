@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Auth from '../../../utils/auth';
+
+
 function PostItem() {
   return <div>
     <div> 
