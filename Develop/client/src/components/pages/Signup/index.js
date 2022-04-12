@@ -1,12 +1,13 @@
 // Import dependencies
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { ADD_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 
 // Create Signup form page component
-function Signup() {
+//! Create the Signup Component
+const Signup = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
 
@@ -84,7 +85,6 @@ function Signup() {
       </form>
     </div>
   );
-}
+};
 
-// Export component
 export default Signup;
