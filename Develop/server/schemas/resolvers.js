@@ -31,8 +31,6 @@ const resolvers = {
     }
   },
 
- 
-
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -64,12 +62,10 @@ const resolvers = {
       }
     },
     addOrder: async (parent, args) => {
-      const order = await Order.create(args)
+      const order = await Order.create(args);
 
       return order;
     }
-
-
   }
 };
 
