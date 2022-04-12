@@ -4,6 +4,7 @@ import Auth from '../../../utils/auth';
 
 
 function PostItem() {
+  
   return <div>
     <div> 
        <form>
