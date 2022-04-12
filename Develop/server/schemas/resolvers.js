@@ -11,6 +11,7 @@ const resolvers = {
     user: async () => {
       return await User.find();
     },
+    // item query
     item: async () => {
       return await Item.find();
     },
