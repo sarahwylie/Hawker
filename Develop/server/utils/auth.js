@@ -1,9 +1,10 @@
 //TODO: AUTHENTICATE JSON WEB TOKEN (JWT)
 //! Import dependencies
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 //! Secret and expiration date for JWT (JSON Web Token)
-const secret = 'mysecretsshhhhh'; // secret to enable the server to verify whether it recognizes the token
+const secret = process.env.JWT_SECRET; // secret to enable the server to verify whether it recognizes the token
 const expiration = '2h'; // expiration date
 
 //! Export the module
@@ -39,5 +40,5 @@ module.exports = {
 
     //* return updated request object
     return req;
-  },
+  }
 };
