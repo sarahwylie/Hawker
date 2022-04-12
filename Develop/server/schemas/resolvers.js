@@ -8,9 +8,18 @@ const resolvers = {
   DateTime: DateTime,
 
   Query: {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+        console.info(userData);
+        return userData;
+      }
+      throw new AuthenticationError('Not logged in');
+    },
     user: async () => {
       return await User.find();
     },
+    // item query
     item: async () => {
       return await Item.find();
     },
@@ -43,11 +52,13 @@ const resolvers = {
       return { token, user };
     },
     // add item
-    addItem: async (parent, args) => {
-      console.info(args);
-      const item = await Item.create(args);
+    addItem: async (parent, args, context) => {
+      if (context.user) {
+        console.info(args);
+        const item = await Item.create(args);
 
-      return item;
+        return item;
+      }
     }
   }
 };
