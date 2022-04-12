@@ -52,11 +52,13 @@ const resolvers = {
       return { token, user };
     },
     // add item
-    addItem: async (parent, args) => {
-      console.info(args);
-      const item = await Item.create(args);
+    addItem: async (parent, args, context) => {
+      if (context.user) {
+        console.info(args);
+        const item = await Item.create(args);
 
-      return item;
+        return item;
+      }
     }
   }
 };
