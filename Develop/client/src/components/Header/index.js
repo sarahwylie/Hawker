@@ -8,7 +8,7 @@ function Header() {
           <a href="/">
             <span role="img" aria-label="img-name">
               <img
-                src={require('../assets/images/icons/Hawker.svg')}
+                src={require('../../assets/images/icons/Hawker.svg')}
                 alt="logo"
                 className="img-thumbnail mx-1 inline-flex"
                 id="logo"
