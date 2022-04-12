@@ -1,4 +1,5 @@
 import React from 'react';
+import Hawker from '../../assets/images/icons/Hawker.svg'
 
 function Header() {
   return (
@@ -8,7 +9,7 @@ function Header() {
           <a href="/">
             <span role="img" aria-label="img-name">
               <img
-                src={require('../../assets/images/icons/Hawker.svg')}
+                src={Hawker}
                 alt="logo"
                 className="img-thumbnail mx-1 inline-flex"
                 id="logo"

@@ -39,4 +39,14 @@ main {
   max-width: 90%;
 }
 
-/*# sourceMappingURL=Login.css.map */
+.footer {
+  background-color: #219EBC;
+  color: #023047;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/*# sourceMappingURL=Footer.css.map */

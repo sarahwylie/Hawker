@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsInstagram } from 'react-icons/bs';
-import Year from '../utils/helpers';
+import Year from '../../utils/helpers';
+import '../../assets/css/Footer.css';
 
 function Footer() {
     return (
