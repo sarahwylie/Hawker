@@ -31,6 +31,9 @@ type Category {
 
   type Order {
     purchaseDate: DateTime
+    items: Item
+    users: User
+    _id: ID
   }
 
   type Auth {
@@ -56,6 +59,10 @@ type Category {
       password: String!
       address: String!
     ): Auth
+  
+    addOrder(
+      purchaseDate: DateTime
+      ): Order
 
     addItem(
       title: String

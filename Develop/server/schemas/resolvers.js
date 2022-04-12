@@ -21,7 +21,7 @@ const resolvers = {
     },
     // item query
     item: async () => {
-      return await Item.find();
+      return await Item.find().populate('category');
     },
     categories: async () => {
       return await Category.find();
@@ -62,7 +62,14 @@ const resolvers = {
 
         return item;
       }
+    },
+    addOrder: async (parent, args) => {
+      const order = await Order.create(args)
+
+      return order;
     }
+
+
   }
 };
 
