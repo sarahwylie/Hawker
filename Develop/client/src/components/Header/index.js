@@ -1,8 +1,7 @@
 import React from 'react';
-import Hawker from '../../assets/images/icons/Hawker.svg'
+import Hawker from '../../assets/images/icons/Hawker.svg';
 import '../../assets/css/Header.css';
-import Login from '../pages/Login';
-// import Logout from '../pages/Logout'
+// import Auth from '../../utils/auth';
 
 function Header() {
 
@@ -24,9 +23,9 @@ function Header() {
               />
             </span>
             <div>
-            {isLoggedIn
-           ? <Logout onClick={this.handleLogoutClick} />
-          : <Login onClick={this.handleLoginClick} />}
+            {/* {isLoggedIn
+           ?  <a href="/" onClick={() => Auth.logout()}>Logout</a>
+          : <Login onClick={this.handleLoginClick} />} */}
             </div>
           </a>
         </div>
