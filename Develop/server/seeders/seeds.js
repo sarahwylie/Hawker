@@ -34,7 +34,8 @@ db.once('open', async () => {
     { name: 'Tech' },
     { name: 'Sports' }
   ]);
- 
+
+  // eslint-disable-next-line no-unused-vars
   const item = await Item.insertMany([
     {
       title: 'Tin of Cookies',
@@ -54,9 +55,9 @@ db.once('open', async () => {
       price: 1.99,
       quantity: 500
     }
-
   ]);
 
+  
   console.info('Items seeded');
 
   console.info('Categories seeded.');
