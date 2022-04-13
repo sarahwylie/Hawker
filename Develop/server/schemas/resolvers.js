@@ -21,13 +21,13 @@ const resolvers = {
     },
     // item query
     item: async () => {
-      return await Item.find().populate('category').populate('items');
+      return await Item.find().populate('category');
     },
     categories: async () => {
       return await Category.find();
     },
     order: async () => {
-      return await Order.find().populate('users');
+      return await Order.find().populate('users').populate('items');
     }
   },
 
@@ -53,13 +53,11 @@ const resolvers = {
       return { token, user };
     },
     // add item
-    addItem: async (parent, args, context) => {
-      if (context.user) {
-        console.info(args);
-        const item = await Item.create(args);
+    addItem: async (parent, args) => {
+      console.info(args);
+      const item = await Item.create(args);
 
-        return item;
-      }
+      return item;
     },
     addOrder: async (parent, args) => {
       const order = await Order.create(args);
