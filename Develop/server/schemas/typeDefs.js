@@ -46,7 +46,7 @@ type Category {
     categories: [Category]
     item(category: ID, name: String): [Item]
     user: [User]
-    order(_id: ID!): Order
+    order: [Order]
   }
 
   type Mutation {
@@ -62,8 +62,8 @@ type Category {
   
     addOrder(
       purchaseDate: DateTime
-      item: ID
-      user: ID
+      items: ID!
+      users: ID!
       ): Order
 
     addItem(

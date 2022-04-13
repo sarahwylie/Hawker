@@ -61,7 +61,7 @@ const resolvers = {
     },
     addOrder: async (parent, args) => {
       const order = await Order.create(args);
-
+      console.info(order);
       return order;
     }
   }
