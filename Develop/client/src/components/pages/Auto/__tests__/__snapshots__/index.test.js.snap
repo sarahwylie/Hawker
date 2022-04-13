@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auto component matches snapshot DOM node structure 1`] = `
+<DocumentFragment>
+  <div>
+    <h2>
+      Auto
+    </h2>
+  </div>
+</DocumentFragment>
+`;
