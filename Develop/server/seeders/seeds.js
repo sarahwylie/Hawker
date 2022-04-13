@@ -56,10 +56,7 @@ db.once('open', async () => {
       quantity: 500
     }
   ]);
-
-  
   console.info('Items seeded');
-
   console.info('Categories seeded.');
   process.exit();
 });
