@@ -34,7 +34,7 @@ db.once('open', async () => {
     { name: 'Tech' },
     { name: 'Sports' }
   ]);
-
+ 
   const item = await Item.insertMany([
     {
       title: 'Tin of Cookies',
@@ -57,7 +57,7 @@ db.once('open', async () => {
 
   ]);
 
-  console.log('Items seeded');
+  console.info('Items seeded');
 
   console.info('Categories seeded.');
   process.exit();
