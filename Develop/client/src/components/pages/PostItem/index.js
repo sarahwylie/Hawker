@@ -5,6 +5,7 @@ import Auth from '../../../utils/auth';
 
 function PostItem() {
   const [postForm, setPostForm] = useState('');
+  console.info(postForm);
   const [addPost] = useMutation(ADD_ITEM);
 
   const categories = [
@@ -23,7 +24,7 @@ function PostItem() {
         image: postForm.image,
         price: postForm.price,
         quanity: postForm.quanity,
-        category: postForm.catergory
+        category: postForm.category
       }
     });
     const token = mutationResponse.data.addPost.token;
@@ -41,16 +42,16 @@ function PostItem() {
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
-        <label for="itemImage">Insert Image </label>
+        <label htmlFor="itemImage">Insert Image </label>
         <input type="file" name="itemImage" onChange={handleChange}></input>
 
-        <label for="itemTitle">Item Title</label>
+        <label htmlFor="itemTitle">Item Title</label>
         <input type="text" name="itemTitle" placeholder="Title" onChange={handleChange}></input>
 
-        <label for="price">Price</label>
+        <label htmlFor="price">Price</label>
         <input type="text" name="price" placeholder="Price of Item" onChange={handleChange}></input>
 
-        <label for="description">Description</label>
+        <label htmlFor="description">Description</label>
         <input
           type="text"
           name="description"
@@ -58,10 +59,10 @@ function PostItem() {
           onChange={handleChange}
         ></input>
 
-        <label for="description">Quantity</label>
+        <label htmlFor="description">Quantity</label>
         <input type="Number" name="Quantity" placeholder="Quantity" onChange={handleChange}></input>
-        
-       <select> {categories.map((category) => { return <option>{category.name + ' - ' +  category.id}</option>})}</select>
+
+       <select> {categories.map((category) => { return <option key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
         <button type="submit">Submit</button>
       </form>
     </div>

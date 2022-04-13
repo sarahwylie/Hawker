@@ -45,7 +45,8 @@ type Category {
     me: User
     categories: [Category]
     item(category: ID, name: String): [Item]
-    user: [User]
+    users: [User]
+    user(_id: ID!): User
     order: [Order]
   }
 
