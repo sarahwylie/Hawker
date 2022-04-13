@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component matches snapshot DOM node structure 1`] = `
+<DocumentFragment>
+  <header>
+    <div
+      class="flex-row"
+    >
+      <div
+        class="col-2 photo"
+      >
+        <a
+          href="/"
+        >
+          <span
+            aria-label="img-name"
+            role="img"
+          >
+            <img
+              alt="logo"
+              class="img-thumbnail mx-1 inline-flex"
+              id="logo"
+              src="Hawker.svg"
+            />
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
