@@ -16,8 +16,12 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
-    user: async () => {
+    users: async () => {
       return await User.find();
+    },
+    // query one user
+    user: async (parent, {_id}) => {
+      return User.findOne({ _id });
     },
     // item query
     item: async () => {
@@ -50,6 +54,7 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
       const token = signToken(user);
+      console.info(user, token);
       return { token, user };
     },
     // add item
