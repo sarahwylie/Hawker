@@ -54,6 +54,7 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
       const token = signToken(user);
+      console.info(user, token);
       return { token, user };
     },
     // add item

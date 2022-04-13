@@ -23,11 +23,12 @@ function PostItem() {
         description: postForm.description,
         image: postForm.image,
         price: postForm.price,
-        quanity: postForm.quanity,
+        quantity: postForm.quantity,
         category: postForm.category
       }
     });
     const token = mutationResponse.data.addPost.token;
+    console.info(token);
     Auth.login(token);
   };
 
