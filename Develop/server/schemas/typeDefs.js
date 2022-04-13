@@ -62,6 +62,8 @@ type Category {
   
     addOrder(
       purchaseDate: DateTime
+      item: ID
+      user: ID
       ): Order
 
     addItem(

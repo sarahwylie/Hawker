@@ -21,17 +21,15 @@ const resolvers = {
     },
     // item query
     item: async () => {
-      return await Item.find().populate('category');
+      return await Item.find().populate('category').populate('items');
     },
     categories: async () => {
       return await Category.find();
     },
     order: async () => {
-      return await Order.find();
+      return await Order.find().populate('users');
     }
   },
-
- 
 
   Mutation: {
     addUser: async (parent, args) => {
@@ -64,12 +62,10 @@ const resolvers = {
       }
     },
     addOrder: async (parent, args) => {
-      const order = await Order.create(args)
+      const order = await Order.create(args);
 
       return order;
     }
-
-
   }
 };
 
