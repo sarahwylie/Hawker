@@ -8,19 +8,33 @@ const resolvers = {
   DateTime: DateTime,
 
   Query: {
-    user: async () => {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+        console.info(userData);
+        return userData;
+      }
+      throw new AuthenticationError('Not logged in');
+    },
+    users: async () => {
       return await User.find();
     },
+    // query one user
+    user: async (parent, {_id}) => {
+      return User.findOne({ _id });
+    },
+    // item query
     item: async () => {
-      return await Item.find();
+      return await Item.find().populate('category');
     },
     categories: async () => {
       return await Category.find();
     },
-    orders: async () => {
-      return await Order.find();
+    order: async () => {
+      return await Order.find().populate('users').populate('items');
     }
   },
+
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -40,6 +54,7 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
       const token = signToken(user);
+      console.info(user, token);
       return { token, user };
     },
     // add item
@@ -48,6 +63,11 @@ const resolvers = {
       const item = await Item.create(args);
 
       return item;
+    },
+    addOrder: async (parent, args) => {
+      const order = await Order.create(args);
+      console.info(order);
+      return order;
     }
   }
 };
