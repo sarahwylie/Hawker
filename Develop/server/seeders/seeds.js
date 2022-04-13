@@ -3,7 +3,7 @@
 const { faker } = require('@faker-js/faker'); // Faker.js helps generate dummy data to use
 
 const db = require('../config/connection');
-const { User, Category } = require('../models');
+const { User, Category, Item } = require('../models');
 
 db.once('open', async () => {
   await User.deleteMany({});
@@ -35,6 +35,28 @@ db.once('open', async () => {
     { name: 'Sports' }
   ]);
 
+  // eslint-disable-next-line no-unused-vars
+  const item = await Item.insertMany([
+    {
+      title: 'Tin of Cookies',
+      description:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+      image: 'cookie-tin.jpg',
+      category: categories[0]._id,
+      price: 2.99,
+      quantity: 500
+    },
+    {
+      title: 'Canned Coffee',
+      description:
+        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
+      image: 'canned-coffee.jpg',
+      category: categories[1]._id,
+      price: 1.99,
+      quantity: 500
+    }
+  ]);
+  console.info('Items seeded');
   console.info('Categories seeded.');
   process.exit();
 });
