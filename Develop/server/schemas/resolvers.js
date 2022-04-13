@@ -21,15 +21,16 @@ const resolvers = {
     },
     // item query
     item: async () => {
-      return await Item.find();
+      return await Item.find().populate('category');
     },
     categories: async () => {
       return await Category.find();
     },
-    orders: async () => {
-      return await Order.find();
+    order: async () => {
+      return await Order.find().populate('users').populate('items');
     }
   },
+
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -52,13 +53,16 @@ const resolvers = {
       return { token, user };
     },
     // add item
-    addItem: async (parent, args, context) => {
-      if (context.user) {
-        console.info(args);
-        const item = await Item.create(args);
+    addItem: async (parent, args) => {
+      console.info(args);
+      const item = await Item.create(args);
 
-        return item;
-      }
+      return item;
+    },
+    addOrder: async (parent, args) => {
+      const order = await Order.create(args);
+      console.info(order);
+      return order;
     }
   }
 };

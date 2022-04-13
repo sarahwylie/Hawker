@@ -24,12 +24,16 @@ type Category {
     userName: String
     email: String
     address: String
+    orders: [Order]
   }
 
   scalar DateTime
 
   type Order {
     purchaseDate: DateTime
+    items: Item
+    users: User
+    _id: ID
   }
 
   type Auth {
@@ -42,7 +46,7 @@ type Category {
     categories: [Category]
     item(category: ID, name: String): [Item]
     user: [User]
-    orders: [Order]
+    order: [Order]
   }
 
   type Mutation {
@@ -55,6 +59,12 @@ type Category {
       password: String!
       address: String!
     ): Auth
+  
+    addOrder(
+      purchaseDate: DateTime
+      items: ID!
+      users: ID!
+      ): Order
 
     addItem(
       title: String
