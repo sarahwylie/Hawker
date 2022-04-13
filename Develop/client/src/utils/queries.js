@@ -7,8 +7,6 @@ export const QUERY_USER = gql`
       firstName
       lastName
       email
-      userName
-      address
       orders {
         _id
         purchaseDate
@@ -24,8 +22,6 @@ export const QUERY_ME = gql`
       firstName
       lastName
       _id
-      address
-      userName
     }
   }
 `;
