@@ -22,3 +22,14 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_ITEM = gql`
+  mutation addItem($title: String!, $description: String!, $image: String!, $price: String!, $quanity: Number!, $category: String!  ) {
+    addItem(title: $title, description: $description, image: $image, price: $price, quanity: $quanity, category: $category ) {
+      token
+      user {
+        _id
+      }
+    }
+  }
+`;
