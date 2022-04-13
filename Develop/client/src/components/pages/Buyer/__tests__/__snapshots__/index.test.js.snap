@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Auto component matches snapshot DOM node structure 1`] = `
+exports[`Buyer component matches snapshot DOM node structure 1`] = `
 <DocumentFragment>
   <div>
     <h2>
-      Auto
+      Buyer
     </h2>
   </div>
 </DocumentFragment>
