@@ -2,21 +2,30 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@apollo/client": "^3.5.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "concurrently": "^7.1.0",
+    "graphql": "^16.3.0",
+    "jwt-decode": "^3.1.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
+    "sass": "^1.50.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"sass\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "sass": "sass src/assets/sass:src/assets/css --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +51,7 @@
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
+    "file-loader": "^6.2.0",
     "prettier": "^2.6.2"
   },
   "keywords": [],

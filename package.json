@@ -4,12 +4,14 @@
   "description": "A marketplace where users can buy or sell items",
   "main": "Develop/server/server.js",
   "scripts": {
-    "start": "concurrently \"cd Develop/server && npm start\" \"cd client && npm start\"",
+    "start": "Develop/server/node server/server.js",
+    "develop": "concurrently \"cd Develop/server && npm run watch\" \"cd Develop/client && npm start\"",
     "build": "cd Develop/client && npm run build",
     "test": "cd Develop/client && npm run test",
     "install": "cd Develop/client && npm i && cd ../server && npm i",
     "eject": "cd Develop/client && npm run eject",
-    "eslint": "cd Develop/client && npm run eslint && cd ../server && npm run eslint"
+    "eslint": "cd Develop/client && npm run eslint && cd ../server && npm run eslint",
+    "seed": "cd Develop/server && npm run seed"
   },
   "repository": {
     "type": "git",
@@ -33,5 +35,12 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
     "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "@testing-library/react": "^13.0.1",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.10",
+    "nodemon": "^2.0.15"
   }
 }
