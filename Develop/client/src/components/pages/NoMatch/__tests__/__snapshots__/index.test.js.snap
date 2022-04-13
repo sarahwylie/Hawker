@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoMatch component matches snapshot DOM node structure 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      style="height: 560px; clear: both; padding-top: 120px; text-align: center;"
+    >
+      <h1>
+        404 Page Not Found
+      </h1>
+      <h1>
+        <span
+          aria-label="Face With Rolling Eyes Emoji"
+          role="img"
+        >
+          🙄
+        </span>
+      </h1>
+    </div>
+  </div>
+</DocumentFragment>
+`;

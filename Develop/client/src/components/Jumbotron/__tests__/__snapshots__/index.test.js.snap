@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Jumbotron component matches snapshot DOM node structure 1`] = `
+<DocumentFragment>
+  <div
+    style="height: 560px; clear: both; padding-top: 120px; text-align: center;"
+  />
+</DocumentFragment>
+`;
