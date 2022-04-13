@@ -13,7 +13,7 @@ function Login() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(formState)
+      console.info(formState);
       const { data } = await login({
         variables: { email: formState.email, password: formState.password }
       });
