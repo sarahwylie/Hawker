@@ -16,13 +16,14 @@ db.once('open', async () => {
     const lastName = faker.name.lastName();
     const address = faker.address.streetAddress(true);
     const userName = faker.internet.userName(`${firstName} ${lastName}}`);
-    const email = faker.internet.email(userName);
+    const email = faker.internet.email(firstName, lastName);
     const password = faker.internet.password();
 
-    userData.push({ firstName, lastName, address, userName, email, password });
+    userData.push({ firstName, lastName, email, password });
   }
   User.collection.insertMany(userData);
   console.info('Users seeded.');
+  console.log(userData);
 });
 
 db.once('open', async () => {
