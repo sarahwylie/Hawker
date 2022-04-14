@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
@@ -48,7 +47,6 @@ function Login() {
 
   return (
     <div style={containerStyle} className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
       <div className="formParent" style={formParentStyle}>
         <h2>Login</h2>
         <form
