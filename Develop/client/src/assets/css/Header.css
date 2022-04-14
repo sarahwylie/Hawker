@@ -8,6 +8,7 @@
 /* Background Colors */
 /* Spacing */
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -43,9 +44,11 @@ main {
   background-color: #219EBC;
   color: #023047;
   position: fixed;
-  bottom: 0;
+  top: 0;
   width: 100%;
   text-align: center;
 }
+
+/*# sourceMappingURL=Header.css.map */
 
 /*# sourceMappingURL=Header.css.map */
