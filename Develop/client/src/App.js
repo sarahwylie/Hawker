@@ -3,7 +3,6 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import Header from './components/Header/index';
-import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/index';
 import Login from './components/pages/Login/index';
 import Signup from './components/pages/Signup/index';
@@ -43,10 +42,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Header />
+      <Header/>
       <Router>
         <>
-          <Navbar />
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/login" element={<Login />} />

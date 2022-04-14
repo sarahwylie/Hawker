@@ -1,11 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,kCAAkC;ACAlC,eAAe;AAEf,uBAAuB;AASvB,uBAAuB;AAIvB,aAAa;ADXb,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,MAAM;CAAG;;AAEvB,AAAA,WAAW,CAAC;EENV,OAAO,EAAE,IAAI;EACb,cAAc,EFMc,MAAM;EELlC,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EFKvB,gBAAgB,ECGN,OAAO;EDFjB,UAAU,EAAE,KAAK;EACjB,SAAS,EAAE,kBAAkB;EAC7B,KAAK,ECTC,OAAO;CDSG;;AAElB,AAAA,SAAS,CAAC;EACR,KAAK,ECXM,OAAO;CDWG",
-    "sources": [
-        "../sass/App.sass",
-        "../sass/_variables.sass",
-        "../sass/_responsive.sass"
-    ],
-    "names": [],
-    "file": "App.css"
-}
+{"version":3,"sourceRoot":"","sources":["../sass/App.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACI;EACI;EACR;EACI;EACI;EACR;EACI;EACI;EACR;EACA;EACA;EACA;;;AAGF;EACE;;;AAEF","file":"App.css"}

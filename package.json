@@ -4,7 +4,7 @@
   "description": "A marketplace where users can buy or sell items",
   "main": "Develop/server/server.js",
   "scripts": {
-    "start": "Develop/server/node server/server.js",
+    "start": "node Develop/server/server.js",
     "develop": "concurrently \"cd Develop/server && npm run watch\" \"cd Develop/client && npm start\"",
     "build": "cd Develop/client && npm run build",
     "test": "cd Develop/client && npm run test",
@@ -43,6 +43,8 @@
     "express": "^4.17.3",
     "jwt-decode": "^3.1.2",
     "mongoose": "^6.2.10",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "react-bootstrap": "^2.2.3",
+    "react-router-dom": "^6.3.0"
   }
 }
