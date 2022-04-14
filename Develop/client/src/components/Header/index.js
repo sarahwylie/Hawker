@@ -7,7 +7,6 @@ import Login from '../pages/Login'
 
 function Header({ history }) {
   let user = JSON.parse(localStorage.getItem('user-info'))
-  // console.warn(user)
   function logOut() {
     localStorage.clear();
     history.push('/')
@@ -45,10 +44,10 @@ function Header({ history }) {
               :
               <div>
                 <a href="/signup">
-                  <button onClick={<Signup />}>Signup</button>
+                  <button onClick={() => <Signup />}>Signup</button>
                 </a>
                 <a href="/login">
-                  <button onClick={<Login />}>Login</button></a>
+                  <button onClick={() => <Login />}>Login</button></a>
               </div>
             }
           </div>
