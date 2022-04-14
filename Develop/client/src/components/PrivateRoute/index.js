@@ -8,8 +8,8 @@ import { Navigate } from 'react-router-dom';
 // If they are: they proceed to the page
 // If not: they are redirected to the login page.
 const PrivateRoute = ({ children }) => {
-  const { token } = Auth;
-
+  const token =  localStorage.getItem('id_token')
+console.log(token)
   if (!token) {
     return <Navigate to="/login" replace />;
   }
