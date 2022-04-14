@@ -1,10 +1,12 @@
 import React from 'react';
+import { NavDropdown } from 'react-bootstrap';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import '../../assets/css/Header.css';
 // import Auth from '../../utils/auth';
 
 function Header() {
-
+let user = JSON.parse(localStorage.getItem('user-info'))
+console.warn(user)
 
   return (
     <header className='head'>
@@ -23,9 +25,9 @@ function Header() {
               />
             </span>
             <div>
-            {/* {isLoggedIn
-           ?  <a href="/" onClick={() => Auth.logout()}>Logout</a>
-          : <Login onClick={this.handleLoginClick} />} */}
+              <NavDropdown title={user.name}>
+              <NavDropdown.Item>Logout</NavDropdown.Item>
+              </NavDropdown>
             </div>
           </a>
         </div>
