@@ -1,12 +1,18 @@
 import React from 'react';
 import { NavDropdown } from 'react-bootstrap';
 import Hawker from '../../assets/images/icons/Hawker.svg';
+import { Link } from 'react-router-dom';
 import '../../assets/css/Header.css';
 // import Auth from '../../utils/auth';
 
-function Header() {
+function Header({history}) {
 let user = JSON.parse(localStorage.getItem('user-info'))
 console.warn(user)
+// const history = useHistory();
+function logOut() {
+  localStorage.clear();
+  history.push('/')
+}
 
   return (
     <header className='head'>
@@ -15,7 +21,7 @@ console.warn(user)
            
         </div>
         <div>
-          <a href="/">
+          <Link to="/" />
             <span role="img" aria-label="img-name">
               <img
                 src={Hawker}
@@ -24,12 +30,13 @@ console.warn(user)
                 id="logo"
               />
             </span>
+            {localStorage.getItem('user-info')?
             <div>
-              <NavDropdown title={user.name}>
-              <NavDropdown.Item>Logout</NavDropdown.Item>
+              <NavDropdown title={user && user.name}>
+              <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
               </NavDropdown>
             </div>
-          </a>
+            :null}
         </div>
       </div>
     </header>

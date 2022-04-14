@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
- 
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@testing-library/user-event": "^13.5.0",
