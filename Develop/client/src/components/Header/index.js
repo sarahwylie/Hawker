@@ -11,7 +11,8 @@ function Header({ history }) {
   function logOut() {
     localStorage.clear();
     history.push('/')
-  }
+  };
+  
 
   return (
     <header className='head'>
