@@ -1,7 +1,9 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import PrivateRoute from './components/PrivateRoute/index';
 import Header from './components/Header/index';
 import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/index';
@@ -51,17 +53,57 @@ function App() {
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/buyer" element={<Buyer />} />
+            <Route
+              exact
+              path="/buyer"
+              element={
+                <PrivateRoute>
+                  <Buyer />
+                </PrivateRoute>
+              }
+            />
             <Route exact path="/auto" element={<Auto />} />
             <Route exact path="/clothing" element={<Clothing />} />
             <Route exact path="/household" element={<Household />} />
             <Route exact path="/outdoor" element={<Outdoor />} />
             <Route exact path="/tech" element={<Tech />} />
-            <Route exact path="/checkout" element={<Checkout />} />
-            <Route exact path="/singleItem" element={<SingleItem />} />
-            <Route exact path="/postItem" element={<PostItem />} />
-            <Route exact path="/seller" element={<Seller />} />
-            <Route element={<NoMatch />} />
+            <Route
+              exact
+              path="/checkout"
+              element={
+                <PrivateRoute>
+                  <Checkout />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path="/singleItem"
+              element={
+                <PrivateRoute>
+                  <SingleItem />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path="/postItem"
+              element={
+                <PrivateRoute>
+                  <PostItem />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path="/seller"
+              element={
+                <PrivateRoute>
+                  <Seller />
+                </PrivateRoute>
+              }
+            />
+            <Route path="*" element={<NoMatch />} />
           </Routes>
         </>
       </Router>
