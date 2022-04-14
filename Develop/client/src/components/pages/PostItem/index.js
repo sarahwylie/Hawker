@@ -1,9 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_ITEM } from '../../../utils/mutations';
+import Auth from '../../../utils/auth';
 
 function PostItem() {
+  const [postForm, setPostForm] = useState('');
+  console.info(postForm);
+  const [addPost] = useMutation(ADD_ITEM);
+
+  const categories = [
+    { name: 'Outdoor', id: '6256096b98fc0602b12202fb' },
+    { name: 'Transportation', id: '6256096b98fc0602b12202fc' },
+    { name: 'Tech', id: '6256096b98fc0602b12202fd' },
+    { name: 'Sports', id: '6256096b98fc0602b12202fe' }
+  ];
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addPost({
+      variables: {
+        title: postForm.title,
+        description: postForm.description,
+        image: postForm.image,
+        price: postForm.price,
+        quantity: postForm.quantity,
+        category: postForm.category
+      }
+    });
+    const token = mutationResponse.data.addPost.token;
+    console.info(token);
+    Auth.login(token);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setPostForm({
+      ...postForm,
+      [name]: value
+    });
+  };
+
   return (
     <div>
-      <h2>Post Item</h2>
+      <form onSubmit={handleFormSubmit}>
+        <label htmlFor="itemImage">Insert Image </label>
+        <input type="file" name="itemImage" onChange={handleChange}></input>
+
+        <label htmlFor="itemTitle">Item Title</label>
+        <input type="text" name="itemTitle" placeholder="Title" onChange={handleChange}></input>
+
+        <label htmlFor="price">Price</label>
+        <input type="text" name="price" placeholder="Price of Item" onChange={handleChange}></input>
+
+        <label htmlFor="description">Description</label>
+        <input
+          type="text"
+          name="description"
+          placeholder="Description"
+          onChange={handleChange}
+        ></input>
+
+        <label htmlFor="description">Quantity</label>
+        <input type="Number" name="Quantity" placeholder="Quantity" onChange={handleChange}></input>
+
+       <select> {categories.map((category) => { return <option key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }

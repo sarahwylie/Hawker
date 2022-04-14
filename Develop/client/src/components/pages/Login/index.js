@@ -7,16 +7,18 @@ import '../../../assets/css/Login.css';
 
 function Login() {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN_USER);
+  const [login, { loading, error }] = useMutation(LOGIN_USER);
 
   // Form submit handler
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password }
+      console.log(formState)
+      const { data } = await login({
+        variables: { email: 'Tim@gmail.com', password: 'password' }
       });
-      const token = mutationResponse.data.login.token;
+
+      const token = data.login.token;
       Auth.login(token);
     } catch (error) {
       console.error(error);
@@ -44,6 +46,7 @@ function Login() {
             name="email"
             type="email"
             id="email"
+            value={formState.email}
             onChange={handleChange}
           />
         </div>
@@ -54,9 +57,15 @@ function Login() {
             name="password"
             type="password"
             id="pwd"
+            value={formState.password}
             onChange={handleChange}
           />
         </div>
+        {loading ? (
+          <div>
+            <p className="loading-text">Loading...</p>
+          </div>
+        ) : null}
         {error ? (
           <div>
             <p className="error-text">The provided credentials are incorrect</p>
