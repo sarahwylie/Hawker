@@ -28,7 +28,7 @@ function Login() {
     event.preventDefault();
     try {
       const { data } = await login({
-        variables: { email: formState.email, password: formState.password }
+        variables: { email: 'Tim@gmail.com', password: 'password' }
       });
 
       const token = data.login.token;

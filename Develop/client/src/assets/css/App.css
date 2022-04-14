@@ -13,14 +13,14 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: #282c34;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
@@ -30,4 +30,7 @@
 .App-link {
   color: #61dafb;
 }
+
+/*# sourceMappingURL=App.css.map */
+
 /*# sourceMappingURL=App.css.map */
