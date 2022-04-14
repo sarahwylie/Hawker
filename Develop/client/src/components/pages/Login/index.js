@@ -4,19 +4,8 @@ import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import '../../../assets/css/Login.css';
 
-const containerStyle = {
-  border: '1px solid black',
-  maxWidth: '600px',
-  margin: '0 auto'
-};
 
-const formParentStyle = {
-  textAlign: 'center'
-};
-
-const formElementStyle = {
-
-};
+const formElementStyle = {};
 
 function Login() {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -46,20 +35,10 @@ function Login() {
   };
 
   return (
-    <div style={containerStyle} className="container my-1">
-      <div className="formParent" style={formParentStyle}>
+    <div className="container my-1">
+      <div className="formParent">
         <h2>Login</h2>
-        <form
-          style={{
-            border: '1px solid black',
-            width: '100%',
-            margin: '0 auto',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start'
-          }}
-          onSubmit={handleFormSubmit}
-        >
+        <form onSubmit={handleFormSubmit}>
           <div>
             <label htmlFor="email">Email address:</label>
             <input
@@ -91,7 +70,10 @@ function Login() {
           ) : null}
           {error ? (
             <div>
-              <p className="error-text">The provided credentials are incorrect. Please correct credentials or create a new account</p>
+              <p className="error-text">
+                The provided credentials are incorrect. Please correct credentials or create a new
+                account
+              </p>
             </div>
           ) : null}
           <div>
