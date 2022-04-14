@@ -1,5 +1,4 @@
 import React from 'react';
-import Auth from '../../utils/auth';
 import { Navigate } from 'react-router-dom';
 
 // This is used to determine if a user is authenticated and
@@ -9,7 +8,7 @@ import { Navigate } from 'react-router-dom';
 // If not: they are redirected to the login page.
 const PrivateRoute = ({ children }) => {
   const token =  localStorage.getItem('id_token')
-console.log(token)
+
   if (!token) {
     return <Navigate to="/login" replace />;
   }
