@@ -1,0 +1,20 @@
+@import './_variables'
+@import './_responsive'
+@import './index'
+
+nav
+  @include flex
+  width: 100%
+
+.links
+  @include flex-right
+  list-style: none
+  text-decoration: none
+
+.links li a
+  margin: 1vw
+
+#logo
+  @include flex-left
+  padding-top: 0
+  margin-top: 0
