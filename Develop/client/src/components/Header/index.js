@@ -16,6 +16,7 @@ function Header({ history }) {
 
   return (
     <header className='head'>
+      <nav>  
       <div className="flex-row">
         <div className='col-4'>
 
@@ -31,7 +32,7 @@ function Header({ history }) {
               />
             </span>
           </a>
-          <div className='col-4'>
+          <div className='log'>
             {localStorage.getItem('user-info') ?
               <div>
                 <a href="/orderHistory">
@@ -55,6 +56,7 @@ function Header({ history }) {
           </div>
         </div>
       </div>
+      </nav>
     </header>
   );
 }
