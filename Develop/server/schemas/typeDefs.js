@@ -21,9 +21,7 @@ type Category {
     _id: ID
     firstName: String
     lastName: String
-    userName: String
     email: String
-    address: String
     orders: [Order]
   }
 
@@ -45,7 +43,8 @@ type Category {
     me: User
     categories: [Category]
     item(category: ID, name: String): [Item]
-    user: [User]
+    users: [User]
+    user(_id: ID!): User
     order: [Order]
   }
 
@@ -55,11 +54,9 @@ type Category {
       firstName: String!
       lastName: String!
       email: String!
-      userName: String!
       password: String!
-      address: String!
     ): Auth
-  
+
     addOrder(
       purchaseDate: DateTime
       items: ID!
