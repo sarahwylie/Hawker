@@ -8,6 +8,8 @@ function PostItem() {
   // const[category, setCategory] = useState('');
   const [addItem] = useMutation(ADD_ITEM);
   
+  // Category id values depend on object id created when categories are seeded in mongo database
+  // if you reseed your database you need to come here and change these values if not you'll have the wrong id when it posts to the server
   const categories = [
     { name: 'Outdoor', id: '6258c2c3fcaaf30e4ffa9ba0' },
     { name: 'Transportation', id: '6258c2c3fcaaf30e4ffa9ba1' },
