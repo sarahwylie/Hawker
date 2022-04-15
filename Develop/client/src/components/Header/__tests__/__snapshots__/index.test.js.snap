@@ -33,15 +33,13 @@ exports[`Header component matches snapshot DOM node structure 1`] = `
           <div
             class="log"
           >
-            <div>
-              <a
-                href="/login"
-              >
-                <button>
-                  Login
-                </button>
-              </a>
-            </div>
+            <a
+              href="/login"
+            >
+              <button>
+                Login
+              </button>
+            </a>
           </div>
         </div>
       </div>
