@@ -14,15 +14,6 @@ function PostItem() {
     { name: 'Tech', id: '6256096b98fc0602b12202fd' },
     { name: 'Sports', id: '6256096b98fc0602b12202fe' }
   ];
-  
-  console.info(postForm.itemImage);
-  console.log(postForm.itemTitle)
-  console.info(postForm.Quantity);
-  console.log(postForm.price)
-  console.info(postForm.description);
-  console.log(postForm.itemTitle)
-  console.log(postForm.categoryId)
-  // console.log(postForm);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -32,13 +23,13 @@ function PostItem() {
         'title': postForm.itemTitle,
         'description': postForm.description,
         'image': postForm.itemImage,
-        'price': postForm.price,
-        'quantity': postForm.Quantity,
+        'price': parseInt(postForm.price),
+        'quantity': parseInt(postForm.Quantity),
         'category': postForm.categoryId
 
       }
     });
-    // console.log(mutationResponse)
+    console.info(mutationResponse)
     // const token = mutationResponse.data.addPost.token;
     // console.info(token);
     // Auth.login(token);
