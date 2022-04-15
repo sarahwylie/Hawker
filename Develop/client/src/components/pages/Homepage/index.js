@@ -3,6 +3,7 @@ import React from 'react';
 import imagesData from './imagesData.json';
 
 function Homepage() {
+  
   return (
     <div>
       {imagesData.map((image, i) => (

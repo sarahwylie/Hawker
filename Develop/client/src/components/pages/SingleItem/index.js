@@ -4,29 +4,25 @@ import Auth from '../../../utils/auth';
 import '../../../assets/css/Singleitem.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_ITEM } from '../../../utils/queries';
-import imagesData from '../../pages/Homepage/imagesData.json';
+import imagesData from '../Auto';
+
 
 function SingleItemModal() {
   
-  // { 
+  { 
 
-  // return (
-  //   <div className='modalBackdrop'>
-  //       <div className='modalContainer'>
-  //         <h2>Item Title</h2>
-  //         {imagesData.map((image, i) => (
-  //           <><a href="http://localhost:3000" key={i}>
-  //             <div>
-  //               <img {...imagesData[i]} alt={imagesData[i].alt} width="25%" />
-  //               <p>{image.category}</p>
-  //             </div>
-  //           </a><div>
-  //               <button type="button">Back to Items</button>
-  //               <button type="button">Buy Me</button>
-  //             </div></>
-  //         </div>
-  //   </div>
-  // )};
+  return (
+    <div className='modalBackdrop'>
+        <div className='modalContainer'>
+          <h3 className='modalTitle'>Item Title</h3>
+              <img src={imagesData}></img>
+                <p>lorem ipsum</p>
+              
+                <button type="button">Back to Items</button>
+                <button type="button">Buy Me</button>
+              </div>
+          </div>
+  )};
 
 }
 
