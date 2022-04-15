@@ -1,43 +1,46 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_ITEM } from '../../../utils/mutations';
-import Auth from '../../../utils/auth';
 
 function PostItem() {
   const [postForm, setPostForm] = useState('');
-  console.info(postForm);
-  const [addPost] = useMutation(ADD_ITEM);
-
+  // const[category, setCategory] = useState('');
+  const [addItem] = useMutation(ADD_ITEM);
+  
+  // Category id values depend on object id created when categories are seeded in mongo database
+  // if you reseed your database you need to come here and change these values if not you'll have the wrong id when it posts to the server
   const categories = [
-    { name: 'Outdoor', id: '6256096b98fc0602b12202fb' },
-    { name: 'Transportation', id: '6256096b98fc0602b12202fc' },
-    { name: 'Tech', id: '6256096b98fc0602b12202fd' },
-    { name: 'Sports', id: '6256096b98fc0602b12202fe' }
+    { name: 'Outdoor', id: '6258c2c3fcaaf30e4ffa9ba0' },
+    { name: 'Transportation', id: '6258c2c3fcaaf30e4ffa9ba1' },
+    { name: 'Tech', id: '6258c2c3fcaaf30e4ffa9ba2' },
+    { name: 'Sports', id: '6258c2c3fcaaf30e4ffa9ba3' }
   ];
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addPost({
+   console.log(postForm)
+    const mutationResponse = await addItem({
       variables: {
-        title: postForm.title,
-        description: postForm.description,
-        image: postForm.image,
-        price: postForm.price,
-        quantity: postForm.quantity,
-        category: postForm.category
+        'title': postForm.itemTitle,
+        'description': postForm.description,
+        'image': postForm.itemImage,
+        'price': parseInt(postForm.price),
+        'quantity': parseInt(postForm.Quantity),
+        'category': postForm.categoryId
+
       }
     });
-    const token = mutationResponse.data.addPost.token;
-    console.info(token);
-    Auth.login(token);
+    console.info(mutationResponse)
   };
 
   const handleChange = (event) => {
+    // console.log(event.target.value)
     const { name, value } = event.target;
     setPostForm({
       ...postForm,
       [name]: value
     });
+    
   };
 
   return (
@@ -63,7 +66,8 @@ function PostItem() {
         <label htmlFor="description">Quantity</label>
         <input type="Number" name="Quantity" placeholder="Quantity" onChange={handleChange}></input>
 
-       <select> {categories.map((category) => { return <option key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
+        <label htmlFor="categoryId">Quantity</label>
+       <select  name='categoryId' onChange={handleChange}> {categories.map((category) => { return <option  value={category.id} key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
         <button type="submit">Submit</button>
       </form>
     </div>
