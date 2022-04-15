@@ -5,6 +5,10 @@ import Auth from '../../../utils/auth';
 import '../../../assets/css/Login.css';
 
 
+const formParentStyle = {
+  textAlign: 'center'
+};
+
 const formElementStyle = {};
 
 function Login() {

@@ -44,12 +44,8 @@ main {
   background-color: #219EBC;
   color: #023047;
   position: fixed;
-  top: 0;
+  bottom: 0;
   width: 100%;
   text-align: center;
-  position: relative;
-  -webkit-box-flex: in-line;
-      -ms-flex: in-line;
-          flex: in-line;
 }
 /*# sourceMappingURL=Header.css.map */
