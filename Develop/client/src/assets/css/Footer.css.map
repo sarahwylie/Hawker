@@ -2,12 +2,21 @@
     "version": 3,
     "mappings": "ACAA,eAAe;AAEf,uBAAuB;AASvB,uBAAuB;AAIvB,aAAa;AEfb,oBAAoB;AFApB,eAAe;AAEf,uBAAuB;AASvB,uBAAuB;AAIvB,aAAa;AEXb,AAAA,CAAC,CAAC;EACA,UAAU,EAAE,UAAU;CAAG;;AAE3B,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,CAAC;EACT,WAAW,EAAE,iJAAiJ;EAC9J,sBAAsB,EAAE,WAAW;EACnC,uBAAuB,EAAE,SAAS;EAClC,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,WAAW,EAAE,GAAG;EAChB,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,IAAI;EACf,cAAc,EAAE,IAAI;EACpB,KAAK,EFbA,OAAO;CEaG;;AAEjB,AAAA,IAAI;AACJ,IAAI,CAAC;EACH,UAAU,EAAE,IAAI;CAAG;;AAErB,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,kEAAkE;CAAG;;AAEpF,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,MAAM;EACd,SAAS,EAAE,GAAG;CAAG;;AHzBnB,AAAA,OAAO,CAAC;EACN,gBAAgB,ECQL,OAAO;EDPlB,KAAK,ECDA,OAAO;EDEZ,QAAQ,EAAE,KAAK;EACf,IAAI,EAAE,CAAC;EACP,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,MAAM;CAAG",
     "sources": [
+<<<<<<< HEAD
         "../../../public/assets/sass/Footer.sass",
         "../../../public/assets/sass/_variables.sass",
         "../../../public/assets/sass/_responsive.sass",
         "../../../public/assets/sass/index.sass",
         "../../../public/assets/sass/_variables.sass",
         "../../../public/assets/sass/_responsive.sass"
+=======
+        "../sass/Footer.sass",
+        "../sass/_variables.sass",
+        "../sass/_responsive.sass",
+        "../sass/index.sass",
+        "../sass/_variables.sass",
+        "../sass/_responsive.sass"
+>>>>>>> fc14da4678c815a05b54295846144e70bca1e5e3
     ],
     "names": [],
     "file": "Footer.css"

@@ -17,10 +17,10 @@ function Header({ history }) {
     <header className='head'>
       <nav>  
       <div className='flex-column'>
-        <div className='first'>
+        <div className='col-gutter-lr'>
 
         </div>
-        <div className='col'>
+        <div className='col-gutter-lr '>
           <a href="/">
             <span role="img" aria-label="img-name">
               <img
@@ -31,7 +31,7 @@ function Header({ history }) {
               />
             </span>
           </a>
-          <div className='last log'>
+          <div className='col-gutter-lr log'>
             {localStorage.getItem('user-info') ?
               <div>
                 <a href="/orderHistory">

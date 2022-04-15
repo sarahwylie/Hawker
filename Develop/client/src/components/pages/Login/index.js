@@ -15,9 +15,7 @@ const formParentStyle = {
   textAlign: 'center'
 };
 
-const formElementStyle = {
-
-};
+const formElementStyle = {};
 
 function Login() {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -93,7 +91,10 @@ function Login() {
           ) : null}
           {error ? (
             <div>
-              <p className="error-text">The provided credentials are incorrect. Please correct credentials or create a new account</p>
+              <p className="error-text">
+                The provided credentials are incorrect. Please correct credentials or create a new
+                account
+              </p>
             </div>
           ) : null}
           <div>
