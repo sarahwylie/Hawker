@@ -1,29 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import '../../../assets/css/Login.css';
 
-
-const formParentStyle = {
-  textAlign: 'center'
-};
-
-const formElementStyle = {};
-
-function Login() {
+function Login({ toggle }) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { loading, error }] = useMutation(LOGIN_USER);
+
+  useEffect(() => {
+    toggle(true);
+  });
 
   // Form submit handler
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await login({
-        variables: { email: 'Tim@gmail.com', password: 'password' }
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password }
       });
 
-      const token = data.login.token;
+      const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (error) {
       console.error(error);
@@ -52,7 +49,6 @@ function Login() {
               id="email"
               value={formState.email}
               onChange={handleChange}
-              style={formElementStyle}
             />
           </div>
           <div>
@@ -64,7 +60,6 @@ function Login() {
               id="pwd"
               value={formState.password}
               onChange={handleChange}
-              style={formElementStyle}
             />
           </div>
           {loading ? (
