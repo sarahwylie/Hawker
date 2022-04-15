@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/variables/main.scss",
+        "../sass/variables/_grid-variables.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
