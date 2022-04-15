@@ -5,6 +5,18 @@ import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import '../../../assets/css/Login.css';
 
+const containerStyle = {
+  border: '1px solid black',
+  maxWidth: '600px',
+  margin: '0 auto'
+};
+
+const formParentStyle = {
+  textAlign: 'center'
+};
+
+const formElementStyle = {};
+
 function Login() {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { loading, error }] = useMutation(LOGIN_USER);
@@ -13,9 +25,8 @@ function Login() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(formState)
       const { data } = await login({
-        variables: { email: formState.email, password: formState.password }
+        variables: { email: 'Tim@gmail.com', password: 'password' }
       });
 
       const token = data.login.token;
@@ -34,47 +45,63 @@ function Login() {
   };
 
   return (
-    <div className="container my-1">
+    <div style={containerStyle} className="container my-1">
       <Link to="/signup">← Go to Signup</Link>
-
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            value={formState.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            value={formState.password}
-            onChange={handleChange}
-          />
-        </div>
-        {loading ? (
+      <div className="formParent" style={formParentStyle}>
+        <h2>Login</h2>
+        <form
+          style={{
+            border: '1px solid black',
+            width: '100%',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start'
+          }}
+          onSubmit={handleFormSubmit}
+        >
           <div>
-            <p className="loading-text">Loading...</p>
+            <label htmlFor="email">Email address:</label>
+            <input
+              placeholder="youremail@test.com"
+              name="email"
+              type="email"
+              id="email"
+              value={formState.email}
+              onChange={handleChange}
+              style={formElementStyle}
+            />
           </div>
-        ) : null}
-        {error ? (
           <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+            <label htmlFor="pwd">Password:</label>
+            <input
+              placeholder="******"
+              name="password"
+              type="password"
+              id="pwd"
+              value={formState.password}
+              onChange={handleChange}
+              style={formElementStyle}
+            />
           </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          {loading ? (
+            <div>
+              <p className="loading-text">Loading...</p>
+            </div>
+          ) : null}
+          {error ? (
+            <div>
+              <p className="error-text">
+                The provided credentials are incorrect. Please correct credentials or create a new
+                account
+              </p>
+            </div>
+          ) : null}
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
