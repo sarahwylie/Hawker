@@ -24,7 +24,7 @@
     "category": "auto"
   },
   {
-    "src": "../../../assets/images/auto/child_car_seat.jpg",
+    "src": "../../../assets/images/auto/child-car-seat.jpg",
     "alt": "Child Car Seat",
     "title": "Child Car Seat",
     "category": "auto"
@@ -36,7 +36,7 @@
     "category": "auto"
   },
   {
-    "src": "../../../assets/images/auto/jack_side_by_side.jpg",
+    "src": "../../../assets/images/auto/Jack-Side-by-Side.jpg",
     "alt": "Jacks",
     "title": "Jacks",
     "category": "auto"
@@ -84,13 +84,13 @@
     "category": "clothing"
   },
   {
-    "src": "../../../assets/images/clothing/mens_pants.jpg",
+    "src": "../../../assets/images/clothing/mens_pants1.jpg",
     "alt": "Mens Pants",
     "title": "Mens Pants",
     "category": "clothing"
   },
   {
-    "src": "../../../assets/images/clothing/mens_shirt.jpg",
+    "src": "../../../assets/images/clothing/mens_shirt1.jpg",
     "alt": "Mens Shirt",
     "title": "Mens Shirt",
     "category": "clothing"
@@ -108,13 +108,13 @@
     "category": "clothing"
   },
   {
-    "src": "../../../assets/images/clothing/womens_pants.jpg",
+    "src": "../../../assets/images/clothing/womens_pants1.jpg",
     "alt": "Womens Pants",
     "title": "Womens Pants",
     "category": "clothing"
   },
   {
-    "src": "../../../assets/images/clothing/womens_shirt.jpg",
+    "src": "../../../assets/images/clothing/womens_shirt2.jpg",
     "alt": "Womens Shirt",
     "title": "Womens Shirt",
     "category": "clothing"
@@ -180,7 +180,7 @@
     "category": "household"
   },
   {
-    "src": "../../../assets/images/outdoor/black_egg_chair.jpg",
+    "src": "../../../assets/images/outdoor/acapulco-black-egg-outdoor-chair.jpg",
     "alt": "Black Egg Outdoor Chair",
     "title": "Black Egg Outdoor Chair",
     "category": "outdoor"
@@ -240,7 +240,7 @@
     "category": "outdoor"
   },
   {
-    "src": "../../../assets/images/tech/computer_speaker.jpg",
+    "src": "../../../assets/images/tech/computer-speaker.jpg",
     "alt": "Computer Speakers",
     "title": "Computer Speakers",
     "category": "tech"
@@ -252,7 +252,7 @@
     "category": "tech"
   },
   {
-    "src": "../../../assets/images/tech/cryorig_cooler.jpg",
+    "src": "../../../assets/images/tech/cryorig-cooler.jpg",
     "alt": "Cryorig Cooler",
     "title": "Cryorig Cooler",
     "category": "tech"
