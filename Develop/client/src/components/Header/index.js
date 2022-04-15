@@ -7,7 +7,6 @@ import Login from '../pages/Login'
 
 function Header({ history }) {
   let user = JSON.parse(localStorage.getItem('user-info'))
-  // console.warn(user)
   function logOut() {
     localStorage.clear();
     history.push('/')
@@ -17,11 +16,11 @@ function Header({ history }) {
   return (
     <header className='head'>
       <nav>  
-      <div className="flex-row">
-        <div className='col-4'>
+      <div className='row'>
+        <div className='col-xs-12 col-sm-8 col-md-6 col-lg-4'>
 
         </div>
-        <div className='col-4'>
+        <div className='col-xs-12 col-sm-8 col-md-6 col-lg-4'>
           <a href="/">
             <span role="img" aria-label="img-name">
               <img
@@ -32,7 +31,7 @@ function Header({ history }) {
               />
             </span>
           </a>
-          <div className='log'>
+          <div className='col-xs-12 col-sm-8 col-md-6 col-lg-4 log'>
             {localStorage.getItem('user-info') ?
               <div>
                 <a href="/orderHistory">
@@ -47,10 +46,10 @@ function Header({ history }) {
               :
               <div>
                 <a href="/signup">
-                  <button onClick={<Signup />}>Signup</button>
+                <button onClick={() => <Signup />}>Signup</button>
                 </a>
                 <a href="/login">
-                  <button onClick={<Login />}>Login</button></a>
+                <button onClick={() => <Login />}>Login</button></a>
               </div>
             }
           </div>

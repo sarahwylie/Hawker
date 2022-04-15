@@ -8,7 +8,6 @@
 /* Background Colors */
 /* Spacing */
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -49,7 +48,5 @@ main {
   width: 100%;
   text-align: center;
 }
-
-/*# sourceMappingURL=Footer.css.map */
 
 /*# sourceMappingURL=Footer.css.map */

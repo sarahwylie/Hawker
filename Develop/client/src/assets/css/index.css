@@ -4,7 +4,6 @@
 /* Background Colors */
 /* Spacing */
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -35,7 +34,5 @@ main {
   margin: 0 auto;
   max-width: 90%;
 }
-
-/*# sourceMappingURL=index.css.map */
 
 /*# sourceMappingURL=index.css.map */
