@@ -1,6 +1,6 @@
 import React from 'react';
 
-import imagesData from './imagesData.js';
+import imagesData from './imagesData.json';
 
 function Homepage() {
   return (
