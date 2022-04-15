@@ -1,14 +1,18 @@
 // Import dependencies
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 
 // Create Signup form page component
 //! Create the Signup Component
-const Signup = () => {
+const Signup = ({ toggle }) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
+
+  useEffect(() => {
+    toggle(false);
+  });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();

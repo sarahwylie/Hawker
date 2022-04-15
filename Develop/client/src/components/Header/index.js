@@ -1,38 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavDropdown } from 'react-bootstrap';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import '../../assets/css/Header.css';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 
-function Header({ history }) {
+function Header({ history, isLogin }) {
   let user = JSON.parse(localStorage.getItem('user-info'));
   function logOut() {
     localStorage.clear();
     history.push('/');
   }
 
-  const [onLogin, setOnLogin] = useState();
+  const showButtons = () => {
+    return isLogin ? (
+      <a href="/signup">
+        <button onClick={() => <Signup />}>Signup</button>
+      </a>
+    ) : (
+      <a href="/login">
+        <button onClick={() => <Login />}>Login</button>
+      </a>
+    );
+  };
 
-  function onToggle(toggle) {
-    setOnLogin(toggle);
-  }
-
-  function showButton() {
-    if (!onLogin) {
-      return (
-        <a href="/login">
-          <button onClick={() => <Login onToggle={onToggle} />}>Login</button>
-        </a>
-      );
-    } else {
-      return (
-        <a href="/signup">
-          <button onClick={() => <Signup onToggle={onToggle} />}>Signup</button>
-        </a>
-      );
-    }
-  }
   return (
     <header className="head">
       <nav>
@@ -55,7 +46,7 @@ function Header({ history }) {
                   </a>
                 </div>
               ) : (
-                <div>{showButton()}</div>
+                <div>{showButtons()}</div>
               )}
             </div>
           </div>

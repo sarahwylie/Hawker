@@ -4,12 +4,12 @@ import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import '../../../assets/css/Login.css';
 
-function Login(props) {
-  console.log(props.name)
+function Login({ toggle }) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { loading, error }] = useMutation(LOGIN_USER);
+
   useEffect(() => {
-    // onToggle(true);
+    toggle(true);
   });
 
   // Form submit handler
