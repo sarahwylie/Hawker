@@ -20,7 +20,7 @@ import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
-import './assets/css/App.css';
+import './assets/css/index.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
