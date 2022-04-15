@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_ITEM } from '../../../utils/mutations';
-import Auth from '../../../utils/auth';
 
 function PostItem() {
   const [postForm, setPostForm] = useState('');
@@ -32,9 +31,6 @@ function PostItem() {
       }
     });
     console.info(mutationResponse)
-    // const token = mutationResponse.data.addPost.token;
-    // console.info(token);
-    // Auth.login(token);
   };
 
   const handleChange = (event) => {
