@@ -34,3 +34,22 @@ export const QUERY_SINGLE_USER = gql`
     }
   }
 `;
+
+export const QUERY_SINGLE_ITEM = gql`
+  query singleItem($id: ID!) {
+    item(_id: $id) {
+      _id
+      title
+      description
+      image
+      price
+      quantity
+      user {
+        _id
+      }
+      category {
+        _id
+      }
+    }
+  }`
+

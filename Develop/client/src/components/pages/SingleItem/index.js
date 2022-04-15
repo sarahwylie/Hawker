@@ -3,24 +3,24 @@ import { Link } from 'react-router-dom';
 import Auth from '../../../utils/auth';
 import Hawker from '../../../assets/images/icons/Hawker.svg';
 import '../../../assets/css/Singleitem.css';
+import { useQuery } from '@apollo/client';
+import { QUERY_SINGLE_ITEM } from '../../../utils/queries';
 
-function SingleItem() {
+function SingleItemModal() {
   
+  { 
 
   return (
-    <body>
-        <div>
-          <h2>Single Item</h2>
-        </div>
-      <div>
-        <img src='../../../assets/images/tech/keyboard_mouse.jpg'></img>
-        <p>lorem itsum </p>
+    <div className='modalBackdrop'>
+        <div className='modalContainer'>
+          <h2>Item Title</h2>
+              <p>{}</p>
+      <button type="button">Back to Items</button>
+      <button type="button">Buy Me</button>
       </div>
-      <button>Back to Items</button>
-      <button>Buy Me</button>
-    </body>
+    </div>
   );
-
+}
 }
 
-export default SingleItem;
+export default SingleItemModal;
