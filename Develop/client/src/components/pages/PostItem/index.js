@@ -5,40 +5,47 @@ import Auth from '../../../utils/auth';
 
 function PostItem() {
   const [postForm, setPostForm] = useState('');
-  const[category, setCategory] = useState('');
-  console.info(postForm);
+  // const[category, setCategory] = useState('');
   const [addItem] = useMutation(ADD_ITEM);
-
+  
   const categories = [
     { name: 'Outdoor', id: '6256096b98fc0602b12202fb' },
     { name: 'Transportation', id: '6256096b98fc0602b12202fc' },
     { name: 'Tech', id: '6256096b98fc0602b12202fd' },
     { name: 'Sports', id: '6256096b98fc0602b12202fe' }
   ];
-
-  console.log(postForm.title)
+  
+  console.info(postForm.itemImage);
+  console.log(postForm.itemTitle)
+  console.info(postForm.Quantity);
+  console.log(postForm.price)
+  console.info(postForm.description);
+  console.log(postForm.itemTitle)
+  console.log(postForm.categoryId)
+  // console.log(postForm);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+   console.log(postForm)
     const mutationResponse = await addItem({
       variables: {
-        'title': 'Front End test',
-        'description': 'Front end test description',
-        'image': 'Front end test',
-        'price': 55,
-        'quantity': 10,
-        'category': '6258c2c3fcaaf30e4ffa9ba0'
+        'title': postForm.itemTitle,
+        'description': postForm.description,
+        'image': postForm.itemImage,
+        'price': postForm.price,
+        'quantity': postForm.Quantity,
+        'category': postForm.categoryId
 
       }
     });
-    console.log(mutationResponse)
+    // console.log(mutationResponse)
     // const token = mutationResponse.data.addPost.token;
     // console.info(token);
     // Auth.login(token);
   };
 
   const handleChange = (event) => {
-    console.log(event.target)
+    // console.log(event.target.value)
     const { name, value } = event.target;
     setPostForm({
       ...postForm,
@@ -70,7 +77,8 @@ function PostItem() {
         <label htmlFor="description">Quantity</label>
         <input type="Number" name="Quantity" placeholder="Quantity" onChange={handleChange}></input>
 
-       <select> {categories.map((category) => { return <option value={category.id} key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
+        <label htmlFor="categoryId">Quantity</label>
+       <select  name='categoryId' onChange={handleChange}> {categories.map((category) => { return <option  value={category.id} key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
         <button type="submit">Submit</button>
       </form>
     </div>
