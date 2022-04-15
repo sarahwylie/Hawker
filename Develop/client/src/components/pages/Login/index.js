@@ -16,11 +16,11 @@ function Login({ toggle }) {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await login({
-        variables: { email: 'Tim@gmail.com', password: 'password' }
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password }
       });
 
-      const token = data.login.token;
+      const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (error) {
       console.error(error);

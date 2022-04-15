@@ -1,16 +1,17 @@
 import React from 'react';
-import { NavDropdown } from 'react-bootstrap';
+// import { NavDropdown } from 'react-bootstrap';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import '../../assets/css/Header.css';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
+import Auth from '../../utils/auth';
 
 function Header({ history, isLogin }) {
-  let user = JSON.parse(localStorage.getItem('user-info'));
-  function logOut() {
-    localStorage.clear();
-    history.push('/');
-  }
+  // let user = JSON.parse(localStorage.getItem('user-info'));
+  // function logOut() {
+  //   localStorage.clear();
+  //   history.push('/');
+  // }
 
   const showButtons = () => {
     return isLogin ? (
@@ -24,6 +25,19 @@ function Header({ history, isLogin }) {
     );
   };
 
+  function loggedIn() {
+    if (Auth.loggedIn()) {
+      return (
+        <div>
+          <a href="/orderHistory">Order History</a>
+          <a href="/" onClick={() => Auth.logout()}>Logout</a>
+        </div>
+      );
+    } else {
+      return showButtons();
+    }
+  }
+
   return (
     <header className="head">
       <nav>
@@ -35,20 +49,7 @@ function Header({ history, isLogin }) {
                 <img src={Hawker} alt="logo" className="photo" id="logo" />
               </span>
             </a>
-            <div className="log">
-              {localStorage.getItem('user-info') ? (
-                <div>
-                  <a href="/orderHistory">Order History</a>
-                  <a href="/">
-                    <NavDropdown title={user && user.name}>
-                      <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
-                    </NavDropdown>
-                  </a>
-                </div>
-              ) : (
-                <div>{showButtons()}</div>
-              )}
-            </div>
+            <div className="log">{loggedIn()}</div>
           </div>
         </div>
       </nav>
