@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import '../../../assets/css/Login.css';
 
-
-const formElementStyle = {};
-
-function Login() {
+function Login(props) {
+  console.log(props.name)
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { loading, error }] = useMutation(LOGIN_USER);
+  useEffect(() => {
+    // onToggle(true);
+  });
 
   // Form submit handler
   const handleFormSubmit = async (event) => {
@@ -48,7 +49,6 @@ function Login() {
               id="email"
               value={formState.email}
               onChange={handleChange}
-              style={formElementStyle}
             />
           </div>
           <div>
@@ -60,7 +60,6 @@ function Login() {
               id="pwd"
               value={formState.password}
               onChange={handleChange}
-              style={formElementStyle}
             />
           </div>
           {loading ? (

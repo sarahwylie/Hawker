@@ -2,14 +2,50 @@
 
 exports[`Header component matches snapshot DOM node structure 1`] = `
 <DocumentFragment>
-  <header>
-    <div
-      class="flex-row"
-    >
+  <header
+    class="head"
+  >
+    <nav>
       <div
-        class="col-2 photo"
-      />
-    </div>
+        class="flex-row"
+      >
+        <div
+          class="col-4"
+        />
+        <div
+          class="col-4"
+        >
+          <a
+            href="/"
+          >
+            <span
+              aria-label="img-name"
+              role="img"
+            >
+              <img
+                alt="logo"
+                class="photo"
+                id="logo"
+                src="Hawker.svg"
+              />
+            </span>
+          </a>
+          <div
+            class="log"
+          >
+            <div>
+              <a
+                href="/login"
+              >
+                <button>
+                  Login
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
   </header>
 </DocumentFragment>
 `;
