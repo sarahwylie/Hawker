@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
-import '../../../assets/css/Login.css';
+
 
 function Login({ toggle }) {
   const [formState, setFormState] = useState({ email: '', password: '' });

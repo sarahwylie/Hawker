@@ -3,13 +3,103 @@
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* VARIABLES */
+/* Foreground Colors */
+/* Background Colors */
+/* Spacing */
+.footer {
+  background-color: #219EBC;
+  color: #023047;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* VARIABLES */
+/* Foreground Colors */
+/* Background Colors */
+/* Spacing */
+.head {
+  background-color: #219EBC;
+  color: #023047;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  -webkit-box-flex: in-line;
+      -ms-flex: in-line;
+          flex: in-line;
+}
+
+/* STYLES FOR THE APP COMPONENT */
+/* VARIABLES */
+/* Foreground Colors */
+/* Background Colors */
+/* Spacing */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: #ffffff;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* VARIABLES */
+/* Foreground Colors */
+/* Background Colors */
+/* Spacing */
+form {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.formParent {
+  text-align: center;
+}
+
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -17,7 +107,7 @@ body {
   font-weight: 600;
   line-height: 1.5;
   font-size: 18px;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
   color: #023047;
 }
 
@@ -27,12 +117,11 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 main {
   margin: 0 auto;
   max-width: 90%;
 }
-
 /*# sourceMappingURL=index.css.map */
