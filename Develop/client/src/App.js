@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -42,15 +42,21 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
+  const toggle = (whichButton) => {
+    setIsLogin(whichButton);
+  };
+
   return (
     <ApolloProvider client={client}>
-      <Header/>
+      <Header isLogin={isLogin} />
       <Router>
         <>
           <Routes>
             <Route exact path="/" element={<Homepage />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/login" element={<Login toggle={toggle} />} />
+            <Route exact path="/signup" element={<Signup toggle={toggle} />} />
             <Route
               exact
               path="/buyer"
