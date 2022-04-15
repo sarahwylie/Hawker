@@ -6,12 +6,7 @@ import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
 
-function Header({ history, isLogin }) {
-  // let user = JSON.parse(localStorage.getItem('user-info'));
-  // function logOut() {
-  //   localStorage.clear();
-  //   history.push('/');
-  // }
+function Header({ isLogin }) {
 
   const showButtons = () => {
     return isLogin ? (
