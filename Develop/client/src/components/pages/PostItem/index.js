@@ -10,10 +10,11 @@ function PostItem() {
   // Category id values depend on object id created when categories are seeded in mongo database
   // if you reseed your database you need to come here and change these values if not you'll have the wrong id when it posts to the server
   const categories = [
-    { name: 'Outdoor', id: '6258c2c3fcaaf30e4ffa9ba0' },
-    { name: 'Transportation', id: '6258c2c3fcaaf30e4ffa9ba1' },
-    { name: 'Tech', id: '6258c2c3fcaaf30e4ffa9ba2' },
-    { name: 'Sports', id: '6258c2c3fcaaf30e4ffa9ba3' }
+    { name: 'Outdoor', id: '6259e3f5544d46b76947b812' },
+    { name: 'Auto', id: '6259e3f5544d46b76947b813' },
+    { name: 'Tech', id: '6259e3f5544d46b76947b814' },
+    { name: 'Clothing', id: '6259e3f5544d46b76947b815' },
+    { name: 'Home', id: '6259e3f5544d46b76947b816' }
   ];
 
   const handleFormSubmit = async (event) => {
