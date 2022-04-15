@@ -9,10 +9,10 @@ function PostItem() {
   const [addItem] = useMutation(ADD_ITEM);
   
   const categories = [
-    { name: 'Outdoor', id: '6256096b98fc0602b12202fb' },
-    { name: 'Transportation', id: '6256096b98fc0602b12202fc' },
-    { name: 'Tech', id: '6256096b98fc0602b12202fd' },
-    { name: 'Sports', id: '6256096b98fc0602b12202fe' }
+    { name: 'Outdoor', id: '6258c2c3fcaaf30e4ffa9ba0' },
+    { name: 'Transportation', id: '6258c2c3fcaaf30e4ffa9ba1' },
+    { name: 'Tech', id: '6258c2c3fcaaf30e4ffa9ba2' },
+    { name: 'Sports', id: '6258c2c3fcaaf30e4ffa9ba3' }
   ];
 
   const handleFormSubmit = async (event) => {
