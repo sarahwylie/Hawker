@@ -16,7 +16,6 @@ module.exports = {
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
     }
-    //console.info(token);
 
     //* if no token, return request object as is
     if (!token) {
