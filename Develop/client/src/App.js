@@ -21,6 +21,7 @@ import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
 import './assets/css/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
