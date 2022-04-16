@@ -9,7 +9,7 @@
         "../sass/_variables.sass",
         "../sass/_Header.sass",
         "../sass/_variables.sass",
-        "../sass/_App.sass",
+        "../sass/App.sass",
         "../sass/_variables.sass",
         "../sass/_responsive.sass",
         "../sass/_Login.sass",
