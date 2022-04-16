@@ -6,9 +6,9 @@ import imagesData from './imagesData.json';
 
 function Homepage() {
   return (
-    <div>
+    <div className="itemContainer">
       {imagesData.map((image, i) => (
-        <CCard style={{ width: '18rem' }}>
+        <CCard  loading="lazy">
           <CCardImage orientation="top" {...imagesData[i]} alt={imagesData[i].alt} width="100%" />
           <CCardBody>
             <CCardTitle>{imagesData[i].alt}</CCardTitle>

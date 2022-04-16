@@ -1,0 +1,48 @@
+@import './_variables'
+@import './_responsive'
+
+
+.itemContainer
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  
+
+.card
+  border: 2px solid $light-blue
+  border-radius: 15px
+  margin: 1rem
+  width: 20rem
+  height: fit-content(100%)
+  &:hover
+    box-shadow: 8px 5px 5px $dark
+    transform: rotate(2deg)
+
+.card-img-top
+  height: 60%
+  border-bottom: 1px solid $light-blue
+  border-top-left-radius: 15px
+  border-top-right-radius: 15px
+  
+
+.card-body
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  
+.card-title
+  margin: 0
+
+.card-text
+  margin: 0
+
+.btn-primary
+  padding: 1rem
+  background-color: $dark
+  border-radius: 15px
+  color: $light-blue
+  text-decoration: none
+  &:hover
+    box-shadow: 8px 5px 5px $light-blue
+    color: white
