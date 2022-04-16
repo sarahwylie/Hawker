@@ -1,7 +1,6 @@
 @import './_variables'
 @import './_responsive'
 
-
 .itemContainer
   display: flex
   flex-wrap: wrap
@@ -16,8 +15,9 @@
   height: 33rem
   background-color: $background
   &:hover
-    box-shadow: 8px 5px 5px $dark
+    box-shadow: 8px 5px 5px $orange
     transform: rotate(2deg)
+    transition: all .3s 
 
 .card-img-top
   height: 50%
@@ -25,7 +25,6 @@
   border-top-left-radius: 15px
   border-top-right-radius: 15px
   
-
 .card-body
   display: flex
   justify-content: center
@@ -35,6 +34,8 @@
   
 .card-title
   margin: .25rem 0
+  font-size: large
+  font-weight: bolder
 
 .card-text
   margin: .25rem 0
@@ -44,10 +45,11 @@
   margin: .5rem
   background-color: $dark
   border-radius: 10px
-  color: $light-blue
+  color: white
   text-decoration: none
   border: 1px solid $light-blue
   &:hover
-    box-shadow: 5px 5px 5px $light-blue
-    border: 1px solid white
-    color: white
+    transition: all .2s
+    box-shadow: 5px 5px 5px $orange
+    border: 1px solid $orange
+    color: $orange

@@ -118,10 +118,12 @@ form {
 }
 
 .card:hover {
-  -webkit-box-shadow: 8px 5px 5px #023047;
-          box-shadow: 8px 5px 5px #023047;
+  -webkit-box-shadow: 8px 5px 5px #FB8500;
+          box-shadow: 8px 5px 5px #FB8500;
   -webkit-transform: rotate(2deg);
           transform: rotate(2deg);
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .card-img-top {
@@ -152,6 +154,8 @@ form {
 
 .card-title {
   margin: .25rem 0;
+  font-size: large;
+  font-weight: bolder;
 }
 
 .card-text {
@@ -163,16 +167,18 @@ form {
   margin: .5rem;
   background-color: #023047;
   border-radius: 10px;
-  color: #61dafb;
+  color: white;
   text-decoration: none;
   border: 1px solid #61dafb;
 }
 
 .btn-primary:hover {
-  -webkit-box-shadow: 5px 5px 5px #61dafb;
-          box-shadow: 5px 5px 5px #61dafb;
-  border: 1px solid white;
-  color: white;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-box-shadow: 5px 5px 5px #FB8500;
+          box-shadow: 5px 5px 5px #FB8500;
+  border: 1px solid #FB8500;
+  color: #FB8500;
 }
 
 * {
