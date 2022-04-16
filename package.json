@@ -38,6 +38,8 @@
     "prettier": "^2.6.2"
   },
   "dependencies": {
+    "@mui/material": "^5.6.1",
+    "@mui/styled-engine-sc": "^5.6.1",
     "@testing-library/react": "^13.0.1",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
@@ -46,6 +48,7 @@
     "mongoose": "^6.2.10",
     "nodemon": "^2.0.15",
     "react-bootstrap": "^2.2.3",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5"
   }
 }
