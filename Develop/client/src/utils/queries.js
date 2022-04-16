@@ -35,6 +35,7 @@ export const QUERY_SINGLE_USER = gql`
   }
 `;
 
+<<<<<<< HEAD
 export const QUERY_SINGLE_ITEM = gql`
   query singleItem($id: ID!) {
     item(_id: $id) {
@@ -53,3 +54,21 @@ export const QUERY_SINGLE_ITEM = gql`
     }
   }`
 
+=======
+export const QUERY_ITEMS = gql`
+query items {
+  item {
+    _id
+    description
+    image
+    title
+    price
+    quantity
+    category {
+      _id
+      name
+    }
+  }
+}
+`
+>>>>>>> 413c5bccf13463e1765be18c9c258cff4ebf8477

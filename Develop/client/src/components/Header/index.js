@@ -1,7 +1,7 @@
 import React from 'react';
 // import { NavDropdown } from 'react-bootstrap';
 import Hawker from '../../assets/images/icons/Hawker.svg';
-import '../../assets/css/Header.css';
+import '../../assets/css/index.css';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';

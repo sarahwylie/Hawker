@@ -28,9 +28,10 @@ db.once('open', async () => {
   // eslint-disable-next-line no-unused-vars
   const categories = await Category.insertMany([
     { name: 'Outdoor' },
-    { name: 'Transportation' },
+    { name: 'Auto' },
     { name: 'Tech' },
-    { name: 'Sports' }
+    { name: 'Clothing' },
+    { name: 'Home' }
   ]);
 
   // eslint-disable-next-line no-unused-vars
