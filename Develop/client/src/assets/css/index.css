@@ -156,6 +156,11 @@ input, select {
   width: 25%;
   height: 2.25rem;
   border-radius: 15px;
+  background-color: #FB8500;
+}
+
+input:focus, select:focus {
+  background-color: white;
 }
 
 label {
