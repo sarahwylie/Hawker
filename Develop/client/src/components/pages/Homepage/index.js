@@ -1,4 +1,6 @@
 import React from 'react';
+import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
+
 
 import imagesData from './imagesData.json';
 
@@ -6,12 +8,16 @@ function Homepage() {
   return (
     <div>
       {imagesData.map((image, i) => (
-        <a href="http://localhost:3000" key={i}>
-          <div className="imageGrid">
-            <img {...imagesData[i]} alt={imagesData[i].alt} width="25%" />
-            <p>{image.category}</p>
-          </div>
-        </a>
+        <CCard style={{ width: '18rem' }}>
+          <CCardImage orientation="top" {...imagesData[i]} alt={imagesData[i].alt} width="100%" />
+          <CCardBody>
+            <CCardTitle>{imagesData[i].alt}</CCardTitle>
+            <CCardText>
+              {imagesData[i].category}
+            </CCardText>
+            <CButton href="#">Purchase</CButton>
+          </CCardBody>
+        </CCard>
       ))}
     </div>
   );
