@@ -34,3 +34,20 @@ export const QUERY_SINGLE_USER = gql`
     }
   }
 `;
+
+export const QUERY_ITEMS = gql`
+query items {
+  item {
+    _id
+    description
+    image
+    title
+    price
+    quantity
+    category {
+      _id
+      name
+    }
+  }
+}
+`
