@@ -76,7 +76,7 @@ function Login({ toggle }) {
             </div>
           ) : null}
           <div>
-            <button type="submit">Submit</button>
+            <button type="submit" className='btn-primary'>Submit</button>
           </div>
         </form>
       </div>
