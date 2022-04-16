@@ -10,17 +10,18 @@ import Clothing from '../pages/Clothing';
 import Household from '../pages/Household';
 import Outdoor from '../pages/Outdoor';
 import Tech from '../pages/Tech';
+import '../../assets/css/index.css';
 
 function Header({ isLogin }) {
 
   const showButtons = () => {
     return isLogin ? (
       <a href="/signup">
-        <button onClick={() => <Signup />}>Signup</button>
+        <button onClick={() => <Signup />} className='btn-primary'>Signup</button>
       </a>
     ) : (
       <a href="/login">
-        <button onClick={() => <Login />}>Login</button>
+        <button onClick={() => <Login />} className='btn-primary'>Login</button>
       </a>
     );
   };
@@ -29,8 +30,8 @@ function Header({ isLogin }) {
     if (Auth.loggedIn()) {
       return (
         <div>
-          <a href="/orderHistory">Order History</a>
-          <a href="/" onClick={() => Auth.logout()}>Logout</a>
+          <a href="/orderHistory"><button className='btn-primary'>Order History</button></a>
+          <a href="/" onClick={() => Auth.logout()}><button className='btn-primary'>Logout</button></a>
         </div>
       );
     } else {
