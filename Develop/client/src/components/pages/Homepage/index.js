@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
 import imagesData from './imagesData.json';
@@ -13,7 +13,7 @@ function Homepage() {
   const getItemData = () => {
     return itemData.item.map((item) => (
       <div className="card" key={item._id}>
-        <div>{item.description}</div> 
+        <div>{item.description}</div>
         <div>{item.price}</div>
         <div>{item.quantity}</div>
         <div>{item.image}</div>
@@ -22,24 +22,24 @@ function Homepage() {
     ));
   };
 
-  let item = itemData
-  if(itemData){
-  return (
-    <div>
+  let item = itemData;
+  if (itemData) {
+    return (
+      <div>
         {itemData.item.map((item) => {
-
-            {return <div>
+          {
+            return (
+              <div>
                 <p>{item.category.name}</p>
                 <SingleItemModal props={item}></SingleItemModal>
-                </div>}
-
+              </div>
+            );
+          }
         })}
-    </div>
-      
-  );
+      </div>
+    );
+  }
 }
-}
-  
 
 //   return (
 //     <div>
@@ -52,7 +52,7 @@ function Homepage() {
 //         </a>
 //       ))}
 //       {itemData ? (getItemData()) : <div>Loading...</div>}
-      
+
 //     </div>
 //   );
 //}
