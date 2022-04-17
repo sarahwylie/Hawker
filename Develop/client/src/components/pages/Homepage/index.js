@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
 import imagesData from './imagesData.json';
 import { Card } from 'react-bootstrap';
-import { QUERY_ITEMS } from '../../../utils/queries'
+
 
 function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
