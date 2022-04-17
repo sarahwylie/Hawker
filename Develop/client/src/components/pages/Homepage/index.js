@@ -32,7 +32,7 @@ function Homepage() {
               <CCardText>{imagesData[i].category}</CCardText>
               <CCardText>{imagesData[i].description}</CCardText>
 
-              <CButton href="#">Purchase</CButton>
+              <CButton href="#">Check it out!</CButton>
             </CCardBody>
           </CCard>
         ))}
