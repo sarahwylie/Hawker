@@ -25,7 +25,7 @@ function Header({ isLogin }) {
       return (
         <div>
           <a href="/orderHistory"><button className='btn-primary'>Order History</button></a>
-          <a href="/" onClick={() => Auth.logout()}><button className='btn-primary'>Logout</button></a>
+          <a href="/" onClick={() => Auth.logout()}>Logout</a>
         </div>
       );
     } else {
