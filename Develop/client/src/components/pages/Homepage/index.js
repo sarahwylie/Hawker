@@ -1,8 +1,9 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_ITEMS } from '../../../utils/queries';
+import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
+import { useQuery } from '@apollo/client'
 import imagesData from './imagesData.json';
 import { Card } from 'react-bootstrap';
+import { QUERY_ITEMS } from '../../../utils/queries'
 
 function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
@@ -21,14 +22,18 @@ function Homepage() {
   };
 
   return (
-    <div>
+    <div className="itemContainer">
       {imagesData.map((image, i) => (
-        <a href="http://localhost:3000" key={i}>
-          <div className="imageGrid">
-            <img {...imagesData[i]} alt={imagesData[i].alt} width="25%" />
-            <p>{image.category}</p>
-          </div>
-        </a>
+        <CCard key={i}>
+          <CCardImage orientation="top" {...imagesData[i]} alt={imagesData[i].alt} width="100%" />
+          <CCardBody>
+            <CCardTitle>{imagesData[i].alt}</CCardTitle>
+            <CCardText>{imagesData[i].category}</CCardText>
+            <CCardText>{imagesData[i].description}</CCardText>
+
+            <CButton href="#">Purchase</CButton>
+          </CCardBody>
+        </CCard>
       ))}
       {itemData ? getItemData() : <div>Loading...</div>}
     </div>
