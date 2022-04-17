@@ -1,9 +1,26 @@
 import React from 'react';
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
 
+import { useQuery } from '@apollo/client';
+import { QUERY_ITEMS } from '../../../utils/queries';
 import imagesData from './imagesData.json';
 
 function Homepage() {
+  const { data: itemData } = useQuery(QUERY_ITEMS);
+  console.info(itemData);
+
+  // getting item data from the database and mapping to the ui
+  const getItemData = () => {
+    return itemData.item.map((item) => (
+      <div className="card" key={item._id}>
+        <div>{item.description}</div> 
+        <div>{item.price}</div>
+        <div>{item.quantity}</div>
+        <div>{item.image}</div>
+      </div>
+    ));
+  };
+
   return (
     <div className="itemContainer">
       {imagesData.map((image, i) => (
@@ -18,6 +35,7 @@ function Homepage() {
           </CCardBody>
         </CCard>
       ))}
+      {itemData ? (getItemData()) : <div>Loading...</div>}
     </div>
   );
 }

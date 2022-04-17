@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_ITEM } from '../../../utils/mutations';
+import UploadForm from '../uploadFile/uploadFile';
+
 
 function PostItem() {
   const [postForm, setPostForm] = useState('');
@@ -10,28 +12,34 @@ function PostItem() {
   // Category id values depend on object id created when categories are seeded in mongo database
   // if you reseed your database you need to come here and change these values if not you'll have the wrong id when it posts to the server
   const categories = [
-    { name: 'Outdoor', id: '6259e3f5544d46b76947b812' },
-    { name: 'Auto', id: '6259e3f5544d46b76947b813' },
-    { name: 'Tech', id: '6259e3f5544d46b76947b814' },
-    { name: 'Clothing', id: '6259e3f5544d46b76947b815' },
-    { name: 'Home', id: '6259e3f5544d46b76947b816' }
+    { name: 'Outdoor', id: '6259e6ff7b3e9cda212fed57' },
+    { name: 'Auto', id: '6259e6ff7b3e9cda212fed58' },
+    { name: 'Tech', id: '6259e6ff7b3e9cda212fed59' },
+    { name: 'Clothing', id: '6259e6ff7b3e9cda212fed5a' },
+    { name: 'Home', id: '6259e6ff7b3e9cda212fed5b' }
   ];
+
+let itemImage = localStorage.getItem('imageurl')
+itemImage = itemImage.replace(/^"(.*)"$/, '$1');
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(postForm);
     const mutationResponse = await addItem({
       variables: {
-        title: postForm.itemTitle,
-        description: postForm.description,
-        image: postForm.itemImage,
-        price: parseInt(postForm.price),
-        quantity: parseInt(postForm.Quantity),
-        category: postForm.categoryId
+        'title': postForm.itemTitle,
+        'description': postForm.description,
+        'image': itemImage,
+        'price': parseInt(postForm.price),
+        'quantity': parseInt(postForm.Quantity),
+        'category': postForm.categoryId
+
       }
     });
     console.info(mutationResponse);
   };
+
+
 
   const handleChange = (event) => {
     // console.log(event.target.value)
@@ -47,6 +55,7 @@ function PostItem() {
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="itemImage">Insert Image </label>
         <input type="file" name="itemImage" onChange={handleChange} className="btn-primary"></input>
+        <UploadForm/>
 
         <label htmlFor="itemTitle">Item Title</label>
         <input type="text" name="itemTitle" placeholder="Title" onChange={handleChange}></input>

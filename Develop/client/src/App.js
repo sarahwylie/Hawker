@@ -21,6 +21,7 @@ import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
 import './assets/css/index.css';
+import UploadForm from './components/pages/uploadFile/uploadFile';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -104,6 +105,15 @@ function App() {
               element={
                 <PrivateRoute>
                   <Seller />
+                </PrivateRoute>
+              }
+            />
+                  <Route
+              exact
+              path="/upload"
+              element={
+                <PrivateRoute>
+                  <UploadForm />
                 </PrivateRoute>
               }
             />
