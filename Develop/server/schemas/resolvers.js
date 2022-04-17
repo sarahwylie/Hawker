@@ -20,7 +20,7 @@ const resolvers = {
       return await User.find();
     },
     // query one user
-    user: async (parent, {_id}) => {
+    user: async (parent, { _id }) => {
       return User.findOne({ _id });
     },
     // item query
@@ -33,6 +33,7 @@ const resolvers = {
     order: async () => {
       return await Order.find().populate('users').populate('items');
     }
+    // uploads: (parents, args) => {}
   },
 
   Mutation: {
