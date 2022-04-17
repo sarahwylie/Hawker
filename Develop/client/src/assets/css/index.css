@@ -24,14 +24,18 @@
 .head {
   background-color: #219EBC;
   color: #023047;
-  position: fixed;
   top: 0;
   width: 100%;
   text-align: center;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
   -webkit-box-flex: in-line;
       -ms-flex: in-line;
           flex: in-line;
+}
+
+.cats {
+  list-style: none;
 }
 
 /* VARIABLES */
@@ -153,10 +157,7 @@ form {
 /* Spacing */
 select, .formField {
   height: 2.25rem;
-  border-radius: 10px;
-}
-
-select:focus, .formField:focus {
+  border-radius: 15px;
   background-color: #FFB703;
 }
 

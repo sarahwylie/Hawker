@@ -1,0 +1,72 @@
+[
+    {
+        "src": "../../../assets/images/household/big_lamp.jpeg",
+        "alt": "Big Lamp",
+        "title": "Big Lamp",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/blue_chair.jpg",
+        "alt": "Blue Chair",
+        "title": "Blue Chair",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/bookshelf.jpg",
+        "alt": "Bookshelf",
+        "title": "Bookshelf",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/colander.jpg",
+        "alt": "Colander",
+        "title": "Colander",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/comfy_chair.jpeg",
+        "alt": "Comfy Chair",
+        "title": "Comfy Chair",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/couch.jpg",
+        "alt": "Couch",
+        "title": "Couch",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/lamp.jpg",
+        "alt": "Lamp",
+        "title": "Lamp",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/standing_light.jpg",
+        "alt": "Standing Light",
+        "title": "Standing Light",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/vacuum.jpg",
+        "alt": "Vacuum",
+        "title": "Vacuum",
+        "category": "household",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/household/wooden_spoons.jpg",
+        "alt": "Wooden Spoons",
+        "title": "Wooden Spoons",
+        "category": "household",
+        "description": ""
+      }
+    ]
