@@ -4,6 +4,7 @@ import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@c
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
 import imagesData from './imagesData.json';
+import { Card } from 'react-bootstrap';
 
 function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
@@ -12,12 +13,12 @@ function Homepage() {
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
     return itemData.item.map((item) => (
-      <div className="card" key={item._id}>
-        <div>{item.description}</div> 
+      <Card key={item._id}>
+        <div>{item.description}</div>
         <div>{item.price}</div>
         <div>{item.quantity}</div>
-        <div>{item.image}</div>
-      </div>
+        <Card.Img src={item.image} />
+      </Card>
     ));
   };
 
@@ -35,7 +36,7 @@ function Homepage() {
           </CCardBody>
         </CCard>
       ))}
-      {itemData ? (getItemData()) : <div>Loading...</div>}
+      {itemData ? getItemData() : <div>Loading...</div>}
     </div>
   );
 }

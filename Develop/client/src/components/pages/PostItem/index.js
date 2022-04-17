@@ -20,7 +20,9 @@ function PostItem() {
   ];
 
 let itemImage = localStorage.getItem('imageurl')
-// itemImage = itemImage.replace(/^"(.*)"$/, '$1');
+if(itemImage) {
+  itemImage = itemImage.replace(/^"(.*)"$/, '$1');
+}
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
