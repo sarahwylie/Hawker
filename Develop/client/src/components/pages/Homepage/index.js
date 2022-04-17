@@ -1,6 +1,8 @@
 import React from 'react';
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
-import { useQuery } from '@apollo/client'
+
+import { useQuery } from '@apollo/client';
+import { QUERY_ITEMS } from '../../../utils/queries';
 import imagesData from './imagesData.json';
 import { Card } from 'react-bootstrap';
 import { QUERY_ITEMS } from '../../../utils/queries'
@@ -29,7 +31,7 @@ function Homepage() {
           <CCardBody>
             <CCardTitle>{imagesData[i].alt}</CCardTitle>
             <CCardText>{imagesData[i].category}</CCardText>
-            <CCardText>{imagesData[i].description}</CCardText>
+            <CCardText >{imagesData[i].description}</CCardText>
 
             <CButton href="#">Purchase</CButton>
           </CCardBody>

@@ -8,7 +8,7 @@ function PostItem() {
   const [postForm, setPostForm] = useState('');
   // const[category, setCategory] = useState('');
   const [addItem] = useMutation(ADD_ITEM);
-
+  
   // Category id values depend on object id created when categories are seeded in mongo database
   // if you reseed your database you need to come here and change these values if not you'll have the wrong id when it posts to the server
   const categories = [
@@ -26,18 +26,19 @@ if(itemImage) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(postForm);
+   console.log(postForm)
     const mutationResponse = await addItem({
       variables: {
-        title: postForm.itemTitle,
-        description: postForm.description,
-        image: postForm.itemImage,
-        price: parseInt(postForm.price),
-        quantity: parseInt(postForm.Quantity),
-        category: postForm.categoryId
+        'title': postForm.itemTitle,
+        'description': postForm.description,
+        'image': itemImage,
+        'price': parseInt(postForm.price),
+        'quantity': parseInt(postForm.Quantity),
+        'category': postForm.categoryId
+
       }
     });
-    console.info(mutationResponse);
+    console.info(mutationResponse)
   };
 
 
@@ -49,13 +50,13 @@ if(itemImage) {
       ...postForm,
       [name]: value
     });
+    
   };
 
   return (
-    <div className='form-container'>
-      <form onSubmit={handleFormSubmit}>
-        <label htmlFor="itemImage">Insert Image </label>
-        <input type="file" name="itemImage" onChange={handleChange} className="btn-primary"></input>
+    <div>
+      <form onSubmit={handleFormSubmit} className="form-container">
+        <UploadForm/>
 
         <label htmlFor="itemTitle">Item Title</label>
         <input type="text" name="itemTitle" placeholder="Title" onChange={handleChange}></input>
@@ -75,19 +76,8 @@ if(itemImage) {
         <input type="Number" name="Quantity" placeholder="Quantity" onChange={handleChange}></input>
 
         <label htmlFor="categoryId">Category</label>
-        <select name="categoryId" onChange={handleChange}>
-          {' '}
-          {categories.map((category) => {
-            return (
-              <option value={category.id} key={category.id}>
-                {category.name + ' - ' + category.id}
-              </option>
-            );
-          })}
-        </select>
-        <button type="submit" className="btn-primary">
-          Hawk Item
-        </button>
+       <select  name='categoryId' onChange={handleChange}> {categories.map((category) => { return <option  value={category.id} key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
