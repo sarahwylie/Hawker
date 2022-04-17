@@ -29,7 +29,7 @@ function Homepage() {
           <CCardBody>
             <CCardTitle>{imagesData[i].alt}</CCardTitle>
             <CCardText>{imagesData[i].category}</CCardText>
-            <CCardText>{imagesData[i].description}</CCardText>
+            <CCardText >{imagesData[i].description}</CCardText>
 
             <CButton href="#">Purchase</CButton>
           </CCardBody>

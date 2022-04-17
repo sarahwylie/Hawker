@@ -155,7 +155,6 @@ form {
 input, select {
   width: 25%;
   height: 2.25rem;
-  border-radius: 15px;
 }
 
 label {
