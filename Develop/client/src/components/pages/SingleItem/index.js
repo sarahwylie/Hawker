@@ -21,7 +21,7 @@ function SingleItemModal(props) {
         {console.log(item)}
       {/* {item ? ( */}
           <><Button variant="primary" onClick={handleShow}>
-                  Black Car
+                  {item.title}
               </Button><Modal show={show} centered onHide={handleClose}>
                       <Modal.Header closeButton>
                       <Modal.Title>{item.title}</Modal.Title>
@@ -29,16 +29,13 @@ function SingleItemModal(props) {
                       <Modal.Body>{item.description}</Modal.Body>
                       <Modal.Footer>
                           <Button variant="secondary" onClick={handleClose}>
-                              Close
+                              Back to Items
                           </Button>
                           <Button variant="primary" onClick={handleClose}>
-                              Save Changes
+                              Buy Me
                           </Button>
                       </Modal.Footer>
                   </Modal></>
-      {/* ) : (
-          null
-          )} */}
           </div>
       
   );

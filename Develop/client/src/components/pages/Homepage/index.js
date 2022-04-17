@@ -9,10 +9,6 @@ function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
   console.info(itemData);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentPhoto, setCurrentPhoto] = useState();
-
-
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
     return itemData.item.map((item) => (
@@ -20,9 +16,8 @@ function Homepage() {
         <div>{item.description}</div> 
         <div>{item.price}</div>
         <div>{item.quantity}</div>
-        <div>{item.image}
-        
-        </div>
+        <div>{item.image}</div>
+        <div>{item.category.name}</div>
       </div>
     ));
   };
@@ -34,7 +29,7 @@ function Homepage() {
         {itemData.item.map((item) => {
 
             {return <div>
-                <p>words</p>
+                <p>{item.category.name}</p>
                 <SingleItemModal props={item}></SingleItemModal>
                 </div>}
 
@@ -42,7 +37,7 @@ function Homepage() {
     </div>
       
   );
-    }
+}
 }
   
 
