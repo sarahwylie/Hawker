@@ -1,5 +1,5 @@
 import React from 'react';
-import {  gql } from '@apollo/client';
+
 
 function UploadForm() {
 
@@ -30,8 +30,9 @@ function UploadForm() {
   return (
     <div>
       <h1>Upload File</h1>
-      <input type="file" onChange={handleFileChange} value='' />
-      <button style={{width: '5rem', height: '2rem'}} className="btn-primary"  type="submit" onClick={handleFileChange}>submit file</button>
+      
+      <input type="file" onChange={handleFileChange} value='' className='btn-primary' />
+      
     </div>
   );
 }

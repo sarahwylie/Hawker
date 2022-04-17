@@ -59,25 +59,26 @@ if(itemImage) {
         <UploadForm/>
 
         <label htmlFor="itemTitle">Item Title</label>
-        <input type="text" name="itemTitle" placeholder="Title" onChange={handleChange}></input>
+        <input type="text" name="itemTitle" placeholder="Title" className="formField" onChange={handleChange}></input>
 
         <label htmlFor="price">Price</label>
-        <input type="text" name="price" placeholder="Price of Item" onChange={handleChange}></input>
+        <input type="text" name="price" placeholder="Price of Item" className="formField" onChange={handleChange}></input>
 
         <label htmlFor="description">Description</label>
         <input
           type="text"
           name="description"
           placeholder="Description"
+          className="formField"
           onChange={handleChange}
         ></input>
 
         <label htmlFor="description">Quantity</label>
-        <input type="Number" name="Quantity" placeholder="Quantity" onChange={handleChange}></input>
+        <input type="Number" name="Quantity" placeholder="Quantity" className="formField" onChange={handleChange}></input>
 
         <label htmlFor="categoryId">Category</label>
        <select  name='categoryId' onChange={handleChange}> {categories.map((category) => { return <option  value={category.id} key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
-        <button type="submit">Submit</button>
+        <button type="submit" className='btn-primary'>Hawk Item</button>
       </form>
     </div>
   );

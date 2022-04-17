@@ -47,6 +47,7 @@ function Login({ toggle }) {
               name="email"
               type="email"
               id="email"
+              className="formField"
               value={formState.email}
               onChange={handleChange}
             />
@@ -57,6 +58,7 @@ function Login({ toggle }) {
               name="password"
               type="password"
               id="pwd"
+              className="formField"
               value={formState.password}
               onChange={handleChange}
             />
