@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
+import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
@@ -34,45 +32,21 @@ function Header({ isLogin }) {
       return showButtons();
     }
   }
-  const [show, setShow] = useState(false);
-  const showDropdown = (e)=>{
-      setShow(!show);
-  }
-  const hideDropdown = e => {
-      setShow(false);
-  }
-
-  const dropdown = () => {
-    if (Auth.loggedIn()) {
-      return (
-        <div className="col-4">
-          <Dropdown id="collapsible-nav-dropdown"
-             show={show}
-             onMouseEnter={showDropdown} 
-             onMouseLeave={hideDropdown}>
-            <DropdownButton title='Categories' >
-              <Dropdown.Menu>
-                <ul className='cats'>
-                  <li><Dropdown.Item href="/auto">Auto</Dropdown.Item></li>
-                  <li><Dropdown.Item href="/clothing">Clothing</Dropdown.Item></li>
-                  <li><Dropdown.Item href="/household">Household</Dropdown.Item></li>
-                  <li><Dropdown.Item href="/outdoor">Outdoor</Dropdown.Item></li>
-                  <li><Dropdown.Item href="/tech">Tech</Dropdown.Item></li>
-                </ul>
-              </Dropdown.Menu>
-            </DropdownButton>
-          </Dropdown>
-        </div>
-      )
-    }
-  }
 
   return (
     <nav>
       <header className="head">
         <nav>
           <div className="flex-row">
-            {dropdown()}
+            <div className='col-4'>Categories
+              <ul className='cats'>
+                <li><a href="/auto">Auto</a></li>
+                <li><a href="/clothing">Clothing</a></li>
+                <li><a href="/household">Household</a></li>
+                <li><a href="/outdoor">Outdoor</a></li>
+                <li><a href="/tech">Tech</a></li>
+              </ul>
+            </div>
             <div className="col-4">
               <a href="/">
                 <span role="img" aria-label="img-name">
