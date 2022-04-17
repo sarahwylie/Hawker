@@ -21,7 +21,6 @@ const startServer = async () => {
   await server.start();
 
   server.applyMiddleware({ app });
-
   console.info(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 };
 startServer();
