@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
-import '../../../assets/css/Login.css';
 
 function Login({ toggle }) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -40,28 +39,29 @@ function Login({ toggle }) {
       <div className="formParent">
         <h2>Login</h2>
         <form onSubmit={handleFormSubmit}>
-          <div>
+          
             <label htmlFor="email">Email address:</label>
             <input
               placeholder="youremail@test.com"
               name="email"
               type="email"
               id="email"
+              className="formField"
               value={formState.email}
               onChange={handleChange}
             />
-          </div>
-          <div>
+          
             <label htmlFor="pwd">Password:</label>
             <input
               placeholder="******"
               name="password"
               type="password"
               id="pwd"
+              className="formField"
               value={formState.password}
               onChange={handleChange}
             />
-          </div>
+        
           {loading ? (
             <div>
               <p className="loading-text">Loading...</p>
@@ -76,7 +76,7 @@ function Login({ toggle }) {
             </div>
           ) : null}
           <div>
-            <button type="submit">Submit</button>
+            <button type="submit" className='btn-primary'>Submit</button>
           </div>
         </form>
       </div>
