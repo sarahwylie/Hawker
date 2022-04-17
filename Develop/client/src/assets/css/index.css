@@ -3,10 +3,12 @@
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 .footer {
   background-color: #219EBC;
   color: #023047;
@@ -21,6 +23,7 @@
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 .head {
   background-color: #219EBC;
   color: #023047;
@@ -33,12 +36,15 @@
 
 .cats {
   list-style: none;
+  text-decoration: none;
+  color: #023047;
 }
 
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 form {
   margin: 0 auto;
   display: flex;
@@ -55,6 +61,7 @@ form {
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 .itemContainer {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +78,7 @@ form {
   background-color: #219EBC;
 }
 .card:hover {
-  box-shadow: 8px 5px 5px #FB8500;
+  box-shadow: 8px 5px 5px #6d6a75;
   transform: rotate(2deg);
   transition: all 0.3s;
 }
@@ -112,23 +119,24 @@ form {
 }
 .btn-primary:hover {
   transition: all 0.2s;
-  box-shadow: 5px 5px 5px #FB8500;
-  border: 1px solid #FB8500;
-  color: #FB8500;
+  box-shadow: 5px 5px 5px #6d6a75;
+  border: 1px solid #6d6a75;
+  color: #eae6e5;
 }
 
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 input, select {
   width: 25%;
   height: 2.25rem;
   border-radius: 15px;
-  background-color: #FFB703;
+  background-color: white;
 }
 input:focus, select:focus {
-  background-color: white;
+  background-color: #eae6e5;
 }
 
 label {
@@ -167,6 +175,13 @@ code {
 main {
   margin: 0 auto;
   max-width: 100%;
+}
+
+.title {
+  margin: 0.25rem 0;
+  font-size: x-large;
+  font-weight: bolder;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=index.css.map */
