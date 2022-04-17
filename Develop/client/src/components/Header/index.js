@@ -1,15 +1,11 @@
 import React from 'react';
-import { NavDropdown } from 'react-bootstrap';
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
+import Form from 'react-bootstrap/Form';
 import Hawker from '../../assets/images/icons/Hawker.svg';
-import '../../assets/css/Header.css';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
-import Auto from '../pages/Auto';
-import Clothing from '../pages/Clothing';
-import Household from '../pages/Household';
-import Outdoor from '../pages/Outdoor';
-import Tech from '../pages/Tech';
 import '../../assets/css/index.css';
 
 function Header({ isLogin }) {
@@ -39,30 +35,55 @@ function Header({ isLogin }) {
     }
   }
 
-  return (
-    <header className="head">
-      <nav>
-        <div className="flex-row">
-          <div className="col-4">
-            <NavDropdown title='Categories'>Categories
-              <NavDropdown.Item onClick={Auto}>Auto</NavDropdown.Item>
-              <NavDropdown.Item onClick={Clothing}>Clothing</NavDropdown.Item>
-              <NavDropdown.Item onClick={Household}>Household</NavDropdown.Item>
-              <NavDropdown.Item onClick={Outdoor}>Outdoor</NavDropdown.Item>
-              <NavDropdown.Item onClick={Tech}>Tech</NavDropdown.Item>
-            </NavDropdown>
-          </div>
-          <div className="col-4">
-            <a href="/">
-              <span role="img" aria-label="img-name">
-                <img src={Hawker} alt="logo" className="photo" id="logo" />
-              </span>
-            </a>
-            <div className="log">{loggedIn()}</div>
-          </div>
+  const dropdown = () => {
+    if (Auth.loggedIn()) {
+      return (
+        <div className="col-4">
+          <Dropdown id="collasible-nav-dropdown">
+            <DropdownButton title='Categories'>
+              <Dropdown.Menu>
+                <ul>
+                  <li><Dropdown.Item href="/auto">Auto</Dropdown.Item></li>
+                  <li><Dropdown.Item href="/clothing">Clothing</Dropdown.Item></li>
+                  <li><Dropdown.Item href="/household">Household</Dropdown.Item></li>
+                  <li><Dropdown.Item href="/outdoor">Outdoor</Dropdown.Item></li>
+                  <li><Dropdown.Item href="/tech">Tech</Dropdown.Item></li>
+                </ul>
+              </Dropdown.Menu>
+            </DropdownButton>
+          </Dropdown>
         </div>
-      </nav>
-    </header>
+      )
+    }
+  }
+  
+  return (
+    <nav>
+      <header className="head">
+        <nav>
+          <div className="flex-row">
+            {dropdown()}
+            <div className="col-4">
+              <a href="/">
+                <span role="img" aria-label="img-name">
+                  <img src={Hawker} alt="logo" className="photo" id="logo" />
+                </span>
+              </a>
+              <Form className="d-flex">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+                <button className='btn-primary'>Search</button>
+              </Form>
+              <div className="log col-4">{loggedIn()}</div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </nav >
   );
 }
 

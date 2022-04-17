@@ -24,14 +24,11 @@
 .head {
   background-color: #219EBC;
   color: #023047;
-  position: fixed;
   top: 0;
   width: 100%;
   text-align: center;
-  position: relative;
-  -webkit-box-flex: in-line;
-      -ms-flex: in-line;
-          flex: in-line;
+  position: sticky;
+  flex: in-line;
 }
 
 /* STYLES FOR THE APP COMPONENT */
@@ -44,19 +41,10 @@
 }
 
 .App-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #282c34;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
@@ -73,19 +61,10 @@
 /* Spacing */
 form {
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .formParent {
@@ -97,14 +76,9 @@ form {
 /* Background Colors */
 /* Spacing */
 .itemContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 3rem;
 }
 
@@ -116,14 +90,10 @@ form {
   height: 33rem;
   background-color: #219EBC;
 }
-
 .card:hover {
-  -webkit-box-shadow: 8px 5px 5px #FB8500;
-          box-shadow: 8px 5px 5px #FB8500;
-  -webkit-transform: rotate(2deg);
-          transform: rotate(2deg);
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  box-shadow: 8px 5px 5px #FB8500;
+  transform: rotate(2deg);
+  transition: all 0.3s;
 }
 
 .card-img-top {
@@ -134,49 +104,35 @@ form {
 }
 
 .card-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: fit-content;
 }
 
 .card-title {
-  margin: .25rem 0;
+  margin: 0.25rem 0;
   font-size: large;
   font-weight: bolder;
 }
 
 .card-text {
-  margin: .25rem 0;
+  margin: 0.25rem 0;
 }
 
 .btn-primary {
-  padding: .5rem;
-  margin: .5rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
   background-color: #023047;
   border-radius: 10px;
   color: white;
   text-decoration: none;
   border: 1px solid #61dafb;
 }
-
 .btn-primary:hover {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-box-shadow: 5px 5px 5px #FB8500;
-          box-shadow: 5px 5px 5px #FB8500;
+  transition: all 0.2s;
+  box-shadow: 5px 5px 5px #FB8500;
   border: 1px solid #FB8500;
   color: #FB8500;
 }
