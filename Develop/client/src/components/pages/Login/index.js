@@ -19,7 +19,9 @@ function Login({ toggle }) {
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password }
       });
-
+      console.info(mutationResponse.data.login)
+      let userId = mutationResponse.data.login.user._id;
+      localStorage.setItem('userId', `${userId}`);
       const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (error) {
