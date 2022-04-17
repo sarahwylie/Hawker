@@ -35,11 +35,10 @@ function Header({ isLogin }) {
   }
 
   return (
-    <nav>
       <header className="head">
         <nav>
-          <div className="flex-row">
-            <div className='col-4'>Categories
+          <div className='row'>
+            <div className='col title'>Categories
               <ul className='cats'>
                 <li><a href="/auto">Auto</a></li>
                 <li><a href="/clothing">Clothing</a></li>
@@ -48,7 +47,7 @@ function Header({ isLogin }) {
                 <li><a href="/tech">Tech</a></li>
               </ul>
             </div>
-            <div className="col-4">
+            <div className="col">
               <a href="/">
                 <span role="img" aria-label="img-name">
                   <img src={Hawker} alt="logo" className="photo" id="logo" />
@@ -63,12 +62,11 @@ function Header({ isLogin }) {
                 />
                 <button className='btn-primary'>Search</button>
               </Form>
-              <div className="log col-4">{loggedIn()}</div>
+              <div className="log col">{loggedIn()}</div>
             </div>
           </div>
         </nav>
       </header>
-    </nav >
   );
 }
 

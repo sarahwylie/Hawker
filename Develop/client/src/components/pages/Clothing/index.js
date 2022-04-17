@@ -5,21 +5,25 @@ import imagesData from './imagesData.json';
 
 function Clothing() {
   return (
-    <div className="itemContainer">
-      {imagesData.map((image, i) => (
-        <CCard key={i}>
-          <CCardImage orientation="top" {...imagesData[i]} alt={imagesData[i].alt} width="100%" />
-          <CCardBody>
-            <CCardTitle>{imagesData[i].alt}</CCardTitle>
-            <CCardText>{imagesData[i].category}</CCardText>
-            <CCardText>{imagesData[i].description}</CCardText>
+    <div><div className='title'>
+      Clothing
+    </div>
+      <div className="itemContainer">
+        {imagesData.map((image, i) => (
+          <CCard key={i}>
+            <CCardImage orientation="top" {...imagesData[i]} alt={imagesData[i].alt} width="100%" />
+            <CCardBody>
+              <CCardTitle>{imagesData[i].alt}</CCardTitle>
+              <CCardText>{imagesData[i].category}</CCardText>
+              <CCardText>{imagesData[i].description}</CCardText>
 
-            <CButton href="#">Purchase</CButton>
-          </CCardBody>
-        </CCard>
-      ))}
+              <CButton href="#">Purchase</CButton>
+            </CCardBody>
+          </CCard>
+        ))}
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 export default Clothing;
