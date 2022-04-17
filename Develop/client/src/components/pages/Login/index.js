@@ -39,7 +39,7 @@ function Login({ toggle }) {
       <div className="formParent">
         <h2>Login</h2>
         <form onSubmit={handleFormSubmit}>
-          <div>
+          
             <label htmlFor="email">Email address:</label>
             <input
               placeholder="youremail@test.com"
@@ -49,8 +49,7 @@ function Login({ toggle }) {
               value={formState.email}
               onChange={handleChange}
             />
-          </div>
-          <div>
+          
             <label htmlFor="pwd">Password:</label>
             <input
               placeholder="******"
@@ -60,7 +59,7 @@ function Login({ toggle }) {
               value={formState.password}
               onChange={handleChange}
             />
-          </div>
+        
           {loading ? (
             <div>
               <p className="loading-text">Loading...</p>

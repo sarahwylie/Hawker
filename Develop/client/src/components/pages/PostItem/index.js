@@ -44,7 +44,7 @@ function PostItem() {
   };
 
   return (
-    <div>
+    <div className='form-container'>
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="itemImage">Insert Image </label>
         <input type="file" name="itemImage" onChange={handleChange} className="btn-primary"></input>
