@@ -40,6 +40,7 @@ function PostItem() {
       ...postForm,
       [name]: value
     });
+    
   };
 
   return (
