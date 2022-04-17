@@ -43,13 +43,22 @@ function Header({ isLogin }) {
     }
   }
 
+  function showDiv() {
+    if(document.getElementById('catBtn').style.display === ""){
+      document.getElementById('catBtn').style.display = "block"
+    } else {
+      document.getElementById('catBtn').style.display = ""
+    }
+    
+  }
+
   return (
     <header className="head">
       <nav>
         <div className="row">
           <div className="col title">
-            Categories
-            <ul className="cats">
+            <button className="btn-primary" onClick={showDiv}>Categories</button> 
+            <ul className="cats" id="catBtn">
               <li>
                 <a href="/auto">Auto</a>
               </li>
