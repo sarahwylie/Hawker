@@ -47,6 +47,7 @@ const Signup = ({ toggle }) => {
             name="firstName"
             type="firstName"
             id="firstName"
+            className="formField" 
             onChange={handleChange}
           />
           <label htmlFor="lastName">Last Name:</label>
@@ -55,6 +56,7 @@ const Signup = ({ toggle }) => {
             name="lastName"
             type="lastName"
             id="lastName"
+            className="formField" 
             onChange={handleChange}
           />
           <label htmlFor="email">Email:</label>
@@ -63,6 +65,7 @@ const Signup = ({ toggle }) => {
             name="email"
             type="email"
             id="email"
+            className="formField" 
             onChange={handleChange}
           />
           <label htmlFor="pwd">Password:</label>
@@ -71,6 +74,7 @@ const Signup = ({ toggle }) => {
             name="password"
             type="password"
             id="pwd"
+            className="formField" 
             onChange={handleChange}
           />
           <button type="submit" className="btn-primary">
