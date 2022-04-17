@@ -4,9 +4,24 @@
 .head
   background-color: $background
   color: $dark
-  position: fixed
   top: 0
   width: 100%
   text-align: center
-  position: relative
+  position: sticky
   flex: in-line
+  z-index: 50
+  
+.cats
+  list-style: none
+  text-decoration: none
+  color: $dark
+
+.row
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: center
+  
+.log
+  display: flex
+  flex-direction: column

@@ -21,6 +21,10 @@ import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
 import './assets/css/index.css';
+<<<<<<< HEAD
+=======
+import 'bootstrap/dist/css/bootstrap.min.css';
+>>>>>>> 7f4753c22447c14ac22dd6fe06961208f0e9ca47
 import UploadForm from './components/pages/uploadFile/uploadFile';
 
 const httpLink = createHttpLink({

@@ -3,10 +3,12 @@
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 .footer {
   background-color: #219EBC;
   color: #023047;
@@ -21,23 +23,57 @@
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 .head {
   background-color: #219EBC;
   color: #023047;
-  position: fixed;
   top: 0;
   width: 100%;
   text-align: center;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
   -webkit-box-flex: in-line;
       -ms-flex: in-line;
           flex: in-line;
+  z-index: 50;
+}
+
+.cats {
+  list-style: none;
+  text-decoration: none;
+  color: #023047;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.log {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 form {
   margin: 0 auto;
   display: -webkit-box;
@@ -64,6 +100,7 @@ form {
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 .itemContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,8 +123,8 @@ form {
 }
 
 .card:hover {
-  -webkit-box-shadow: 8px 5px 5px #FFB703;
-          box-shadow: 8px 5px 5px #FFB703;
+  -webkit-box-shadow: 8px 5px 5px #6d6a75;
+          box-shadow: 8px 5px 5px #6d6a75;
   -webkit-transform: rotate(2deg);
           transform: rotate(2deg);
   -webkit-transition: all .3s;
@@ -141,23 +178,25 @@ form {
 .btn-primary:hover {
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-box-shadow: 5px 5px 5px #FFB703;
-          box-shadow: 5px 5px 5px #FFB703;
-  border: 1px solid #FFB703;
-  color: #FFB703;
+  -webkit-box-shadow: 5px 5px 5px #6d6a75;
+          box-shadow: 5px 5px 5px #6d6a75;
+  border: 1px solid #6d6a75;
+  color: #eae6e5;
 }
 
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
+/* GRID */
 select, .formField {
   height: 2.25rem;
-  border-radius: 10px;
+  border-radius: 15px;
+  background-color: white;
 }
 
 select:focus, .formField:focus {
-  background-color: #FFB703;
+  background-color: #eae6e5;
 }
 
 label {
@@ -197,5 +236,14 @@ code {
 main {
   margin: 0 auto;
   max-width: 100%;
+}
+
+.title {
+  margin: .25rem 0;
+  font-size: x-large;
+  font-weight: bolder;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=index.css.map */
