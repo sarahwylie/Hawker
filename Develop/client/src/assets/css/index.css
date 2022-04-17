@@ -31,6 +31,19 @@
   flex: in-line;
 }
 
+.cats {
+  list-style: none;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  background-color: #FFB703;
+}
+.cats:focus {
+  background-color: white;
+}
+
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
@@ -121,7 +134,7 @@ input, select {
   width: 25%;
   height: 2.25rem;
   border-radius: 15px;
-  background-color: #FB8500;
+  background-color: #FFB703;
 }
 input:focus, select:focus {
   background-color: white;

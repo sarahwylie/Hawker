@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Form from 'react-bootstrap/Form';
@@ -27,22 +27,32 @@ function Header({ isLogin }) {
       return (
         <div>
           <a href="/orderHistory"><button className='btn-primary'>Order History</button></a>
-          <a href="/" onClick={() => Auth.logout()}>Logout</a>
+          <a href="/" onClick={() => Auth.logout()}><button className='btn-primary'>Logout</button></a>
         </div>
       );
     } else {
       return showButtons();
     }
   }
+  const [show, setShow] = useState(false);
+  const showDropdown = (e)=>{
+      setShow(!show);
+  }
+  const hideDropdown = e => {
+      setShow(false);
+  }
 
   const dropdown = () => {
     if (Auth.loggedIn()) {
       return (
         <div className="col-4">
-          <Dropdown id="collasible-nav-dropdown">
-            <DropdownButton title='Categories'>
+          <Dropdown id="collapsible-nav-dropdown"
+             show={show}
+             onMouseEnter={showDropdown} 
+             onMouseLeave={hideDropdown}>
+            <DropdownButton title='Categories' >
               <Dropdown.Menu>
-                <ul>
+                <ul className='cats'>
                   <li><Dropdown.Item href="/auto">Auto</Dropdown.Item></li>
                   <li><Dropdown.Item href="/clothing">Clothing</Dropdown.Item></li>
                   <li><Dropdown.Item href="/household">Household</Dropdown.Item></li>
@@ -56,7 +66,7 @@ function Header({ isLogin }) {
       )
     }
   }
-  
+
   return (
     <nav>
       <header className="head">
