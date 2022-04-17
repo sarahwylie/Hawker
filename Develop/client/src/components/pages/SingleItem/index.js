@@ -19,16 +19,16 @@ function SingleItemModal(props) {
     <div>
       <>
         <Button variant="primary" onClick={handleShow}>
-          {item.title}
+          
         </Button>
         <Modal show={show} centered onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>{item.title}</Modal.Title>
+            <Modal.Title></Modal.Title>
           </Modal.Header>
-          <Modal.Body>{item.description}</Modal.Body>
+          <Modal.Body></Modal.Body>
           <Modal.Footer>
             <p>Price:</p>
-            <div>{item.price}</div>
+            <div></div>
             <form>
               <label>
                 Quantity:
