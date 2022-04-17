@@ -75,7 +75,7 @@ if(itemImage) {
         <label htmlFor="description">Quantity</label>
         <input type="Number" name="Quantity" placeholder="Quantity" onChange={handleChange}></input>
 
-        <label htmlFor="categoryId">Quantity</label>
+        <label htmlFor="categoryId">Category</label>
        <select  name='categoryId' onChange={handleChange}> {categories.map((category) => { return <option  value={category.id} key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
         <button type="submit">Submit</button>
       </form>
