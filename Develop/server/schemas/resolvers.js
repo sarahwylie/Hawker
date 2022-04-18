@@ -124,6 +124,7 @@ const resolvers = {
         console.info(userItems);
         return userItems;
       }
+      throw new AuthenticationError('Not logged in');
     },
     addOrder: async (parent, { items }, context) => {
       if (context.user) {
