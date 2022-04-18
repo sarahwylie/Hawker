@@ -36,18 +36,40 @@ export const QUERY_SINGLE_USER = gql`
 `;
 
 export const QUERY_ITEMS = gql`
-query items {
-  item {
-    _id
-    description
-    image
-    title
-    price
-    quantity
-    category {
+  query items {
+    items {
       _id
-      name
+      description
+      image
+      title
+      price
+      quantity
+      category {
+        _id
+        name
+      }
     }
   }
-}
-`
+`;
+export const QUERY_SINGLE_ITEM = gql`
+  query item($id: ID!) {
+    item(_id: $id) {
+      title
+      _id
+      description
+      image
+      price
+      quantity
+      category {
+        _id
+        name
+      }
+      user {
+        _id
+        email
+        firstName
+        lastName
+      }
+    }
+  }
+`;

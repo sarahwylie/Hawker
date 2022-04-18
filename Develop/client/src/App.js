@@ -21,6 +21,7 @@ import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
 import './assets/css/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import UploadForm from './components/pages/uploadFile/uploadFile';
 
 const httpLink = createHttpLink({
@@ -83,7 +84,7 @@ function App() {
             />
             <Route
               exact
-              path="/singleItem"
+              path="/singleItem/:id"
               element={
                 <PrivateRoute>
                   <SingleItem />

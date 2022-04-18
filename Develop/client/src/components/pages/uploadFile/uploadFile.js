@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function UploadForm() {
 
   const handleFileChange = async (e) => {
