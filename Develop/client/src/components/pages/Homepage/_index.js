@@ -24,16 +24,16 @@ function Homepage() {
         </div>
     ));
   };
-    // return itemData.item.map((item) => (
-    //    <CCard key={item._id}>
-    //      <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
-    //      <CCardBody>
-    //        <CCardTitle>{item.title}</CCardTitle>
-    //        <CCardText>${item.price}</CCardText>
-    //       <CButton href="#">See Item</CButton>
-    //      </CCardBody>
-    //    </CCard>
-    //  )); 
+  //   return itemData.item.map((item) => (
+  //      <CCard key={item._id}>
+  //        <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
+  //        <CCardBody>
+  //          <CCardTitle>{item.title}</CCardTitle>
+  //          <CCardText>${item.price}</CCardText>
+  //         <CButton href="#">See Item</CButton>
+  //        </CCardBody>
+  //      </CCard>
+  //    )); 
 
 //   let item = itemData;
 
