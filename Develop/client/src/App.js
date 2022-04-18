@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import { StoreProvider } from './utils/GlobalState';
 import PrivateRoute from './components/PrivateRoute/index';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
@@ -19,9 +20,9 @@ import Checkout from './components/pages/Checkout/index';
 import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
+import UploadForm from './components/pages/uploadFile/uploadFile';
 import NoMatch from './components/pages/NoMatch/index';
 import './assets/css/index.css';
-import UploadForm from './components/pages/uploadFile/uploadFile';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -53,7 +54,7 @@ function App() {
     <ApolloProvider client={client}>
       <Header isLogin={isLogin} />
       <Router>
-        <>
+        <StoreProvider>
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/login" element={<Login toggle={toggle} />} />
@@ -108,7 +109,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-                  <Route
+            <Route
               exact
               path="/upload"
               element={
@@ -119,7 +120,7 @@ function App() {
             />
             <Route path="*" element={<NoMatch />} />
           </Routes>
-        </>
+        </StoreProvider>
       </Router>
       <Footer />
     </ApolloProvider>
