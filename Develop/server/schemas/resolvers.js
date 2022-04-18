@@ -17,15 +17,19 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     users: async () => {
-      return await User.find();
+      return await User.find().populate('items');
     },
     // query one user
     user: async (parent, { _id }) => {
-      return User.findOne({ _id });
+      return User.findOne({ _id }).populate('items');
     },
     // item query
-    item: async () => {
-      return await Item.find().populate('category');
+    items: async () => {
+      return await Item.find().populate('category').populate('user');
+    },
+    // query one item
+    item: async (parent, { _id }) => {
+      return await Item.findOne({ _id }).populate('category').populate('user');
     },
     categories: async () => {
       return await Category.find();
@@ -33,7 +37,6 @@ const resolvers = {
     order: async () => {
       return await Order.find().populate('users').populate('items');
     }
-    // uploads: (parents, args) => {}
   },
 
   Mutation: {
@@ -55,7 +58,6 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
       const token = signToken(user);
-      console.info(user, token);
       return { token, user };
     },
     // add item

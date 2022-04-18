@@ -17,6 +17,7 @@ const typeDefs = gql`
     price: Float
     quantity: Int
     category: Category
+    user: User
   }
 
   type User {
@@ -25,6 +26,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     orders: [Order]
+    items: [Item]
   }
 
   scalar DateTime
@@ -44,7 +46,8 @@ const typeDefs = gql`
   type Query {
     me: User
     categories: [Category]
-    item(category: ID, name: String): [Item]
+    items(category: ID, name: String): [Item]
+    item(_id: ID!): Item
     users: [User]
     user(_id: ID!): User
     order: [Order]
@@ -63,6 +66,7 @@ const typeDefs = gql`
       price: Float
       quantity: Int
       category: ID
+      user: ID
     ): Item
 
     

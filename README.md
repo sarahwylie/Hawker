@@ -8,7 +8,7 @@ React, Sass, GraphQL, .
 
 ## Usage
 Check out our site at [Hawker]() and hawk your wares! The finished output:
-![screenshot](Develop/client/public/assets/images/hawker-homepage.png)
+![screenshot](Develop/client/src/assets/images/icons/hawker-home.png)
 
 ## Badges
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)

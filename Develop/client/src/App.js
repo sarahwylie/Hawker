@@ -83,7 +83,7 @@ function App() {
             />
             <Route
               exact
-              path="/singleItem"
+              path="/singleItem/:id"
               element={
                 <PrivateRoute>
                   <SingleItem />
