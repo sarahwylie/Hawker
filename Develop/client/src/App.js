@@ -22,6 +22,7 @@ import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
 import UploadForm from './components/pages/uploadFile/uploadFile';
 import NoMatch from './components/pages/NoMatch/index';
+import Success from './components/Success/index';
 import './assets/css/index.css';
 
 const httpLink = createHttpLink({
@@ -79,6 +80,15 @@ function App() {
               element={
                 <PrivateRoute>
                   <Checkout />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path="/success"
+              element={
+                <PrivateRoute>
+                  <Success />
                 </PrivateRoute>
               }
             />
