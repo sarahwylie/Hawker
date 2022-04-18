@@ -16,6 +16,7 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
+    // Query all users
     users: async () => {
       return await User.find().populate('items');
     },
@@ -23,7 +24,7 @@ const resolvers = {
     user: async (parent, { _id }) => {
       return User.findOne({ _id }).populate('items');
     },
-    // item query
+    // Query all items
     items: async () => {
       return await Item.find().populate('category').populate('user');
     },
@@ -34,8 +35,20 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    order: async () => {
+    // Query all orders
+    orders: async () => {
       return await Order.find().populate('users').populate('items');
+    },
+    // Query one order
+    order: async (parent, { _id }, context) => {
+      // console.log(context.user);
+      const user = await User.findById(context.user._id).populate({
+        path: 'orders.items',
+        populate: 'category'
+      });
+
+      console.info(user.orders);
+      return user.orders.id(_id);
     }
   },
 
@@ -67,10 +80,17 @@ const resolvers = {
 
       return item;
     },
-    addOrder: async (parent, args) => {
-      const order = await Order.create(args);
-      console.info(order);
-      return order;
+    addOrder: async (parent, { items }, context) => {
+      if (context.user) {
+        const order = new Order({ items });
+
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { orders: order }
+        });
+
+        return order;
+      }
+      throw new AuthenticationError('Not logged in');
     }
   }
 };
