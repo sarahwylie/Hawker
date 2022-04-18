@@ -22,7 +22,7 @@ function Homepage() {
           <CCardText>${item.price}</CCardText>
           <Link to={`/SingleItem/${item._id}`}>
             {' '}
-            <CButton href="singleItem">See Item</CButton>
+            <CButton>See Item</CButton>
           </Link>
         </CCardBody>
       </CCard>

@@ -23,9 +23,9 @@ function SingleItem() {
           <CCardBody>
             <CCardTitle>{data.item.title}</CCardTitle>
             <CCardText>${data.item.price}</CCardText>
-            <Link to={`/SingleItem/${data.item._id}`}>
+            <Link to={"/Checkout"}>
               {' '}
-              <CButton href="checkout">Goto Checkout</CButton>
+              <CButton>Goto Checkout</CButton>
             </Link>
           </CCardBody>
         </CCard>
