@@ -64,6 +64,8 @@
   -webkit-box-flex: in-line;
       -ms-flex: in-line;
           flex: in-line;
+  -webkit-box-shadow: 0px 5px 8px #6d6a75;
+          box-shadow: 0px 5px 8px #6d6a75;
 }
 
 .cats {
@@ -134,7 +136,12 @@ form {
 
 .formParent {
   text-align: center;
-  margin-bottom: 4rem;
+  margin: 2rem 0 2rem 0;
+  background-color: #219EBC;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 8px #6d6a75;
+          box-shadow: 5px 5px 8px #6d6a75;
+  padding: 0 1rem 1rem 1rem;
 }
 
 /* VARIABLES */
@@ -193,6 +200,7 @@ form {
 
 .card-text {
   margin: .25rem 0;
+  text-shadow: 2px 2px 5px #023047;
 }
 
 /* VARIABLES */
@@ -218,6 +226,12 @@ label {
 
 .form-container {
   margin-bottom: 6rem;
+  margin-top: 3rem;
+  background-color: #219EBC;
+  padding: 0 1rem 1rem 1rem;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 8px #6d6a75;
+          box-shadow: 5px 5px 8px #6d6a75;
 }
 
 /* VARIABLES */
@@ -226,6 +240,100 @@ label {
 /* Spacing */
 /* GRID */
 /* Breakpoints */
+.itemDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70vh;
+}
+
+@media (max-width: 768px) {
+  .itemDiv {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.singleCard {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.singleCard img {
+  width: 80%;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 8px #6d6a75;
+          box-shadow: 5px 5px 8px #6d6a75;
+  -webkit-transform: rotate(-3.5deg);
+          transform: rotate(-3.5deg);
+}
+
+@media (max-width: 768px) {
+  .singleCard {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .singleCard {
+    width: 90%;
+    margin-top: 1rem;
+  }
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #219EBC;
+  border-radius: 15px;
+  padding: 1rem;
+  border: 1px solid #61dafb;
+  -webkit-box-shadow: 5px 5px 8px #6d6a75;
+          box-shadow: 5px 5px 8px #6d6a75;
+  text-shadow: 2px 2px 5px #023047;
+}
+
+@media (max-width: 768px) {
+  .info {
+    width: 50%;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .info {
+    width: 75%;
+    margin-top: 1.5rem;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -304,5 +412,11 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) and (max-width: 480px) {
+  .itemContainer {
+    margin-top: 1.5rem;
+  }
 }
 /*# sourceMappingURL=index.css.map */
