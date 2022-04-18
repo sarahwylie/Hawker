@@ -23,6 +23,7 @@ import NoMatch from './components/pages/NoMatch/index';
 import './assets/css/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UploadForm from './components/pages/uploadFile/uploadFile';
+import OrderHistory from './components/pages/OrderHistory';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -115,6 +116,15 @@ function App() {
               element={
                 <PrivateRoute>
                   <UploadForm />
+                </PrivateRoute>
+              }
+            />
+                  <Route
+              exact
+              path="/orderHistory"
+              element={
+                <PrivateRoute>
+                  <OrderHistory />
                 </PrivateRoute>
               }
             />
