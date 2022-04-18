@@ -18,24 +18,30 @@ function Homepage() {
     //     <CCardBody>
     //       <CCardTitle>{item.title}</CCardTitle>
     //       <CCardText>${item.price}</CCardText>
-    //       <CButton href="#">See Item</CButton>
+    //       <CButton href="#">Check it out!</CButton>
     //     </CCardBody>
     //   </CCard>
     // ));
     return (
-      <div className="itemContainer">
-        {imagesData.map((image, i) => (
-          <CCard key={i}>
-            <CCardImage orientation="top" {...imagesData[i]} alt={imagesData[i].alt} width="100%" />
-            <CCardBody>
-              <CCardTitle>{imagesData[i].alt}</CCardTitle>
-              <CCardText>{imagesData[i].category}</CCardText>
-              <CCardText>{imagesData[i].description}</CCardText>
-
-              <CButton href="#">Check it out!</CButton>
-            </CCardBody>
-          </CCard>
-        ))}
+      <div>
+        <div className="title">Homepage</div>
+        <div className="itemContainer">
+          {imagesData.map((image, i) => (
+            <CCard key={i}>
+              <CCardImage
+                orientation="top"
+                {...imagesData[i]}
+                alt={imagesData[i].alt}
+                width="100%"
+              />
+              <CCardBody>
+                <CCardTitle>{imagesData[i].alt}</CCardTitle>
+                <CCardText>{imagesData[i].category}</CCardText>
+                <CButton href="#">Check it out!</CButton>
+              </CCardBody>
+            </CCard>
+          ))}
+        </div>
       </div>
     );
   };

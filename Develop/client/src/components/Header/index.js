@@ -16,7 +16,7 @@ function Header({ isLogin }) {
       </a>
     ) : (
       <a href="/login">
-        <button onClick={() => <Login />} className="btn-primary">
+        <button onClick={() => <Login />} className="btn-primary loginBtn">
           Login
         </button>
       </a>

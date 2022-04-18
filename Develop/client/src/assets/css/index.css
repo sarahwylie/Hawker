@@ -4,19 +4,49 @@
 /* Background Colors */
 /* Spacing */
 /* GRID */
+/* Breakpoints */
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
 /* Spacing */
 /* GRID */
+/* Breakpoints */
 .footer {
   background-color: #219EBC;
   color: #023047;
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: -1.75rem;
   width: 100%;
   text-align: center;
+}
+
+.footer:hover {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    bottom: -3.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    bottom: -4rem;
+  }
+}
+
+.legalese {
+  font-size: xx-small;
+}
+
+.legalese:hover {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  font-size: medium;
 }
 
 /* VARIABLES */
@@ -24,6 +54,7 @@
 /* Background Colors */
 /* Spacing */
 /* GRID */
+/* Breakpoints */
 .head {
   background-color: #219EBC;
   color: #023047;
@@ -83,6 +114,7 @@
 /* Background Colors */
 /* Spacing */
 /* GRID */
+/* Breakpoints */
 form {
   margin: 0 auto;
   display: -webkit-box;
@@ -110,6 +142,7 @@ form {
 /* Background Colors */
 /* Spacing */
 /* GRID */
+/* Breakpoints */
 .card {
   border: 2px solid #61dafb;
   border-radius: 15px;
@@ -167,6 +200,7 @@ form {
 /* Background Colors */
 /* Spacing */
 /* GRID */
+/* Breakpoints */
 select, .formField {
   height: 2.25rem;
   border-radius: 15px;
@@ -183,7 +217,7 @@ label {
 }
 
 .form-container {
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 * {
@@ -263,6 +297,6 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 /*# sourceMappingURL=index.css.map */
