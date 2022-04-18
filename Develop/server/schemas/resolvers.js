@@ -51,7 +51,7 @@ const resolvers = {
       console.info(user.orders);
       return user.orders.id(_id);
     },
-    // uploads: (parents, args) => {},
+
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ items: args.items });
@@ -69,7 +69,7 @@ const resolvers = {
         const price = await stripe.prices.create({
           item: item.id,
           unit_amount: items[i].price * 100,
-          currency: 'usd',
+          currency: 'usd'
         });
 
         line_items.push({

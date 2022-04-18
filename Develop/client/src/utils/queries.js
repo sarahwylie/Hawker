@@ -140,8 +140,9 @@ export const QUERY_SINGLE_ORDER = gql`
       users {
         firstName
       }
-}
-`
+    }
+  }
+`;
 
 export const QUERY_CHECKOUT = gql`
   query getCheckout($items: [ID]!) {
