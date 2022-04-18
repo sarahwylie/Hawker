@@ -37,7 +37,7 @@ function Login({ toggle }) {
   };
 
   return (
-    <div className="container my-1">
+    <div className="itemContainer">
       <div className="formParent">
         <h2>Login</h2>
         <form onSubmit={handleFormSubmit}>
