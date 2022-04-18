@@ -22,40 +22,24 @@ function Homepage() {
         <div>{item.image}</div>
         <div>{item.category.name}</div>
         </div>
-    )
-    /* // return itemData.item.map((item) => (
-    //   <CCard key={item._id}>
-    //     <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
-    //     <CCardBody>
-    //       <CCardTitle>{item.title}</CCardTitle>
-    //       <CCardText>${item.price}</CCardText>
+    ));
+  };
+    // return itemData.item.map((item) => (
+    //    <CCard key={item._id}>
+    //      <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
+    //      <CCardBody>
+    //        <CCardTitle>{item.title}</CCardTitle>
+    //        <CCardText>${item.price}</CCardText>
     //       <CButton href="#">See Item</CButton>
-    //     </CCardBody>
-    //   </CCard>
-    // )); */
+    //      </CCardBody>
+    //    </CCard>
+    //  )); 
 
-//     return (
-//       <div className="itemContainer">
-//         {imagesData.map((image, i) => (
-//           <CCard key={i}>
-//             <CCardImage orientation="top" {...imagesData[i]} alt={imagesData[i].alt} width="100%" />
-//             <CCardBody>
-//               <CCardTitle>{imagesData[i].alt}</CCardTitle>
-//               <CCardText>{imagesData[i].category}</CCardText>
-//               <CCardText>{imagesData[i].description}</CCardText>
+//   let item = itemData;
 
-//               <CButton href="#">Check it out!</CButton>
-//             </CCardBody>
-//           </CCard>
-//         ))}
-//       </div>
-//     );
-//   };
-    )
-
-  let item = itemData;
-  if (itemData) {
-    return (
+//   if (itemData) {
+   
+return (
       <div>
         {itemData.item.map((item) => {
           {
@@ -70,24 +54,10 @@ function Homepage() {
       </div>
     );
   }
-  return <div className="itemContainer">{itemData ? getItemData() : <div>Loading...</div>}</div>;
- }
-}
+//   return <div className="itemContainer">{itemData ? 
+//     getItemData() : <div>Loading...</div>}</div>;
+//     )}
+// }
 
-//   return (
-//     <div>
-//       {imagesData.map((image, i) => (
-//         <a href="http://localhost:3000" key={i}>
-//           <div className="imageGrid">
-//             <img {...imagesData[i]} alt={imagesData[i].alt} width="25%" />
-//             <p>{image.category}</p>
-//           </div>
-//         </a>
-//       ))}
-//       {itemData ? (getItemData()) : <div>Loading...</div>}
-
-//     </div>
-//   );
-//}
 
 export default Homepage;
