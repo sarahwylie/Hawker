@@ -17,6 +17,7 @@ const typeDefs = gql`
     price: Float
     quantity: Int
     category: Category
+    user: User
   }
 
   type User {
@@ -25,6 +26,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     orders: [Order]
+    items: [Item]
   }
 
   scalar DateTime
@@ -63,6 +65,7 @@ const typeDefs = gql`
       price: Float
       quantity: Int
       category: ID
+      user: ID
     ): Item
 
     
