@@ -16,7 +16,7 @@ function SearchList(props) {
     return (
         <ul>
             {filteredData.map((item) => (
-                <li key={item.id}>{item.text}</li>
+                <li  className="searchList" key={item.id}>{item.text}</li>
             ))}
         </ul>
     )
