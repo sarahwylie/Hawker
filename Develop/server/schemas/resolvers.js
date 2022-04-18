@@ -24,8 +24,12 @@ const resolvers = {
       return User.findOne({ _id }).populate('items');
     },
     // item query
-    item: async () => {
+    items: async () => {
       return await Item.find().populate('category').populate('user');
+    },
+    // query one item
+    item: async (parent, { _id }) => {
+      return await Item.findOne({ _id }).populate('category').populate('user');
     },
     categories: async () => {
       return await Category.find();
@@ -54,12 +58,6 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
       const token = signToken(user);
-      // console.info(user, token);
-      // console.info(user._id);
-      // let userId = `${user._id}`;
-      // console.info(`this is the ${userId}`);
-      // userId.slice(18, 38);
-      // localStorage.setItem('userId', userId);
       return { token, user };
     },
     // add item

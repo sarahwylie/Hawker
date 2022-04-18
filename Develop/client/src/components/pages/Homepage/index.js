@@ -1,12 +1,12 @@
 import React from 'react';
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
-
+import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
 
-import imagesData from './imagesData.json';
-import SingleItemModal from '../SingleItem';
-import { Modal, Button } from 'react-bootstrap';
+// import imagesData from './imagesData.json';
+// import SingleItemModal from '../SingleItem';
+// import { Modal, Button } from 'react-bootstrap';
 
 function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
@@ -14,13 +14,13 @@ function Homepage() {
 
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
-    return itemData.item.map((item) => (
+    return itemData.items.map((item) => (
       <CCard key={item._id}>
         <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
         <CCardBody>
           <CCardTitle>{item.title}</CCardTitle>
           <CCardText>${item.price}</CCardText>
-          <CButton href="#">See Item</CButton>
+         <Link to={`/SingleItem/${item._id}`}> <CButton href="singleItem">See Item</CButton></Link>
         </CCardBody>
       </CCard>
     ));
