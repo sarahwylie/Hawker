@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
 
 import { useQuery } from '@apollo/client';
