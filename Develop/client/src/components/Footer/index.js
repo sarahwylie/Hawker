@@ -14,6 +14,9 @@ function Footer() {
                     alt="instagram"
                     target="_blank"
                     rel="noreferrer"><BsInstagram /></a></div>
+            <div className='legalese'>
+            Team Hawk assumes no responsibilities whatever for any damages caused to Licensee, any Affiliate, any vendees, other transferees, or sublicensees of or by any product or process incorporating or made by the use of inventions licensed under this Agreement, or incorporating or made by the use of any information furnished under this Agreement.
+            </div>
         </section>
     )
 }
