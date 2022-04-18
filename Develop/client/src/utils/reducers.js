@@ -14,7 +14,12 @@ export const reducer = (state, action) => {
         ...state,
         categories: [...action.categories]
       };
-
+    // if action type value is the value of `UPDATE_CURRENT_CATEGORIES`, return a new state object with an action on the current category
+    case UPDATE_CURRENT_CATEGORY:
+      return {
+        ...state,
+        currentCategory: action.currentCategory
+      };
     default:
       return state;
   }
