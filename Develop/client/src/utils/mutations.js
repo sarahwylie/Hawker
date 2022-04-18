@@ -30,6 +30,7 @@ export const ADD_ITEM = gql`
     $price: Float
     $quantity: Int
     $category: ID
+    $user: ID
   ) {
     addItem(
       title: $title
@@ -38,6 +39,7 @@ export const ADD_ITEM = gql`
       price: $price
       quantity: $quantity
       category: $category
+      user: $user
     ) {
       title
       description
