@@ -5,6 +5,7 @@ function Seller() {
   return (
     <div>
       <h2>Your Listings</h2>
+      
     </div>
   );
 }
