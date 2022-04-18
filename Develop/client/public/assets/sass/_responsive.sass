@@ -1,0 +1,21 @@
+@mixin flex($flex: row)
+  display: flex
+  flex-direction: $flex
+
+@mixin flex-left($flex: row)
+  display: flex
+  flex-direction: $flex
+  justify-content: flex-start
+  align-items: flex-start
+
+@mixin flex-center($flex: row)
+  display: flex
+  flex-direction: $flex
+  align-items: center
+  justify-content: center
+
+@mixin flex-right($flex: row)
+  display: flex
+  flex-direction: $flex
+  justify-content: flex-end
+  align-items: flex-start

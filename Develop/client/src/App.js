@@ -24,6 +24,8 @@ import UploadForm from './components/pages/uploadFile/uploadFile';
 import NoMatch from './components/pages/NoMatch/index';
 import Success from './components/Success/index';
 import './assets/css/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import UploadForm from './components/pages/uploadFile/uploadFile';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -85,6 +87,7 @@ function App() {
             />
             <Route
               exact
+<<<<<<< HEAD
               path="/success"
               element={
                 <PrivateRoute>
@@ -95,6 +98,9 @@ function App() {
             <Route
               exact
               path="/singleItem"
+=======
+              path="/singleItem/:id"
+>>>>>>> c442d811e14dd2d6d9086eb67a8ffc2c9858bc0a
               element={
                 <PrivateRoute>
                   <SingleItem />
