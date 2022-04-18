@@ -23,7 +23,7 @@ const resolvers = {
     },
     // query one user
     user: async (parent, { _id }) => {
-      return User.findOne({ _id }).populate('items');
+      return User.findOne({ _id }).populate('items').populate('category');
     },
     // Query all items
     items: async () => {
@@ -48,7 +48,7 @@ const resolvers = {
         populate: 'category'
       });
 
-      console.info(user.orders);
+      console.info(user.orders[0].items);
       return user.orders.id(_id);
     },
 
@@ -112,11 +112,18 @@ const resolvers = {
       return { token, user };
     },
     // add item
-    addItem: async (parent, args) => {
-      console.info(args);
-      const item = await Item.create(args);
+    addItem: async (parent, args, context) => {
+      if(context.user) {
 
-      return item;
+        // console.info(args);
+        // const item = await Item.create(args);
+        const userItems = new Item(args);
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { items: userItems }
+        });
+        console.info(userItems);
+        return userItems;
+      }
     },
     addOrder: async (parent, { items }, context) => {
       if (context.user) {
@@ -125,7 +132,7 @@ const resolvers = {
         await User.findByIdAndUpdate(context.user._id, {
           $push: { orders: order }
         });
-
+        console.info(order);
         return order;
       }
       throw new AuthenticationError('Not logged in');

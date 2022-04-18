@@ -24,6 +24,7 @@ const typeDefs = gql`
     email: String
     orders: [Order]
     items: [Item]
+    category: Category
   }
 
   scalar DateTime
