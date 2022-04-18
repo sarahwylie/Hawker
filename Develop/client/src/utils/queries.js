@@ -1,5 +1,14 @@
 import { gql } from '@apollo/client';
 
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
+    }
+  }
+`;
+
 export const QUERY_USER = gql`
   query users {
     users {
@@ -131,6 +140,13 @@ export const QUERY_SINGLE_ORDER = gql`
       users {
         firstName
       }
+}
+`
+
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($items: [ID]!) {
+    checkout(items: $items) {
+      session
     }
   }
 `;
