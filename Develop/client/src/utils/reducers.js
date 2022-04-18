@@ -8,8 +8,13 @@ export const reducer = (state, action) => {
         ...state,
         products: [...action.products]
       };
+    // if action type value is the value of `UPDATE_CATEGORIES`, return a new state object with an updated categories array
+    case UPDATE_CATEGORIES:
+      return {
+        ...state,
+        categories: [...action.categories]
+      };
 
-    // if it's none of these actions, do not update state at all and keep things the same!
     default:
       return state;
   }
