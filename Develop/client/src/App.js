@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import PrivateRoute from './components/PrivateRoute/index';
 import Header from './components/Header/index';
-import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/index';
 import Login from './components/pages/Login/index';
 import Signup from './components/pages/Signup/index';
@@ -19,7 +20,8 @@ import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
-import './assets/css/App.css';
+import './assets/css/index.css';
+import UploadForm from './components/pages/uploadFile/uploadFile';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -41,27 +43,81 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
+  const toggle = (whichButton) => {
+    setIsLogin(whichButton);
+  };
+
   return (
     <ApolloProvider client={client}>
-      <Header />
+      <Header isLogin={isLogin} />
       <Router>
         <>
-          <Navbar />
           <Routes>
             <Route exact path="/" element={<Homepage />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/buyer" element={<Buyer />} />
+            <Route exact path="/login" element={<Login toggle={toggle} />} />
+            <Route exact path="/signup" element={<Signup toggle={toggle} />} />
+            <Route
+              exact
+              path="/buyer"
+              element={
+                <PrivateRoute>
+                  <Buyer />
+                </PrivateRoute>
+              }
+            />
             <Route exact path="/auto" element={<Auto />} />
             <Route exact path="/clothing" element={<Clothing />} />
             <Route exact path="/household" element={<Household />} />
             <Route exact path="/outdoor" element={<Outdoor />} />
             <Route exact path="/tech" element={<Tech />} />
-            <Route exact path="/checkout" element={<Checkout />} />
-            <Route exact path="/singleItem" element={<SingleItem />} />
-            <Route exact path="/postItem" element={<PostItem />} />
-            <Route exact path="/seller" element={<Seller />} />
-            <Route element={<NoMatch />} />
+            <Route
+              exact
+              path="/checkout"
+              element={
+                <PrivateRoute>
+                  <Checkout />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path="/singleItem"
+              element={
+                <PrivateRoute>
+                  <SingleItem />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path="/postItem"
+              element={
+                <PrivateRoute>
+                  <PostItem />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path="/seller"
+              element={
+                <PrivateRoute>
+                  <Seller />
+                </PrivateRoute>
+              }
+            />
+                  <Route
+              exact
+              path="/upload"
+              element={
+                <PrivateRoute>
+                  <UploadForm />
+                </PrivateRoute>
+              }
+            />
+            <Route path="*" element={<NoMatch />} />
           </Routes>
         </>
       </Router>

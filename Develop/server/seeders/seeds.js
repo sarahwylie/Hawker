@@ -14,12 +14,10 @@ db.once('open', async () => {
   for (let i = 0; i < 50; i += 1) {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
-    const address = faker.address.streetAddress(true);
-    const userName = faker.internet.userName(`${firstName} ${lastName}}`);
-    const email = faker.internet.email(userName);
+    const email = faker.internet.email(firstName, lastName);
     const password = faker.internet.password();
 
-    userData.push({ firstName, lastName, address, userName, email, password });
+    userData.push({ firstName, lastName, email, password });
   }
   User.collection.insertMany(userData);
   console.info('Users seeded.');
@@ -30,9 +28,10 @@ db.once('open', async () => {
   // eslint-disable-next-line no-unused-vars
   const categories = await Category.insertMany([
     { name: 'Outdoor' },
-    { name: 'Transportation' },
+    { name: 'Auto' },
     { name: 'Tech' },
-    { name: 'Sports' }
+    { name: 'Clothing' },
+    { name: 'Home' }
   ]);
 
   // eslint-disable-next-line no-unused-vars

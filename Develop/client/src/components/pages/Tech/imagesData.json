@@ -1,0 +1,72 @@
+[
+    {
+        "src": "../../../assets/images/tech/computer-speaker.jpg",
+        "alt": "Computer Speakers",
+        "title": "Computer Speakers",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/cooler.jpg",
+        "alt": "PC Cooler Fan",
+        "title": "PC Cooler Fan",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/cryorig-cooler.jpg",
+        "alt": "Cryorig Cooler",
+        "title": "Cryorig Cooler",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/keyboard_mouse.jpg",
+        "alt": "Keyboard and Mouse",
+        "title": "Keyboard and Mouse",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/MSI_3080.jpg",
+        "alt": "MSI 3080 gpu",
+        "title": "MSI 3080 gpu",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/red_black_gpu.jpg",
+        "alt": "Red and Black gpu",
+        "title": "Red and Black gpu",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/rgb_fan.jpg",
+        "alt": "RGB Fan",
+        "title": "RGB Fan",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/rgb_keyboard.jpg",
+        "alt": "RGB Keyboard",
+        "title": "RGB Keyboard",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/speaker_set.jpg",
+        "alt": "Speaker Set",
+        "title": "Speaker Set",
+        "category": "tech",
+        "description": ""
+      },
+      {
+        "src": "../../../assets/images/tech/wooden_speakers.jpg",
+        "alt": "Wooden Speakers",
+        "title": "Wooden Speakers",
+        "category": "tech",
+        "description": ""
+      }
+    ]
