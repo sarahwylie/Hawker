@@ -65,6 +65,10 @@
   flex-direction: column;
 }
 
+SearchList {
+  display: none;
+}
+
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */

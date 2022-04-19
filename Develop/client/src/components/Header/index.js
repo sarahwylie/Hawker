@@ -98,7 +98,7 @@ function Header({ isLogin }) {
                 aria-label="Search"
               />
               <button className="btn-primary">Search</button>
-              <SearchList input={inputText} />
+              <SearchList className='SearchList' input={inputText} />
             </Form>
           </div>
           <div className="col">{loggedIn()}</div>
