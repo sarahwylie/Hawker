@@ -21,10 +21,10 @@ import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
-import Success from './components/Success/index';
+import Success from './components/pages/Success/success'
 import './assets/css/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import OrderHistory from './components/pages/OrderHistory';
+import Dashboard from './components/pages/Dashboard/dashboard';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -114,10 +114,10 @@ function App() {
             />
             <Route
               exact
-              path="/orderHistory"
+              path="/Dashboard"
               element={
                 <PrivateRoute>
-                  <OrderHistory />
+                  <Dashboard />
                 </PrivateRoute>
               }
             />
