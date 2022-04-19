@@ -23,10 +23,17 @@ const Checkout = () => {
       variables: { items: itemIds }
     });
   }
+  
+
 
   return (
     <div>
-      <Confirmation></Confirmation>
+      <div>
+      <h1>Below is the modal</h1>
+      <div>
+        <Confirmation></Confirmation>
+      </div>
+      </div>
       <button onClick={submitCheckout}>Checkout</button>
     </div>
   );

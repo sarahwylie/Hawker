@@ -2,8 +2,10 @@ import React,{useState} from 'react';
 import { QUERY_CHECKOUT } from '../../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import { QUERY_USER } from '../../../utils/queries';
-import { useQuery } from '@apollo/client';
+import { useLazyQuery, useQuery } from '@apollo/client';
 import { selectionSetMatchesResult } from '@apollo/client/cache/inmemory/helpers';
+import { QUERY_ITEMS } from '../../../utils/queries';
+import Modal from 'react-modal';
 
 function Confirmation() {
  // Create state variables for the fields in the form
@@ -16,6 +18,11 @@ function Confirmation() {
   const [zip, setShippingZip] = useState('');
   const [phonenumber, setShippingPhoneNumber] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const { itemData } = useQuery(QUERY_ITEMS);
+  console.log(itemData);
+  const { data } =useQuery(QUERY_USER)
+    console.log(data)
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -50,7 +57,7 @@ function Confirmation() {
       );
       return;
     }
-    alert(`Hello ${fullName}`);
+    alert(`Hello {}`);
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setShippingFullName('');
@@ -61,18 +68,24 @@ function Confirmation() {
     setShippingZip('');
   };
 
+  //const data = props;
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  //let item = props.props;
+
   return (
-    <div>
-      <p>Shipping Details</p>
-      <form className="form">
-          <h3>Ship to:</h3>
-        <input
+    <div >
+      
+      <form className="formModal">
+          <p>Full Name</p>
+          <input
           value={fullName}
-          name="fullName"
+          name="fullname"
           onChange={handleInputChange}
-          type="text"
+          type="fullname"
           placeholder="Full Name"
-        />  
+        />
          <p>Shipping Address:</p>
         <input
           value={address}
@@ -101,8 +114,9 @@ function Confirmation() {
           name="phonenumber"
           onChange={handleInputChange}
           type="phonenumber"
-          placeholder="Phone Number"
+          placeholder="Phone Number (optional)"
         />
+        <p></p>
         <button type="button" onClick={handleFormSubmit}>Submit</button>
       </form>
       {errorMessage && (
