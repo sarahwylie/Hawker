@@ -24,40 +24,37 @@ function Homepage() {
         </div>
     ));
   };
-  //   return itemData.item.map((item) => (
-  //      <CCard key={item._id}>
-  //        <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
-  //        <CCardBody>
-  //          <CCardTitle>{item.title}</CCardTitle>
-  //          <CCardText>${item.price}</CCardText>
-  //         <CButton href="#">See Item</CButton>
-  //        </CCardBody>
-  //      </CCard>
-  //    )); 
+  // return itemData.item.map((item) => (
+  //    <CCard key={item._id}>
+  //      <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
+  //      <CCardBody>
+  //        <CCardTitle>{item.title}</CCardTitle>
+  //        <CCardText>${item.price}</CCardText>
+  //       <CButton href="#">See Item</CButton>
+  //      </CCardBody>
+  //    </CCard>
+  //  ));
 
-//   let item = itemData;
+  //   let item = itemData;
 
-//   if (itemData) {
-   
-return (
-      <div>
-        {itemData.item.map((item) => {
-          {
-            return (
-              <div>
-                <p>{item.category.name}</p>
-                <SingleItemModal props={item}></SingleItemModal>
-              </div>
-            );
-          }
-        })}
-      </div>
-    );
-  }
-//   return <div className="itemContainer">{itemData ? 
+  //   if (itemData) {
+
+  return (
+    <div>
+      {itemData.item.map((item) => {
+        return (
+          <div>
+            <p>{item.category.name}</p>
+            <SingleItemModal props={item}></SingleItemModal>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+//   return <div className="itemContainer">{itemData ?
 //     getItemData() : <div>Loading...</div>}</div>;
 //     )}
 // }
-
 
 export default Homepage;
