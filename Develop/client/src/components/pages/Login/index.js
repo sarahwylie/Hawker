@@ -18,7 +18,9 @@ function Login({ toggle }) {
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password }
       });
-
+      console.info(mutationResponse.data.login)
+      let userId = mutationResponse.data.login.user._id;
+      localStorage.setItem('userId', `${userId}`);
       const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (error) {
@@ -35,7 +37,7 @@ function Login({ toggle }) {
   };
 
   return (
-    <div className="container my-1">
+    <div className="itemContainer">
       <div className="formParent">
         <h2>Login</h2>
         <form onSubmit={handleFormSubmit}>

@@ -30,6 +30,7 @@ export const ADD_ITEM = gql`
     $price: Float
     $quantity: Int
     $category: ID
+    $user: ID
   ) {
     addItem(
       title: $title
@@ -38,6 +39,7 @@ export const ADD_ITEM = gql`
       price: $price
       quantity: $quantity
       category: $category
+      user: $user
     ) {
       title
       description
@@ -46,6 +48,22 @@ export const ADD_ITEM = gql`
       quantity
       category {
         name
+        _id
+      }
+    }
+  }
+`;
+
+export const ADD_ORDER = gql`
+  mutation addOrder($purchaseDate: DateTime, $item: ID!, $user: ID!) {
+    addOrder(purchaseDate: $purchaseDate, users: $user, items: $item) {
+      purchaseDate
+      _id
+      users {
+        _id
+        lastName
+      }
+      items {
         _id
       }
     }

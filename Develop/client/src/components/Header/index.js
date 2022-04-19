@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
 import '../../assets/css/index.css';
+import SearchList from '../SearchList';
 
 function Header({ isLogin }) {
   const showButtons = () => {
@@ -16,7 +17,7 @@ function Header({ isLogin }) {
       </a>
     ) : (
       <a href="/login">
-        <button onClick={() => <Login />} className="btn-primary">
+        <button onClick={() => <Login />} className="btn-primary loginBtn">
           Login
         </button>
       </a>
@@ -30,8 +31,8 @@ function Header({ isLogin }) {
           <a href="/postItem">
             <button className="btn-primary">Hawk Item</button>
           </a>
-          <a href="/orderHistory">
-            <button className="btn-primary">Order History</button>
+          <a href="/dashboard">
+            <button className="btn-primary">Dashboard</button>
           </a>
           <a href="/" onClick={() => Auth.logout()}>
             <button className="btn-primary">Logout</button>
@@ -51,6 +52,12 @@ function Header({ isLogin }) {
     }
     
   }
+  const [inputText, setInputText] = useState("");
+  let inputHandler = (e) => {
+    //convert input text to lower case
+    var lowerCase = e.target.value.toLowerCase();
+    setInputText(lowerCase);
+  };
 
   return (
     <header className="head">
@@ -86,10 +93,12 @@ function Header({ isLogin }) {
               <Form.Control
                 type="search"
                 placeholder="Search"
+                onChange={inputHandler}
                 className="me-2 formField"
                 aria-label="Search"
               />
               <button className="btn-primary">Search</button>
+              <SearchList input={inputText} />
             </Form>
           </div>
           <div className="col">{loggedIn()}</div>

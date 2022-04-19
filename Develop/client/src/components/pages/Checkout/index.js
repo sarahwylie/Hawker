@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLazyQuery } from '@apollo/client';
+import { QUERY_CHECKOUT } from '../../../utils/queries';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
-function Checkout() {
+const Checkout = () => {
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
+
+  function submitCheckout() {
+    const itemIds = [];
+    getCheckout({
+      variables: { items: itemIds }
+    });
+  }
+
   return (
     <div>
-      <h2>Checkout</h2>
+      <button onClick={submitCheckout}>Checkout</button>
     </div>
   );
-}
+};
 
 export default Checkout;

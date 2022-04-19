@@ -2,12 +2,12 @@ import React from 'react';
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
 
 import imagesData from './imagesData.json';
+import { idbPromise } from '../../../utils/helpers';
 
 function Auto() {
   return (
-    <div><div className='title'>
-      Auto
-    </div>
+    <div>
+      <div className="title">Auto</div>
       <div className="itemContainer">
         {imagesData.map((image, i) => (
           <CCard key={i}>
@@ -15,15 +15,13 @@ function Auto() {
             <CCardBody>
               <CCardTitle>{imagesData[i].alt}</CCardTitle>
               <CCardText>{imagesData[i].category}</CCardText>
-              <CCardText>{imagesData[i].description}</CCardText>
-
-              <CButton href="#">Purchase</CButton>
+              <CButton href="#">Check it out!</CButton>
             </CCardBody>
           </CCard>
         ))}
       </div>
     </div>
   );
-};
+}
 
-export default Auto
+export default Auto;

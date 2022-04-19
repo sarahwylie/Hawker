@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function UploadForm() {
 
   const handleFileChange = async (e) => {
@@ -29,7 +28,7 @@ function UploadForm() {
 
   return (
     <div>
-      <h1>Upload File</h1>
+      <h1 className='title'>Upload File</h1>
       
       <input type="file" onChange={handleFileChange} value='' className='btn-primary' />
       

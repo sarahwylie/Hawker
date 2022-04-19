@@ -30,7 +30,7 @@ const itemSchema = new Schema({
     ref: 'Category',
     required: true
   },
-  user: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+  user: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 const Item = mongoose.model('Item', itemSchema);

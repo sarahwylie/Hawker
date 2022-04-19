@@ -3,9 +3,385 @@
 exports[`Clothing component matches snapshot DOM node structure 1`] = `
 <DocumentFragment>
   <div>
-    <h2>
+    <div
+      class="title"
+    >
       Clothing
-    </h2>
+    </div>
+    <div
+      class="itemContainer"
+    >
+      <div
+        class="card"
+      >
+        <img
+          alt="Baby Clothes"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/baby_clothes.jpg"
+          title="Baby Clothes"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Baby Clothes
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Child PJs"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/child_pjs.jpg"
+          title="Child PJs"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Child PJs
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Dress Shoes"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/dress_shoes.jpg"
+          title="Dress Shoes"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Dress Shoes
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Green Shirt"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/green_shirt.png"
+          title="Green Shirt"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Green Shirt
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Mens Pants"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/mens_pants1.jpg"
+          title="Mens Pants"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Mens Pants
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Mens Shirt"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/mens_shirt1.jpg"
+          title="Mens Shirt"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Mens Shirt
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Pizza Shoes"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/pizza_shoes.jpg"
+          title="Pizza Shoes"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Pizza Shoes
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Rainbow Shirt"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/rainbow_shirt.jpg"
+          title="Rainbow Shirt"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Rainbow Shirt
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Womens Pants"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/womens_pants1.jpg"
+          title="Womens Pants"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Womens Pants
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="Womens Shirt"
+          category="clothing"
+          class="card-img-top"
+          description=""
+          src="../../../assets/images/clothing/womens_shirt2.jpg"
+          title="Womens Shirt"
+          width="100%"
+        />
+        <div
+          class="card-body"
+        >
+          <h5
+            class="card-title"
+          >
+            Womens Shirt
+          </h5>
+          <p
+            class="card-text"
+          >
+            clothing
+          </p>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary"
+            href="#"
+            type="button"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

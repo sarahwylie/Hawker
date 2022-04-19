@@ -20,8 +20,12 @@ function PostItem() {
   ];
 
 let itemImage = localStorage.getItem('imageurl')
+let userId = localStorage.getItem('userId');
 if(itemImage) {
   itemImage = itemImage.replace(/^"(.*)"$/, '$1');
+}
+if(userId) {
+  userId = userId.replace(/^"(.*)"$/, '$1');
 }
 
   const handleFormSubmit = async (event) => {
@@ -34,7 +38,8 @@ if(itemImage) {
         'image': itemImage,
         'price': parseInt(postForm.price),
         'quantity': parseInt(postForm.Quantity),
-        'category': postForm.categoryId
+        'category': postForm.categoryId,
+        'user': userId
 
       }
     });
@@ -54,7 +59,7 @@ if(itemImage) {
   };
 
   return (
-    <div>
+    <div className='itemContainer'>
       <form onSubmit={handleFormSubmit} className="form-container">
         <UploadForm/>
 
