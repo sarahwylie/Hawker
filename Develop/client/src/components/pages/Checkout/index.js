@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
+import Confirmation from '../Confirmation';
+
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Checkout = () => {
@@ -24,6 +26,7 @@ const Checkout = () => {
 
   return (
     <div>
+      <Confirmation></Confirmation>
       <button onClick={submitCheckout}>Checkout</button>
     </div>
   );
