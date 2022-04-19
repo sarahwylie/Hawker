@@ -2,11 +2,12 @@ import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@c
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
+import { StoreProvider, useStoreContext } from '../../../utils/GlobalState.js';
 
 function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
   console.info(itemData);
-
+console.log(StoreProvider);
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
     
@@ -16,7 +17,7 @@ function Homepage() {
         <CCardBody>
           <CCardTitle>{item.title}</CCardTitle>
           <CCardText>${item.price}</CCardText>
-          {/* <CCardText>{item.category}</CCardText> */}
+          <CCardText>{item.categories}</CCardText>
           <Link to={`/SingleItem/${item._id}`}>
             {' '}
             <CButton>See Item</CButton>
