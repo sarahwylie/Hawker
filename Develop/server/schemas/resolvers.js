@@ -23,7 +23,10 @@ const resolvers = {
     },
     // query one user
     user: async (parent, { _id }) => {
-      return User.findOne({ _id }).populate('items').populate('category');
+      return User.findOne({ _id }).populate({
+        path: 'items',
+        populate: 'category'
+      });
     },
     // Query all items
     items: async () => {
