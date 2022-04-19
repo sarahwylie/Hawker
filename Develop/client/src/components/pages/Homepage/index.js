@@ -16,6 +16,7 @@ function Homepage() {
         <CCardBody>
           <CCardTitle>{item.title}</CCardTitle>
           <CCardText>${item.price}</CCardText>
+          {/* <CCardText>{item.category}</CCardText> */}
           <Link to={`/SingleItem/${item._id}`}>
             {' '}
             <CButton>See Item</CButton>
