@@ -37,7 +37,7 @@ const Signup = ({ toggle }) => {
   };
 
   return (
-    <div className="container my-1">
+    <div className="itemContainer">
       <div className="formParent">
         <h2>Signup</h2>
         <form onSubmit={handleFormSubmit}>

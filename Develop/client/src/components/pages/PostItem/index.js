@@ -59,7 +59,7 @@ if(userId) {
   };
 
   return (
-    <div>
+    <div className='itemContainer'>
       <form onSubmit={handleFormSubmit} className="form-container">
         <UploadForm/>
 
