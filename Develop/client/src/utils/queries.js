@@ -1,5 +1,14 @@
 import { gql } from '@apollo/client';
 
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
+    }
+  }
+`;
+
 export const QUERY_USER = gql`
   query users {
     users {
@@ -31,6 +40,25 @@ export const QUERY_SINGLE_USER = gql`
     user(_id: $id) {
       firstName
       lastName
+      items {
+        _id
+        category {
+          name
+          _id
+        }
+      }
+      orders {
+        _id
+        purchaseDate
+        items {
+          _id
+          title
+          price
+          description
+          image
+          quantity
+        }
+      }
     }
   }
 `;
@@ -70,6 +98,56 @@ export const QUERY_SINGLE_ITEM = gql`
         firstName
         lastName
       }
+    }
+  }
+`;
+
+export const QUERY_ORDERS = gql`
+  query orders {
+    orders {
+      purchaseDate
+      _id
+      items {
+        _id
+        title
+        user {
+          _id
+          email
+          firstName
+          lastName
+        }
+      }
+      users {
+        _id
+        lastName
+      }
+    }
+  }
+`;
+
+export const QUERY_SINGLE_ORDER = gql`
+  query ($id: ID!) {
+    order(_id: $id) {
+      _id
+      purchaseDate
+      items {
+        _id
+        user {
+          _id
+          firstName
+        }
+      }
+      users {
+        firstName
+      }
+    }
+  }
+`;
+
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($items: [ID]!) {
+    checkout(items: $items) {
+      session
     }
   }
 `;
