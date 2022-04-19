@@ -53,3 +53,19 @@ export const ADD_ITEM = gql`
     }
   }
 `;
+
+export const ADD_ORDER = gql`
+  mutation addOrder($purchaseDate: DateTime, $item: ID!, $user: ID!) {
+    addOrder(purchaseDate: $purchaseDate, users: $user, items: $item) {
+      purchaseDate
+      _id
+      users {
+        _id
+        lastName
+      }
+      items {
+        _id
+      }
+    }
+  }
+`;

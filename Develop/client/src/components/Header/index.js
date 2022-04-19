@@ -31,8 +31,8 @@ function Header({ isLogin }) {
           <a href="/postItem">
             <button className="btn-primary">Hawk Item</button>
           </a>
-          <a href="/orderHistory">
-            <button className="btn-primary">Order History</button>
+          <a href="/dashboard">
+            <button className="btn-primary">Dashboard</button>
           </a>
           <a href="/" onClick={() => Auth.logout()}>
             <button className="btn-primary">Logout</button>
