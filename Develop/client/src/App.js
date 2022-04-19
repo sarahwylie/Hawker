@@ -23,7 +23,6 @@ import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
 import Success from './components/pages/Success/success'
 import './assets/css/index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/pages/Dashboard/dashboard';
 
 const httpLink = createHttpLink({
