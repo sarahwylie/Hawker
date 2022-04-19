@@ -26,6 +26,9 @@ const resolvers = {
       return User.findOne({ _id }).populate({
         path: 'items',
         populate: 'category'
+      }).populate({
+        path: 'orders.items',
+        populate: 'category',
       });
     },
     // Query all items
@@ -48,7 +51,7 @@ const resolvers = {
       // console.log(context.user);
       const user = await User.findById(context.user._id).populate({
         path: 'orders.items',
-        populate: 'category'
+        populate: 'category',
       });
 
       console.info(user.orders[0].items);
