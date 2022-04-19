@@ -71,8 +71,11 @@ const resolvers = {
       const order = await Order.create(args);
       console.info(order);
       return order;
+    },
+    updateItem: async () => {
+      return;
     }
-  }
+  },
 };
 
 module.exports = resolvers;
