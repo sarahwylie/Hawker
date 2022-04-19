@@ -1,10 +1,10 @@
 import React from 'react';
-import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_USER_ITEM } from '../../../utils/queries';
+// import { useQuery, useMutation } from '@apollo/client';
+// import { QUERY_USER_ITEM } from '../../../utils/queries';
 
 
 function Seller() {
-  const { data } = useQuery(QUERY_USER_ITEM);
+  // const { data } = useQuery(QUERY_USER_ITEM);
   
 
   return (

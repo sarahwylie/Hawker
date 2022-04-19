@@ -138,15 +138,15 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
-    updateItem: async (_, {itemId, price, description}) => {
-      const item = find(Item, { id: itemId });
-      if (!item) {
-        throw new Error(`Couldn’t find author with id ${itemId}`);
-      }
-      item.price = price;
-      item.description = description;
-      return item;
-    }
+    // updateItem: async (_, {itemId, price, description}) => {
+    //   const item = find(Item, { id: itemId });
+    //   if (!item) {
+    //     throw new Error(`Couldn’t find author with id ${itemId}`);
+    //   }
+    //   item.price = price;
+    //   item.description = description;
+    //   return item;
+    // }
   },
 };
 
