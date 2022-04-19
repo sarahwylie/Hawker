@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
@@ -8,7 +8,7 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Checkout = () => {
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-
+  const [modalOpen, setModalOpen] = useState(false);
   useEffect(() => {
     if (data) {
       stripePromise.then((res) => {
@@ -30,9 +30,14 @@ const Checkout = () => {
     <div>
       <div>
       <h1>Below is the modal</h1>
-      <div>
-        <Confirmation></Confirmation>
-      </div>
+      <button className='openModalBtn'
+      onClick={() => {
+        setModalOpen(true);
+      }}
+      >
+        Ship To
+      </button>
+      {modalOpen && <Confirmation setModalOpen={setModalOpen} /> }
       </div>
       <button onClick={submitCheckout}>Checkout</button>
     </div>
