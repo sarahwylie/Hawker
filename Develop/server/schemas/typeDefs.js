@@ -34,6 +34,7 @@ const typeDefs = gql`
     items: [Item]
     users: User
     _id: ID
+    category: Category
   }
 
   type Auth {
