@@ -1,0 +1,24 @@
+@import './_variables'
+@import './_responsive'
+
+.footer
+  background-color: $background
+  color: $dark
+  position: fixed
+  left: 0
+  bottom: -1.75rem
+  width: 100%
+  text-align: center
+  &:hover
+    transition: all .5s
+    bottom: 0
+  @media (max-width: $bp-tablet)
+    bottom: -3.25rem
+  @media (max-width: $bp-phone)
+    bottom: -4rem
+
+.legalese
+  font-size: xx-small
+  &:hover
+    transition: all .5s
+    font-size: medium
