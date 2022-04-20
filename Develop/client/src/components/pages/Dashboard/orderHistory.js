@@ -9,7 +9,7 @@ function OrderHistory() {
   }
 
   const { data } = useQuery(QUERY_SINGLE_USER, { variables: { id: userId } });
-
+  console.log(data);
   const getUserOrders = () => {
     return (
       <div>
@@ -30,8 +30,8 @@ function OrderHistory() {
     <div>
       Order History
       <div>
-        return <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>
-        ;
+        <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>
+        
       </div>
     </div>
   );

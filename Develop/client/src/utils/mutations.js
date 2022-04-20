@@ -54,6 +54,14 @@ export const ADD_ITEM = gql`
   }
 `;
 
+export const DELETE_ITEM = gql`
+mutation deleteItem($id: ID!) {
+  deleteItem(_id: $id) {
+    _id
+  }
+}
+`;
+
 export const ADD_ORDER = gql`
   mutation addOrder($purchaseDate: DateTime, $item: ID!, $user: ID!) {
     addOrder(purchaseDate: $purchaseDate, users: $user, items: $item) {

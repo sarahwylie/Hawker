@@ -87,6 +87,8 @@ const typeDefs = gql`
       user: ID
     ): Item
 
+    deleteItem(_id: ID!): Item
+
     addContact(
       phoneNo: String
       profilePicture: String
