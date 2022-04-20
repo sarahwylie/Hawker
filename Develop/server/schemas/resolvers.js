@@ -60,32 +60,31 @@ const resolvers = {
     },
 
     checkout: async (parent, args, context) => {
-      const order = new Order({ items: args.items });
-      const { items } = await order.populate('items').execPopulate();
-      const line_items = [];
       const url = new URL(context.headers.referer).origin;
+      const order = new Order({ items: args.items });
+      const line_items = [];
 
-      for (let i = 0; i < products.length; i++) {
-        // generate item id
+      const { items } = await order.populate('items').execPopulate();
+
+      for (let i = 0; i < items.length; i++) {
         const item = await stripe.items.create({
-          name: products[i].name,
-          description: products[i].description,
-          images: [`${url}/images/${products[i].image}`]
+          name: items[i].name,
+          description: items[i].description,
+          images: [`${url}/images/${items[i].image}`]
         });
 
-        // generate item id using the product id
-        const item = await stripe.items.create({
-          product: item.id,
+        const price = await stripe.prices.create({
+          item: item.id,
           unit_amount: items[i].price * 100,
           currency: 'usd'
         });
 
-        // add price id to the line items array
         line_items.push({
           price: price.id,
           quantity: 1
         });
       }
+
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items,
