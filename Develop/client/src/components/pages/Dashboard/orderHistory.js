@@ -24,7 +24,7 @@ const getUserOrders = () => {
 
     return ( <div>Order History
     <div>
-    return <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>;
+    <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>;
     </div>
     </div> );
 }

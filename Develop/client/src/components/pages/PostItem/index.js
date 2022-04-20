@@ -43,7 +43,8 @@ if(userId) {
 
       }
     });
-    console.info(mutationResponse)
+    console.info(mutationResponse);
+    localStorage.removeItem('imageurl');
   };
 
 
