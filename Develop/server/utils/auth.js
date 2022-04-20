@@ -21,7 +21,6 @@ module.exports = {
     if (!token) {
       return req;
     }
-    // console.info(token);
 
     try {
       //* decode and attach user data to request object

@@ -31,15 +31,15 @@ function Homepage() {
     setCategories(e.target.innerText);
   };
 
-  const filterCategory = (event) => {
+  const filterCategory = () => {
     console.log(itemData.items);
     console.log(categories);
     const newArr = itemData.items.filter((e) => e.category.name === categories);
     console.log(newArr);
 
     return newArr.map((filteredItem) => (
-      <div>
-        <CCard key={filteredItem._id}>
+      <div key={filteredItem._id}>
+        <CCard >
           <CCardImage
             orientation="top"
             src={filteredItem.image}
@@ -84,7 +84,7 @@ function Homepage() {
       return getItemData();
     } else if (categories !== undefined) {
       return filterCategory();
-    }
+    } 
   };
 
   return (
