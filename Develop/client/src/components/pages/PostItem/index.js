@@ -50,12 +50,14 @@ function PostItem() {
   };
 
   const renderCategoryOptions = () => {
-    return categoryData.categories.map((category) => (
-      <option value={category._id} key={category._id}>
-        {category.name + ' - ' + category._id}
-      </option>
-    ));
-  };
+    return categoryData.categories.map((category) =>
+       (
+        <option value={category._id} key={category._id}>
+          {category.name}
+        </option>
+      )
+    )
+  }
 
   return (
     <div className="itemContainer">
@@ -101,11 +103,10 @@ function PostItem() {
         <label htmlFor="categoryId">Category</label>
         <select name="categoryId" onChange={handleChange} placeholder="Select a value">
           {' '}
-          {categoryData ? renderCategoryOptions() : <div>xxxx</div>}
+          { categoryData ? renderCategoryOptions() : <div>Loading...</div>}
+
         </select>
-        {postForm.categoryId === undefined
-          ? `You have not selected a category`
-          : `You've sected the ${postForm.categoryId} category`}
+        { postForm.categoryId === undefined ?  `You have not selected a category` : `You've selected a category`}
         <button type="submit" className="btn-primary">
           Hawk Item
         </button>
