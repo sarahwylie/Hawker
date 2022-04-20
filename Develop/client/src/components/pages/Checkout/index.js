@@ -27,11 +27,17 @@ const Checkout = (product) => {
 
   function submitCheckout() {
     const itemIds = [];
+    
     getCheckout({
       variables: { items: itemIds }
     });
   }
-  
+
+  const tax = (8.25 / 100) * details.price;
+  console.log(tax)
+  const shipping = (5 / 100) * details.price;
+  console.log(shipping)
+
   return (
     <div>
       <div>
@@ -46,9 +52,12 @@ const Checkout = (product) => {
       </button>
       {modalOpen && <Confirmation setModalOpen={setModalOpen} /> }
       </div>
-      <button onClick={submitCheckout}>Checkout</button>
-      <p>{details.price}</p>
+      <p>Item Price-   {details.price}</p>
+      <p>Sales Tax-    {tax}</p>
+      <p>Shipping-     {shipping}</p>
+      <p>Total-     {details.price}</p>
       <img src={details.image}></img>
+      <button onClick={submitCheckout}>Checkout</button>
     </div>
   );
 };
