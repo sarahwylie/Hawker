@@ -30,7 +30,11 @@ const userSchema = new Schema({
   items: [Item.schema],
   category: {
     type: Schema.Types.ObjectId,
+<<<<<<< HEAD
     ref: 'Category'
+=======
+    ref: 'Category',
+>>>>>>> 5091c7ce2f4615fe6ff0753cfcbb4a2994023e1e
   },
 });
 
