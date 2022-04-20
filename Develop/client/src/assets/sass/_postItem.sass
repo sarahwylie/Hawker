@@ -5,17 +5,25 @@ select, .formField
   height: 2.25rem
   border-radius: 15px
   background-color: white
+  width: 50%
   &:focus
     background-color: $searchfill
+  
+select:hover
+  cursor: pointer
 
 label
   font-size: larger
   font-weight: bold
 
+input[type=file]::file-selector-button
+  &:hover
+    cursor: pointer
 
 .form-container
   margin-bottom: 6rem
   margin-top: 3rem
+  width: 50%
   background-color: $background
   padding: 0 1rem 1rem 1rem
   border-radius: 15px

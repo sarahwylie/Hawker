@@ -9,29 +9,37 @@
   text-align: center
   flex: in-line
   box-shadow: 0px 5px 8px $offset
-    
-.cats
-  list-style: none
-  text-decoration: none
-  color: $dark
-  display: none
-  padding: 0
-  font-size: large
-  a
-    text-decoration: none
-    color: $dark
-    &:hover
-      color: $offset
 
 .row
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  
+  
+.colNav, .search
+  display: flex
+  justify-content: center
+  align-items: flex-end
+  flex-direction: row
+
+.d-flex
   display: flex
   flex-direction: row
-  justify-content: space-around
-  align-items: center
-  
-.log
-  display: flex
-  flex-direction: column
+  width: 100%
 
-.searchList
-  display: none
+.search
+  @media ( max-width: $bp-phone )
+    display: none
+
+.photo
+  width: 30%
+  border-radius: 15px
+  box-shadow: 5px 5px 5px $blue-gray
+  margin: 1rem
+  transform: rotate(3deg)
+  &:hover
+    transform: rotate(-3deg)
+    transition: all .3s 
+    box-shadow: -5px 5px 5px $blue-gray
+  &:not(:hover)
+    transition: all .3s 
+

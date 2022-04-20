@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 
 import Form from 'react-bootstrap/Form';
-import Hawker from '../../assets/images/icons/Hawker.svg';
+import Hawker from '../../assets/images/icons/hawkER.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
-import SearchList from '../SearchList';
 
 function Header({ isLogin }) {
   const showButtons = () => {
@@ -55,13 +54,16 @@ function Header({ isLogin }) {
     <header className="head">
       <nav>
         <div className="row">
-          <div className="col title"></div>
-          <div className="col">
+        <div className="colNav">{loggedIn()}</div>
+          <div id="logo">
             <a href="/">
               <span role="img" aria-label="img-name">
-                <img src={Hawker} alt="logo" className="photo" id="logo" />
+                <img src={Hawker} alt="logo" className="photo" />
               </span>
             </a>
+          </div>
+          
+          <div className='search'>
             <Form className="d-flex">
               <Form.Control
                 type="search"
@@ -71,10 +73,8 @@ function Header({ isLogin }) {
                 aria-label="Search"
               />
               <button className="btn-primary">Search</button>
-              <SearchList className="SearchList" input={inputText} />
             </Form>
           </div>
-          <div className="col">{loggedIn()}</div>
         </div>
       </nav>
     </header>

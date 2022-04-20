@@ -27,6 +27,11 @@
   bottom: 0;
 }
 
+.footer:not(:hover) {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 @media (max-width: 768px) {
   .footer {
     bottom: -3.25rem;
@@ -49,6 +54,11 @@
   font-size: medium;
 }
 
+.legalese:not(:hover) {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
@@ -68,25 +78,30 @@
           box-shadow: 0px 5px 8px #6d6a75;
 }
 
-.cats {
-  list-style: none;
-  text-decoration: none;
-  color: #023047;
-  display: none;
-  padding: 0;
-  font-size: large;
-}
-
-.cats a {
-  text-decoration: none;
-  color: #023047;
-}
-
-.cats a:hover {
-  color: #6d6a75;
-}
-
 .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.colNav, .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,25 +109,37 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
 }
 
-.log {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+@media (max-width: 480px) {
+  .search {
+    display: none;
+  }
 }
 
-.searchList {
-  display: none;
+.photo {
+  width: 30%;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 5px #282c34;
+          box-shadow: 5px 5px 5px #282c34;
+  margin: 1rem;
+  -webkit-transform: rotate(3deg);
+          transform: rotate(3deg);
+}
+
+.photo:hover {
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-box-shadow: -5px 5px 5px #282c34;
+          box-shadow: -5px 5px 5px #282c34;
+}
+
+.photo:not(:hover) {
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 /* VARIABLES */
@@ -141,6 +168,7 @@ form {
 .formParent {
   text-align: center;
   margin: 2rem 0 2rem 0;
+  width: 50%;
   background-color: #219EBC;
   border-radius: 15px;
   -webkit-box-shadow: 5px 5px 8px #6d6a75;
@@ -168,6 +196,11 @@ form {
           box-shadow: 8px 5px 5px #6d6a75;
   -webkit-transform: rotate(2deg);
           transform: rotate(2deg);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.card:not(:hover) {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -207,6 +240,33 @@ form {
   text-shadow: 2px 2px 5px #023047;
 }
 
+#catBtn {
+  display: none;
+}
+
+#catBtn div {
+  padding: 0 1rem;
+}
+
+#catBtn div:hover {
+  color: #6d6a75;
+  text-shadow: 2px 2px 3px #6d6a75;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.selectCat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
@@ -217,10 +277,15 @@ select, .formField {
   height: 2.25rem;
   border-radius: 15px;
   background-color: white;
+  width: 50%;
 }
 
 select:focus, .formField:focus {
   background-color: #eae6e5;
+}
+
+select:hover {
+  cursor: pointer;
 }
 
 label {
@@ -228,9 +293,14 @@ label {
   font-weight: bold;
 }
 
+input[type=file]::file-selector-button:hover {
+  cursor: pointer;
+}
+
 .form-container {
   margin-bottom: 6rem;
   margin-top: 3rem;
+  width: 50%;
   background-color: #219EBC;
   padding: 0 1rem 1rem 1rem;
   border-radius: 15px;
@@ -395,6 +465,8 @@ main {
   color: white;
   text-decoration: none;
   border: 1px solid #61dafb;
+  font-size: medium;
+  letter-spacing: .1em;
 }
 
 .btn-primary:hover {
@@ -404,6 +476,12 @@ main {
           box-shadow: 5px 5px 5px #6d6a75;
   border: 1px solid #6d6a75;
   color: #eae6e5;
+  cursor: pointer;
+}
+
+.btn-primary:not(:hover) {
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .itemContainer {

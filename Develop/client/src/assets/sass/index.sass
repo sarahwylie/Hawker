@@ -49,20 +49,21 @@ main
   color: white
   text-decoration: none
   border: 1px solid $light-blue
+  font-size: medium
+  letter-spacing: .1em
   &:hover
     transition: all .2s
     box-shadow: 5px 5px 5px $offset
     border: 1px solid $offset
     color: $searchfill
+    cursor: pointer
+  &:not(:hover)
+    transition: all .3s 
 
 .itemContainer
   display: flex
   flex-wrap: wrap
   justify-content: center
-<<<<<<< HEAD
-  margin-bottom: 3rem
-=======
   margin-bottom: 4rem
   @media (max-width: $bp-tablet) and (max-width: $bp-phone)
     margin-top: 1.5rem
->>>>>>> c572f45954be09fa04e99fcf3848c3cb46815d04
