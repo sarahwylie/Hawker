@@ -14,7 +14,7 @@ function SearchList(props) {
             // }
             return el;
         })
-        console.log(filteredData);
+        // console.log(filteredData);
     return (
         <ul>
             {filteredData.map((item) => (

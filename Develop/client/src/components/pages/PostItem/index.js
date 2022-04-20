@@ -8,7 +8,7 @@ function PostItem() {
   const [postForm, setPostForm] = useState('');
   // const[category, setCategory] = useState('');
   const [addItem] = useMutation(ADD_ITEM);
-  
+
   // Category id values depend on object id created when categories are seeded in mongo database
   // if you reseed your database you need to come here and change these values if not you'll have the wrong id when it posts to the server
   const categories = [
@@ -30,7 +30,6 @@ if(userId) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-   console.log(postForm)
     const mutationResponse = await addItem({
       variables: {
         'title': postForm.itemTitle,
@@ -56,7 +55,7 @@ if(userId) {
       ...postForm,
       [name]: value
     });
-    
+
   };
 
   return (
