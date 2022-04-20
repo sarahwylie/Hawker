@@ -6,9 +6,9 @@ import { QUERY_SINGLE_ITEM } from '../../../utils/queries';
 function SingleItem() {
   // substring number probably will change we stop hosting on Local host
   let itemId = window.location.href.substring(33);
-  console.log(itemId);
+  // console.log(itemId);
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
-  console.log(data);
+  // console.log(data);
 
   const getSingleItemData = () => {
     return (
@@ -21,6 +21,9 @@ function SingleItem() {
           <div className="info">
             <div>
               <p>{data.item.title}</p>
+            </div>
+            <div>
+              <p>{data.item.category.name}</p>
             </div>
             <div>
               <p className="itemDescription">{data.item.description}</p>

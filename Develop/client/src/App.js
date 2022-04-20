@@ -69,11 +69,11 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route exact path="/auto" element={<Auto />} />
-            <Route exact path="/clothing" element={<Clothing />} />
-            <Route exact path="/household" element={<Household />} />
-            <Route exact path="/outdoor" element={<Outdoor />} />
-            <Route exact path="/tech" element={<Tech />} />
+            <Route exact path="/auto" component={<Auto />} />
+            <Route exact path="/clothing" component={<Clothing />} />
+            <Route exact path="/household" component={<Household />} />
+            <Route exact path="/outdoor" component={<Outdoor />} />
+            <Route exact path="/tech" component={<Tech />} />
             <Route
               exact
               path="/checkout"

@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useQuery } from '@apollo/client';
+
 import Form from 'react-bootstrap/Form';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
-import '../../assets/css/index.css';
 import SearchList from '../SearchList';
 
 function Header({ isLogin }) {
+
   const showButtons = () => {
     return isLogin ? (
       <a href="/signup">
@@ -27,7 +29,7 @@ function Header({ isLogin }) {
   function loggedIn() {
     if (Auth.loggedIn()) {
       return (
-        <div className='log'>
+        <div className="log">
           <a href="/postItem">
             <button className="btn-primary">Hawk Item</button>
           </a>
@@ -44,44 +46,24 @@ function Header({ isLogin }) {
     }
   }
 
-  function showDiv() {
-    if(document.getElementById('catBtn').style.display === ""){
-      document.getElementById('catBtn').style.display = "block"
-    } else {
-      document.getElementById('catBtn').style.display = ""
-    }
-    
-  }
-  const [inputText, setInputText] = useState("");
+  
+  const [inputText, setInputText] = useState('');
   let inputHandler = (e) => {
     //convert input text to lower case
     var lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
   };
 
+ 
+
+  
+
   return (
     <header className="head">
       <nav>
         <div className="row">
           <div className="col title">
-            <button className="btn-primary" onClick={showDiv}>Categories</button> 
-            <ul className="cats" id="catBtn">
-              <li>
-                <a href="/auto">Auto</a>
-              </li>
-              <li>
-                <a href="/clothing">Clothing</a>
-              </li>
-              <li>
-                <a href="/household">Household</a>
-              </li>
-              <li>
-                <a href="/outdoor">Outdoor</a>
-              </li>
-              <li>
-                <a href="/tech">Tech</a>
-              </li>
-            </ul>
+            
           </div>
           <div className="col">
             <a href="/">
@@ -98,7 +80,7 @@ function Header({ isLogin }) {
                 aria-label="Search"
               />
               <button className="btn-primary">Search</button>
-              <SearchList input={inputText} />
+              <SearchList className='SearchList' input={inputText} />
             </Form>
           </div>
           <div className="col">{loggedIn()}</div>
