@@ -19,7 +19,6 @@ import Tech from './components/pages/Tech/index';
 import Checkout from './components/pages/Checkout/index';
 import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
-import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
 import Success from './components/pages/Success/success'
 import './assets/css/index.css';
@@ -99,15 +98,6 @@ function App() {
               element={
                 <PrivateRoute>
                   <PostItem />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              exact
-              path="/seller"
-              element={
-                <PrivateRoute>
-                  <Seller />
                 </PrivateRoute>
               }
             />
