@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLazyQuery } from '@apollo/client';
+import { useLazyQuery, useQuery } from '@apollo/client';
 import { QUERY_CHECKOUT, QUERY_SINGLE_ITEM } from '../../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import Confirmation from '../Confirmation';
