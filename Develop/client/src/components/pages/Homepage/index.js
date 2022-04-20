@@ -31,7 +31,7 @@ function Homepage() {
     setCategories(e.target.innerText);
   };
 
-  const filterCategory = (event) => {
+  const filterCategory = () => {
     console.log(itemData.items);
     console.log(categories);
     const newArr = itemData.items.filter((e) => e.category.name === categories);
