@@ -103,7 +103,7 @@ function PostItem() {
         <label htmlFor="categoryId">Category</label>
         <select name="categoryId" onChange={handleChange} placeholder="Select a value">
           {' '}
-          { categoryData ? renderCategoryOptions() : <div>Loading...</div>}
+          { categoryData ? renderCategoryOptions() : <option>Loading...</option>}
 
         </select>
         { postForm.categoryId === undefined ?  `You have not selected a category` : `You've selected a category`}

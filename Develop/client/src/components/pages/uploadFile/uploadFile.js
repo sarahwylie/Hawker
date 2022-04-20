@@ -6,8 +6,22 @@ function UploadForm() {
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
+    var formData = new FormData();
     previewFile(file);
     setFileInputState(e.target.value);
+    formData.append('file', file);
+    formData.append('cloud_name', 'dkmsnpghg');
+    formData.append('upload_preset', 'fjzsl5iq');
+
+    let res = await fetch('https://api.cloudinary.com/v1_1/dkmsnpghg/image/upload', {
+      method: 'post',
+      mode: 'cors',
+      body: formData
+    });
+
+    let json = await res.json();
+    console.log(JSON.stringify(json.secure_url));
+    localStorage.setItem('imageurl', `${JSON.stringify(json.secure_url)}`);
   };
 
   const previewFile = (file) => {
