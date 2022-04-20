@@ -30,15 +30,7 @@ const userSchema = new Schema({
   items: [Item.schema],
   category: {
     type: Schema.Types.ObjectId,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    ref: 'Category'
-=======
     ref: 'Category',
->>>>>>> 5091c7ce2f4615fe6ff0753cfcbb4a2994023e1e
-=======
-    ref: 'Category',
->>>>>>> b3d3de800ea7410dabf532b24db51561b6b0f566
   },
   contactInfo: {
     type: Schema.Types.ObjectId,

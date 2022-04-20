@@ -1,6 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const { typeDefs, resolvers } = require('./schemas');
 
@@ -40,4 +41,21 @@ db.once('open', () => {
   app.listen(PORT, () => {
     console.info(`API server running on port ${PORT}!`);
   });
+});
+
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    Item: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: '{{Item.price}}',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: 'https://localhost:3000/success',
+    cancel_url: 'https://localhost:3000/cancel',
+  });
+
+  res.redirect(303, session.url);
 });

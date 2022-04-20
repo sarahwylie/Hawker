@@ -20,6 +20,7 @@ import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
 import NoMatch from './components/pages/NoMatch/index';
 import Success from './components/pages/Success/success'
+import Cancel from './components/pages/Cancel/index'
 import './assets/css/index.css';
 import Dashboard from './components/pages/Dashboard/dashboard';
 
@@ -100,12 +101,21 @@ function App() {
                 </PrivateRoute>
               }
             />
-                <Route
+            <Route
               exact
               path="/success"
               element={
                 <PrivateRoute>
                   <Success />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path="/cancel"
+              element={
+                <PrivateRoute>
+                  <Cancel />
                 </PrivateRoute>
               }
             />
