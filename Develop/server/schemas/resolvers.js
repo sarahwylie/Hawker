@@ -23,7 +23,15 @@ const resolvers = {
     },
     // query one user
     user: async (parent, { _id }) => {
-      return User.findOne({ _id }).populate('items').populate('category');
+      return User.findOne({ _id })
+        .populate({
+          path: 'items',
+          populate: 'category'
+        })
+        .populate({
+          path: 'orders.items',
+          populate: 'category'
+        });
     },
     // Query all items
     items: async () => {
@@ -42,7 +50,6 @@ const resolvers = {
     },
     // Query one order
     order: async (parent, { _id }, context) => {
-      // console.log(context.user);
       const user = await User.findById(context.user._id).populate({
         path: 'orders.items',
         populate: 'category'
@@ -113,16 +120,15 @@ const resolvers = {
     },
     // add item
     addItem: async (parent, args, context) => {
-      if(context.user) {
-
+      if (context.user) {
         // console.info(args);
-        // const item = await Item.create(args);
+        const item = await Item.create(args);
         const userItems = new Item(args);
         await User.findByIdAndUpdate(context.user._id, {
           $push: { items: userItems }
         });
         console.info(userItems);
-        return userItems;
+        return userItems, item;
       }
       throw new AuthenticationError('Not logged in');
     },

@@ -36,9 +36,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -73,9 +70,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -110,9 +104,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -147,9 +138,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -184,9 +172,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -221,9 +206,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -258,9 +240,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -295,9 +274,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -332,9 +308,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
@@ -369,9 +342,6 @@ exports[`Clothing component matches snapshot DOM node structure 1`] = `
           >
             clothing
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"

@@ -3,7 +3,7 @@ import React from 'react';
 function UploadForm() {
 
   const handleFileChange = async (e) => {
-      console.log(e.target.files[0])
+      // console.log(e.target.files[0])
       let file = e.target.files[0];
       var formData = new FormData();
 
@@ -21,17 +21,17 @@ function UploadForm() {
       );
 
       let json = await res.json();
-    console.log(JSON.stringify(json.secure_url));
+    // console.log(JSON.stringify(json.secure_url));
     localStorage.setItem('imageurl', `${JSON.stringify(json.secure_url)}`)
-  
+
   };
 
   return (
     <div>
       <h1 className='title'>Upload File</h1>
-      
+
       <input type="file" onChange={handleFileChange} value='' className='btn-primary' />
-      
+
     </div>
   );
 }

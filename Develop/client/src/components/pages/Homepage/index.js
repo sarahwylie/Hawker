@@ -9,7 +9,7 @@ function Homepage() {
 
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
-    
+
     return itemData.items.map((item) => (
       <CCard key={item._id}>
         <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
