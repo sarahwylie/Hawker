@@ -16,7 +16,6 @@ function Confirmation({ setOpenModal }) {
   const [state, setShippingState] = useState('');
   const [zip, setShippingZip] = useState('');
   const [phonenumber, setShippingPhoneNumber] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
 
   const { itemData } = useQuery(QUERY_ITEMS);
   console.log(itemData);
@@ -34,30 +33,19 @@ function Confirmation({ setOpenModal }) {
       setShippingAddress(inputValue);
     } else if (inputType === 'fullName') {
       setShippingFullName(inputValue);
-    } else {
+    } else if (inputType === 'phonenumber') {
       setShippingPhoneNumber(inputValue);
+    } else if (inputType === 'state') {
+      setShippingState(inputValue);
+    } else if (inputType === 'zip') {
+      setShippingZip(inputValue);
     }
+    
   };
 
   const handleFormSubmit = (e) => {
 
     e.preventDefault();
-
-    
-    if (!(address) || !fullName) {
-      setErrorMessage('Address or fullname is invalid');
-      
-      return;
-      
-    }
-    if (!(phonenumber)) {
-      setErrorMessage(
-        `Choose a more secure phonenumber for the account: ${fullName}`
-      );
-      return;
-    }
-    alert(`Hello {}`);
-
    
     setShippingFullName('');
     setShippingCity('');
@@ -76,7 +64,7 @@ function Confirmation({ setOpenModal }) {
   return (
     <div >
       <button className='modalButton' onClick={handleShow}>
-      
+      {/* onClick={handleShow} */}
       <form className="formModal">
           <p>Full Name</p>
           <input
@@ -119,14 +107,9 @@ function Confirmation({ setOpenModal }) {
         
         <p></p>
         <button onClick={() => {  setOpenModal(false) }}  id="cancelBtn">Cancel</button>
-        <button type="button" onClick={handleFormSubmit}>Submit</button>
+        <button type="button" onClick={handleFormSubmit}>Add</button>
       </form>
       </button>
-      {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )}
     </div>
   );
 }

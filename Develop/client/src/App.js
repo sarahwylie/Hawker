@@ -24,7 +24,6 @@ import UploadForm from './components/pages/uploadFile/uploadFile';
 import NoMatch from './components/pages/NoMatch/index';
 import Success from './components/Success/index';
 import './assets/css/index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const httpLink = createHttpLink({

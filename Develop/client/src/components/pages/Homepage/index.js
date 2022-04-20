@@ -17,7 +17,7 @@ function Homepage() {
         <CCardBody>
           <CCardTitle>{item.title}</CCardTitle>
           <CCardText>${item.price}</CCardText>
-          <Link to={`/SingleItem/${item._id}`}>
+          <Link to={{pathname:`/SingleItem/${item._id}`,item: item}}>
             {' '}
             <CButton>See Item</CButton>
           </Link>

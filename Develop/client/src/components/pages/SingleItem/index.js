@@ -22,9 +22,10 @@ function SingleItem() {
           <CCardBody>
             <CCardTitle>{data.item.title}</CCardTitle>
             <CCardText>${data.item.price}</CCardText>
-            <Link to={"/Checkout"}>
+            {/* <Link to='/Checkout/' state={{ data: data}}> */}
+            <Link to={ "/Checkout"} state = {{ itemData: data }} >
               {' '}
-              <CButton>Goto Checkout</CButton>
+              <CButton>Go to Checkout</CButton>
             </Link>
           </CCardBody>
         </CCard>
