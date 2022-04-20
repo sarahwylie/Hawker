@@ -39,6 +39,7 @@ function PostItem() {
     });
     console.info(mutationResponse);
     localStorage.removeItem('imageurl');
+    window.location.assign('/');
   };
 
   const handleChange = (event) => {
@@ -51,7 +52,7 @@ function PostItem() {
 
   const renderCategoryOptions = () => {
     return categoryData.categories.map((category) => (
-      <option value={category._id} key={category._id}>
+      <option value={category._id} key={category._id} name={category.name}>
         {category.name}
       </option>
     ));
@@ -100,7 +101,9 @@ function PostItem() {
 
         <label htmlFor="categoryId">Category</label>
         <select name="categoryId" onChange={handleChange} defaultValue={'none'}>
-          <option value="none" disabled hidden>Select An Option</option>
+          <option value="none" disabled hidden>
+            Select An Option
+          </option>
           {categoryData ? renderCategoryOptions() : <option>Loading...</option>}
         </select>
         {postForm.categoryId === undefined
