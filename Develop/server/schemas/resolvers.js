@@ -17,14 +17,21 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
+    // Query all users
     users: async () => {
       return await User.find().populate('items');
     },
     // query one user
     user: async (parent, { _id }) => {
-      return User.findOne({ _id }).populate('items');
+      return User.findOne({ _id }).populate({
+        path: 'items',
+        populate: 'category'
+      }).populate({
+        path: 'orders.items',
+        populate: 'category',
+      });
     },
-    // item query
+    // Query all items
     items: async () => {
       return await Item.find().populate('category').populate('user');
     },
@@ -35,10 +42,22 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    order: async () => {
+    // Query all orders
+    orders: async () => {
       return await Order.find().populate('users').populate('items');
     },
-    // uploads: (parents, args) => {},
+    // Query one order
+    order: async (parent, { _id }, context) => {
+      // console.log(context.user);
+      const user = await User.findById(context.user._id).populate({
+        path: 'orders.items',
+        populate: 'category',
+      });
+
+      console.info(user.orders[0].items);
+      return user.orders.id(_id);
+    },
+
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ items: args.items });
@@ -56,7 +75,7 @@ const resolvers = {
         const price = await stripe.prices.create({
           item: item.id,
           unit_amount: items[i].price * 100,
-          currency: 'usd',
+          currency: 'usd'
         });
 
         line_items.push({
@@ -99,16 +118,31 @@ const resolvers = {
       return { token, user };
     },
     // add item
-    addItem: async (parent, args) => {
-      console.info(args);
-      const item = await Item.create(args);
+    addItem: async (parent, args, context) => {
+      if(context.user) {
 
-      return item;
+        // console.info(args);
+        const item = await Item.create(args);
+        const userItems = new Item(args);
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { items: userItems }
+        });
+        console.info(userItems);
+        return (userItems, item);
+      }
+      throw new AuthenticationError('Not logged in');
     },
-    addOrder: async (parent, args) => {
-      const order = await Order.create(args);
-      console.info(order);
-      return order;
+    addOrder: async (parent, { items }, context) => {
+      if (context.user) {
+        const order = new Order({ items });
+
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { orders: order }
+        });
+        console.info(order);
+        return order;
+      }
+      throw new AuthenticationError('Not logged in');
     }
   }
 };

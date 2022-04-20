@@ -39,7 +39,36 @@ export const QUERY_SINGLE_USER = gql`
   query oneUser($id: ID!) {
     user(_id: $id) {
       firstName
+      _id
       lastName
+      items {
+        _id
+        title
+        image
+        quantity
+        price
+        description
+        category {
+          name
+          _id
+        }
+      }
+      orders {
+        _id
+        purchaseDate
+        items {
+          _id
+          title
+          price
+          description
+          image
+          quantity
+          category {
+            _id
+            name
+          }
+        }
+      }
     }
   }
 `;
@@ -90,3 +119,47 @@ export const QUERY_SINGLE_ITEM = gql`
     }
   }
 `;
+
+export const QUERY_ORDERS = gql`
+  query orders {
+    orders {
+      purchaseDate
+      _id
+      items {
+        _id
+        title
+        user {
+          _id
+          email
+          firstName
+          lastName
+        }
+      }
+      users {
+        _id
+        lastName
+      }
+    }
+  }
+`;
+
+export const QUERY_SINGLE_ORDER = gql`
+  query ($id: ID!) {
+    order(_id: $id) {
+      _id
+      purchaseDate
+      items {
+        _id
+        user {
+          _id
+          firstName
+        }
+      }
+      users {
+        firstName
+      }
+    }
+  }
+`;
+
+

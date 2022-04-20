@@ -20,11 +20,10 @@ import Checkout from './components/pages/Checkout/index';
 import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
 import Seller from './components/pages/Seller/index';
-import UploadForm from './components/pages/uploadFile/uploadFile';
 import NoMatch from './components/pages/NoMatch/index';
-import Success from './components/Success/index';
+import Success from './components/pages/Success/success'
 import './assets/css/index.css';
-
+import Dashboard from './components/pages/Dashboard/dashboard';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -84,6 +83,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+         
             <Route
               exact
               path="/success"
@@ -122,10 +122,19 @@ function App() {
             />
             <Route
               exact
-              path="/upload"
+              path="/Dashboard"
               element={
                 <PrivateRoute>
-                  <UploadForm />
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
+                <Route
+              exact
+              path="/success"
+              element={
+                <PrivateRoute>
+                  <Success />
                 </PrivateRoute>
               }
             />
