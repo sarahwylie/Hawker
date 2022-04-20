@@ -1,7 +1,7 @@
-// import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-// function SearchList(props) {
-  
-// }
+function SearchList() {
+  return <div>SearchList</div>;
+}
 
-// export default SearchList;
+export default SearchList;
