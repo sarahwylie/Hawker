@@ -2,8 +2,7 @@
 // Import Dependencies
 
 const db = require('../config/connection');
-const {  Category } = require('../models');
-
+const { Category } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
