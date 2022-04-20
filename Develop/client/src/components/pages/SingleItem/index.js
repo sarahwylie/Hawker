@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_ITEM } from '../../../utils/queries';
 
@@ -12,7 +11,7 @@ function SingleItem() {
 
   const getSingleItemData = () => {
     return (
-      <div className='itemContainer'>
+      <div className="itemContainer">
         <div className="itemDiv">
           <div className="singleCard">
             <img orientation="top" src={data.item.image} alt={data.item.title} />
@@ -29,10 +28,10 @@ function SingleItem() {
               <p>${data.item.price}</p>
             </div>
             <div>
-              <Link to={'/Checkout'}>
+              <a href={`checkout/${data.item._id}`}>
                 {' '}
-                <button className="btn-primary">Goto Checkout</button>
-              </Link>
+                <button className="btn-primary">Go to Checkout</button>
+              </a>
             </div>
           </div>
         </div>

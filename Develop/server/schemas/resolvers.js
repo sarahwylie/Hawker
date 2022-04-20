@@ -23,13 +23,15 @@ const resolvers = {
     },
     // query one user
     user: async (parent, { _id }) => {
-      return User.findOne({ _id }).populate({
-        path: 'items',
-        populate: 'category'
-      }).populate({
-        path: 'orders.items',
-        populate: 'category',
-      });
+      return User.findOne({ _id })
+        .populate({
+          path: 'items',
+          populate: 'category'
+        })
+        .populate({
+          path: 'orders.items',
+          populate: 'category'
+        });
     },
     // Query all items
     items: async () => {
@@ -48,10 +50,9 @@ const resolvers = {
     },
     // Query one order
     order: async (parent, { _id }, context) => {
-      // console.log(context.user);
       const user = await User.findById(context.user._id).populate({
         path: 'orders.items',
-        populate: 'category',
+        populate: 'category'
       });
 
       console.info(user.orders[0].items);
@@ -59,31 +60,32 @@ const resolvers = {
     },
 
     checkout: async (parent, args, context) => {
-      const url = new URL(context.headers.referer).origin;
       const order = new Order({ items: args.items });
-      const line_items = [];
-
       const { items } = await order.populate('items').execPopulate();
+      const line_items = [];
+      const url = new URL(context.headers.referer).origin;
 
-      for (let i = 0; i < items.length; i++) {
+      for (let i = 0; i < products.length; i++) {
+        // generate item id
         const item = await stripe.items.create({
-          name: items[i].name,
-          description: items[i].description,
-          images: [`${url}/images/${items[i].image}`]
+          name: products[i].name,
+          description: products[i].description,
+          images: [`${url}/images/${products[i].image}`]
         });
 
-        const price = await stripe.prices.create({
-          item: item.id,
+        // generate item id using the product id
+        const item = await stripe.items.create({
+          product: item.id,
           unit_amount: items[i].price * 100,
           currency: 'usd'
         });
 
+        // add price id to the line items array
         line_items.push({
           price: price.id,
           quantity: 1
         });
       }
-
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items,
@@ -119,8 +121,7 @@ const resolvers = {
     },
     // add item
     addItem: async (parent, args, context) => {
-      if(context.user) {
-
+      if (context.user) {
         // console.info(args);
         const item = await Item.create(args);
         const userItems = new Item(args);
@@ -128,7 +129,7 @@ const resolvers = {
           $push: { items: userItems }
         });
         console.info(userItems);
-        return (userItems, item);
+        return userItems, item;
       }
       throw new AuthenticationError('Not logged in');
     },

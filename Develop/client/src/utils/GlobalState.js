@@ -15,8 +15,6 @@ const StoreProvider = ({ value = [], ...props }) => {
     categories: [],
     currentCategory: ''
   });
-  // use this to confirm it works!
-  console.log(state);
   // return the StoreContext's <Provider> component with our state object and dispatch the function provided as data for the value prop.
   return <Provider value={[state, dispatch]} {...props} />;
 };

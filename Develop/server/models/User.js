@@ -30,8 +30,7 @@ const userSchema = new Schema({
   items: [Item.schema],
   category: {
     type: Schema.Types.ObjectId,
-    ref: 'Category',
-    required: true
+    ref: 'Category'
   },
 });
 
