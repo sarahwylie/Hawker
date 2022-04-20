@@ -1,18 +1,24 @@
 # Hawker
+## License
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+# Table of Contents
+  - [Description](#description)
+  - [Created With](#created-with)
+  - [Usage Instructions](#usage)
+  - [Badges](#badges)
+  - [License Section](#license)
+  - [Contact Us](#contact-us)
 
 ## Description
 Do you have a spectacular item that you just don't need anymore? Are you in search of something specific but don't want to spend an inordinate amount of money or search every thrift store in the greater metropolitan area? Come check out Hawker!
 
-## License
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-
 ## Usage
-Check out our site at [Hawker]() and hawk your wares! The finished output:
+Check out our site at [Hawker](https://frozen-caverns-58686.herokuapp.com/) and hawk your wares! The finished output:
 
 ![screenshot](Develop/client/src/assets/images/icons/hawker-home.png)
 
 ## Created with:
-React, React-Router, Sass, GraphQL, Apollo, Stripe, JWT, CoreUI, Jest, Prettier, ESLint, Heroku.
+React, React-Router, Sass, GraphQL, Apollo, Stripe, JWT, CoreUI, Jest, Prettier, ESLint, Heroku, bcrypt, Faker.js, JavaScript.
 
 ## Badges
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -37,6 +43,8 @@ React, React-Router, Sass, GraphQL, Apollo, Stripe, JWT, CoreUI, Jest, Prettier,
 ![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white)
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+
 ### Made with a whole lot of :heart: by
 Nicholas Nolen [(@nicnolen)](https://github.com/nicnolen), Craig Jensen [(@CraigMJensen)](https://github.com/CraigMJensen), Jide Ogunbanjo [(@JideOgun)](https://github.com/JideOgun), Nigel Loch [(@nigelloch)](https://github.com/nigelloch), Samantha Chavez [(@Sammychvz17)](https://github.com/Sammychvz17), Sarah Wylie [(@sarahwylie)](https://github.com/sarahwylie)
+
 <sup>©</sup> 2022

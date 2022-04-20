@@ -45,10 +45,6 @@ function Homepage() {
 
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
-<<<<<<< HEAD
-
-=======
->>>>>>> 5091c7ce2f4615fe6ff0753cfcbb4a2994023e1e
     return itemData.items.map((item) => (
       <CCard key={item._id}>
         <CCardImage orientation="top" src={item.image} alt={item.title} width="100%" />
