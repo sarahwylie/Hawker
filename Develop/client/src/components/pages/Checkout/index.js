@@ -11,11 +11,10 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 const Checkout = (product) => {
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
   let location = useLocation()
-  // let itemDetails = location.item
-  // itemInfo = thing.state
-  // itemDetails = itemInfo.image.image.item.category...
-  const details = location.state.itemData.item
-  console.log('something',details)
+
+
+  const details = JSON.parse(localStorage.getItem("itemData")).item
+
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
@@ -33,8 +32,6 @@ const Checkout = (product) => {
     });
   }
   
-
-
   return (
     <div>
       <div>

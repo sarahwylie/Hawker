@@ -9,22 +9,35 @@ function SingleItem() {
   console.log(itemId);
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   console.log(data);
-
+  const saveItem = function() {
+    localStorage.setItem("itemData",JSON.stringify(data))
+  }
   const getSingleItemData = () => {
     return (
-      <div>
-        <CCard>
-          <CCardImage orientation="top" src={data.item.image} alt={data.item.title} width="100%" />
-          <CCardBody>
-            <CCardTitle>{data.item.title}</CCardTitle>
-            <CCardText>${data.item.price}</CCardText>
-            {/* <Link to='/Checkout/' state={{ data: data}}> */}
-            <Link to={ "/Checkout"} state = {{ itemData: data }} >
-              {' '}
-              <CButton>Go to Checkout</CButton>
-            </Link>
-          </CCardBody>
-        </CCard>
+      <div className='itemContainer'>
+        <div className="itemDiv">
+          <div className="singleCard">
+            <img orientation="top" src={data.item.image} alt={data.item.title} />
+          </div>
+
+          <div className="info">
+            <div>
+              <p>{data.item.title}</p>
+            </div>
+            <div>
+              <p className="itemDescription">{data.item.description}</p>
+            </div>
+            <div>
+              <p>${data.item.price}</p>
+            </div>
+            <div>
+              <Link to={'/Checkout'}>
+                {' '}
+                <button onClick = {saveItem}className="btn-primary">Goto Checkout</button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   };
