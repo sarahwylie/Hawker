@@ -1,4 +1,4 @@
-/* SEED THE DATABASE WITH FAKE DATA */
+/* SEED THE DATABASE */
 // Import Dependencies
 
 const db = require('../config/connection');
