@@ -39,9 +39,15 @@ export const QUERY_SINGLE_USER = gql`
   query oneUser($id: ID!) {
     user(_id: $id) {
       firstName
+      _id
       lastName
       items {
         _id
+        title
+        image
+        quantity
+        price
+        description
         category {
           name
           _id
@@ -57,6 +63,10 @@ export const QUERY_SINGLE_USER = gql`
           description
           image
           quantity
+          category {
+            _id
+            name
+          }
         }
       }
     }

@@ -75,14 +75,14 @@ function App() {
             <Route exact path="/tech" element={<Tech />} />
             <Route
               exact
-              path="/checkout"
+              path="singleItem/checkout/:id"
               element={
                 <PrivateRoute>
                   <Checkout />
                 </PrivateRoute>
               }
             />
-         
+
             <Route
               exact
               path="/singleItem/:id"

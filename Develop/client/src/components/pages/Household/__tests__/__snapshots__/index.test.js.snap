@@ -36,15 +36,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -73,15 +70,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -110,15 +104,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -147,15 +138,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -184,15 +172,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -221,15 +206,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -258,15 +240,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -295,15 +274,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -332,15 +308,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -369,15 +342,12 @@ exports[`Household component matches snapshot DOM node structure 1`] = `
           >
             household
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
