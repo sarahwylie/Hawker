@@ -15,7 +15,9 @@ function Seller() {
     const getUserListing = () => {
         return (
             <div><div>{data.user.firstName} {data.user.lastName}'s Listings</div>
-            {data.user.items.map((x) => (<div key={x._id}> TEST {x.title} {x.price} {x.description}</div>))}
+            <div>
+            {data.user.items.map((x) => (<div key={x._id}> Title- {x.title} Price- {x.price} Description-{x.description}</div>))}
+            </div>
             </div>
         );
     };
