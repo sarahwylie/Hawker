@@ -2,7 +2,6 @@ import React from 'react';
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
 
 import imagesData from './imagesData.json';
-import { idbPromise } from '../../../utils/helpers';
 
 function Auto() {
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLazyQuery, useQuery } from '@apollo/client';
 import { QUERY_CHECKOUT, QUERY_SINGLE_ITEM } from '../../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
@@ -10,8 +10,6 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Checkout = (product) => {
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-  let location = useLocation()
-
 
   const details = JSON.parse(localStorage.getItem("itemData")).item
 
@@ -26,10 +24,11 @@ const Checkout = (product) => {
   }, [data]);
 
   function submitCheckout() {
-    const itemIds = [];
-    
+    const id = [];
+    id.push(itemIds);
+    console.log(id);
     getCheckout({
-      variables: { items: itemIds }
+      variables: { items: id }
     });
   }
 

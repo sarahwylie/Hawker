@@ -36,17 +36,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          >
-            A cool new black car for you!
-          </p>
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -75,15 +70,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -112,15 +104,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -149,15 +138,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -186,15 +172,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -223,15 +206,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -260,15 +240,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -297,15 +274,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -334,15 +308,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
@@ -371,15 +342,12 @@ exports[`Auto component matches snapshot DOM node structure 1`] = `
           >
             auto
           </p>
-          <p
-            class="card-text"
-          />
           <a
             class="btn btn-primary"
             href="#"
             type="button"
           >
-            Purchase
+            Check it out!
           </a>
         </div>
       </div>
