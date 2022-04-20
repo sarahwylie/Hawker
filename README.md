@@ -3,12 +3,16 @@
 ## Description
 Do you have a spectacular item that you just don't need anymore? Are you in search of something specific but don't want to spend an inordinate amount of money or search every thrift store in the greater metropolitan area? Come check out Hawker!
 
-## Created with:
-React, Sass, GraphQL, .
+## License
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Usage
 Check out our site at [Hawker]() and hawk your wares! The finished output:
+
 ![screenshot](Develop/client/src/assets/images/icons/hawker-home.png)
+
+## Created with:
+React, React-Router, Sass, GraphQL, Apollo, Stripe, JWT, CoreUI, Jest, Prettier, ESLint, Heroku.
 
 ## Badges
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
