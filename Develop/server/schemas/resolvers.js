@@ -116,13 +116,13 @@ const resolvers = {
       if(context.user) {
 
         // console.info(args);
-        // const item = await Item.create(args);
+        const item = await Item.create(args);
         const userItems = new Item(args);
         await User.findByIdAndUpdate(context.user._id, {
           $push: { items: userItems }
         });
         console.info(userItems);
-        return userItems;
+        return userItems, item;
       }
       throw new AuthenticationError('Not logged in');
     },

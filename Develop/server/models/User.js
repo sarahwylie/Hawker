@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const Order = require('./Order');
 const Item = require('./Item');
 
+
 const userSchema = new Schema({
   firstName: {
     type: String,
@@ -31,7 +32,6 @@ const userSchema = new Schema({
   category: {
     type: Schema.Types.ObjectId,
     ref: 'Category',
-    required: true
   },
 });
 
