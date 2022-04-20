@@ -34,9 +34,8 @@ const Checkout = (product) => {
   }
 
   const tax = (8.25 / 100) * details.price;
-  console.log(tax)
   const shipping = (5 / 100) * details.price;
-  console.log(shipping)
+  const total = details.price + tax + shipping;
 
   return (
     <div>
@@ -55,7 +54,7 @@ const Checkout = (product) => {
       <p>Item Price-   {details.price}</p>
       <p>Sales Tax-    {tax}</p>
       <p>Shipping-     {shipping}</p>
-      <p>Total-     {details.price}</p>
+      <p>Total-     {total}</p>
       <img src={details.image}></img>
       <button onClick={submitCheckout}>Checkout</button>
     </div>
