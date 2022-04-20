@@ -38,8 +38,8 @@ function Homepage() {
     console.log(newArr);
 
     return newArr.map((filteredItem) => (
-      <div>
-        <CCard key={filteredItem._id}>
+      <div key={filteredItem._id}>
+        <CCard >
           <CCardImage
             orientation="top"
             src={filteredItem.image}
@@ -84,7 +84,7 @@ function Homepage() {
       return getItemData();
     } else if (categories !== undefined) {
       return filterCategory();
-    }
+    } 
   };
 
   return (
