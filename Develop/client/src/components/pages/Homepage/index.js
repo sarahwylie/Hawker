@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -10,39 +10,6 @@ function Homepage() {
   const { data: categoryData } = useQuery(QUERY_CATEGORIES);
   const [categories, setCategories] = useState();
 
-
-  // issue is here, can log filteredCat but can't drill down to
-  // the category
-  const filterCategory = (event) => {
-    setCategories(event.target.getAttribute('name'));
-    console.log(itemData.items);
-    console.log(categories);
-    let filteredCat = itemData.items.filter((category) => {
-      return itemData.items.includes(category);
-    });
-    console.log(filteredCat);
-  };
-
-  const getCategoryData = () => {
-    return (
-      <ul className="cats" id="catBtn">
-        {categoryData.categories.map((category) => (
-          <li key={category._id} name={category.name} onClick={filterCategory}>
-            {category.name}
-          </li>
-        ))}
-      </ul>
-    );
-  };
-
-  function showDiv() {
-    if (document.getElementById('catBtn').style.display === '') {
-      document.getElementById('catBtn').style.display = 'block';
-    } else {
-      document.getElementById('catBtn').style.display = '';
-    }
-  }
-
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
     return itemData.items.map((item) => (
@@ -51,7 +18,6 @@ function Homepage() {
         <CCardBody>
           <CCardTitle>{item.title}</CCardTitle>
           <CCardText>${item.price}</CCardText>
-          <CCardText>{item.category.name}</CCardText>
           <Link to={`/SingleItem/${item._id}`}>
             {' '}
             <CButton>See Item</CButton>
@@ -60,6 +26,67 @@ function Homepage() {
       </CCard>
     ));
   };
+
+  const seState = (e) => {
+    setCategories(e.target.innerText);
+  };
+
+  const filterCategory = (event) => {
+    console.log(itemData.items);
+    console.log(categories);
+    const newArr = itemData.items.filter((e) => e.category.name === categories);
+    console.log(newArr);
+
+    return newArr.map((filteredItem) => (
+      <div>
+        <CCard key={filteredItem._id}>
+          <CCardImage
+            orientation="top"
+            src={filteredItem.image}
+            alt={filteredItem.title}
+            width="100%"
+          />
+          <CCardBody>
+            <CCardTitle>{filteredItem.title}</CCardTitle>
+            <CCardText>${filteredItem.price}</CCardText>
+            <Link to={`/SingleItem/${filteredItem._id}`}>
+              {' '}
+              <CButton>See Item</CButton>
+            </Link>
+          </CCardBody>
+        </CCard>
+      </div>
+    ));
+  };
+
+  const getCategoryData = () => {
+    return (
+      <ul className="cats" id="catBtn">
+        {categoryData.categories.map((category) => (
+          <div key={category._id} name={category.name} onClick={seState}>
+            {category.name}
+          </div>
+        ))}
+      </ul>
+    );
+  };
+
+  const showDiv = () => {
+    if (document.getElementById('catBtn').style.display === '') {
+      document.getElementById('catBtn').style.display = 'block';
+    } else {
+      document.getElementById('catBtn').style.display = '';
+    }
+  };
+
+  const renderCards = () => {
+    if (itemData && categories === undefined) {
+      return getItemData();
+    } else if (categories !== undefined) {
+      return filterCategory();
+    }
+  };
+
   return (
     <div className="itemContainer">
       <button className="btn-primary" onClick={showDiv}>
@@ -68,7 +95,7 @@ function Homepage() {
       <div className="itemContainer">
         {categoryData ? getCategoryData() : <div>Loading...</div>}
       </div>
-      {itemData ? getItemData() : <div>Loading...</div>}
+      {itemData ? renderCards() : <div>Loading...</div>}
     </div>
   );
 }

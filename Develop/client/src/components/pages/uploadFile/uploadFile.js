@@ -20,6 +20,7 @@ function UploadForm() {
       );
 
       let json = await res.json();
+    console.log(JSON.stringify(json.secure_url));
     localStorage.setItem('imageurl', `${JSON.stringify(json.secure_url)}`)
 
   };

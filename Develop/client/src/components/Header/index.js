@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
 
 import Form from 'react-bootstrap/Form';
 import Hawker from '../../assets/images/icons/Hawker.svg';
@@ -9,7 +8,6 @@ import Auth from '../../utils/auth';
 import SearchList from '../SearchList';
 
 function Header({ isLogin }) {
-
   const showButtons = () => {
     return isLogin ? (
       <a href="/signup">
@@ -46,7 +44,6 @@ function Header({ isLogin }) {
     }
   }
 
-  
   const [inputText, setInputText] = useState('');
   let inputHandler = (e) => {
     //convert input text to lower case
@@ -54,17 +51,11 @@ function Header({ isLogin }) {
     setInputText(lowerCase);
   };
 
- 
-
-  
-
   return (
     <header className="head">
       <nav>
         <div className="row">
-          <div className="col title">
-            
-          </div>
+          <div className="col title"></div>
           <div className="col">
             <a href="/">
               <span role="img" aria-label="img-name">
@@ -80,7 +71,7 @@ function Header({ isLogin }) {
                 aria-label="Search"
               />
               <button className="btn-primary">Search</button>
-              <SearchList className='SearchList' input={inputText} />
+              <SearchList className="SearchList" input={inputText} />
             </Form>
           </div>
           <div className="col">{loggedIn()}</div>

@@ -25,6 +25,18 @@ const typeDefs = gql`
     orders: [Order]
     items: [Item]
     category: Category
+    contactInfo: [ContactInfo]
+  }
+
+  type ContactInfo {
+    phoneNo: String
+    profilePicture: String
+    street: String
+    city: String
+    state: String
+    zipcode: String
+    userId: ID
+    user: User
   }
 
   scalar DateTime
@@ -56,6 +68,7 @@ const typeDefs = gql`
     orders: [Order]
     order(_id: ID!): Order
     checkout(items: [ID]!): Checkout
+    contactInfo: [ContactInfo]
   }
 
   type Mutation {
@@ -73,6 +86,16 @@ const typeDefs = gql`
       category: ID
       user: ID
     ): Item
+
+    addContact(
+      phoneNo: String
+      profilePicture: String
+      street: String
+      city: String
+      state: String
+      zipcode: String
+      user: ID!
+    ): ContactInfo
   }
 `;
 
