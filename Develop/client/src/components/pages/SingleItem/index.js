@@ -22,6 +22,9 @@ function SingleItem() {
               <p>{data.item.title}</p>
             </div>
             <div>
+              <p>{data.item.category.name}</p>
+            </div>
+            <div>
               <p className="itemDescription">{data.item.description}</p>
             </div>
             <div>

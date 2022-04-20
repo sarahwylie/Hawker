@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_CATEGORIES } from '../../utils/queries';
+
 import Form from 'react-bootstrap/Form';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
-import '../../assets/css/index.css';
 import SearchList from '../SearchList';
 
 function Header({ isLogin }) {
-  const { data: categoryData } = useQuery(QUERY_CATEGORIES);
+
   const showButtons = () => {
     return isLogin ? (
       <a href="/signup">
@@ -47,13 +46,7 @@ function Header({ isLogin }) {
     }
   }
 
-  function showDiv() {
-    if (document.getElementById('catBtn').style.display === '') {
-      document.getElementById('catBtn').style.display = 'block';
-    } else {
-      document.getElementById('catBtn').style.display = '';
-    }
-  }
+  
   const [inputText, setInputText] = useState('');
   let inputHandler = (e) => {
     //convert input text to lower case
@@ -61,27 +54,16 @@ function Header({ isLogin }) {
     setInputText(lowerCase);
   };
 
-  const getCategoryData = () => {
-    return (
-      <ul className="cats" id="catBtn">
-        {categoryData.categories.map((category) => (
-          <li key={category.id}>{category.name}</li>
-        ))}
-      </ul>
-    );
-  };
+ 
+
+  
 
   return (
     <header className="head">
       <nav>
         <div className="row">
           <div className="col title">
-            <button className="btn-primary" onClick={showDiv}>
-              Categories
-            </button>
-            <div className="itemContainer">
-              {categoryData ? getCategoryData() : <div>Loading...</div>}
-            </div>
+            
           </div>
           <div className="col">
             <a href="/">
@@ -98,7 +80,7 @@ function Header({ isLogin }) {
                 aria-label="Search"
               />
               <button className="btn-primary">Search</button>
-              <SearchList input={inputText} />
+              <SearchList className='SearchList' input={inputText} />
             </Form>
           </div>
           <div className="col">{loggedIn()}</div>

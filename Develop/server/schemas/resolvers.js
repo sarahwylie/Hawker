@@ -111,7 +111,7 @@ const resolvers = {
       return { token, user };
     },
     addContact: async (parent, args) => {
-      console.log(args);
+      console.info(args);
       const contact = await ContactInfo.create(args);
       return contact;
     },
