@@ -9,7 +9,6 @@ import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Login from './components/pages/Login/index';
 import Signup from './components/pages/Signup/index';
-import Buyer from './components/pages/Buyer/index';
 import Auto from './components/pages/Auto/index';
 import Clothing from './components/pages/Clothing/index';
 import Homepage from './components/pages/Homepage/index';
@@ -19,7 +18,6 @@ import Tech from './components/pages/Tech/index';
 import Checkout from './components/pages/Checkout/index';
 import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
-import Seller from './components/pages/Seller/index';
 import NoMatch from './components/pages/NoMatch/index';
 import Success from './components/pages/Success/success'
 import './assets/css/index.css';
@@ -60,20 +58,11 @@ function App() {
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/login" element={<Login toggle={toggle} />} />
             <Route exact path="/signup" element={<Signup toggle={toggle} />} />
-            <Route
-              exact
-              path="/buyer"
-              element={
-                <PrivateRoute>
-                  <Buyer />
-                </PrivateRoute>
-              }
-            />
-            <Route exact path="/auto" component={<Auto />} />
-            <Route exact path="/clothing" component={<Clothing />} />
-            <Route exact path="/household" component={<Household />} />
-            <Route exact path="/outdoor" component={<Outdoor />} />
-            <Route exact path="/tech" component={<Tech />} />
+            <Route exact path="/auto" element={<Auto />} />
+            <Route exact path="/clothing" element={<Clothing />} />
+            <Route exact path="/household" element={<Household />} />
+            <Route exact path="/outdoor" element={<Outdoor />} />
+            <Route exact path="/tech" element={<Tech />} />
             <Route
               exact
               path="singleItem/checkout/:id"
@@ -99,15 +88,6 @@ function App() {
               element={
                 <PrivateRoute>
                   <PostItem />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              exact
-              path="/seller"
-              element={
-                <PrivateRoute>
-                  <Seller />
                 </PrivateRoute>
               }
             />

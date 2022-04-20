@@ -7,10 +7,8 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 const Checkout = () => {
   // substring number probably will change we stop hosting on Local host
   let itemId = window.location.href.substring(42);
-  // console.log(itemId);
   const itemIds = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-  console.log(data);
 
   useEffect(() => {
     if (data) {
@@ -23,7 +21,6 @@ const Checkout = () => {
   function submitCheckout() {
     const id = [];
     id.push(itemIds);
-    console.log(id);
     getCheckout({
       variables: { items: id }
     });

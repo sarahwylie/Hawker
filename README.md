@@ -9,9 +9,16 @@
   - [License Section](#license)
   - [Contact Us](#contact-us)
 
+![MIT License](https://img.shields.io/badge/license-MIT-important)
+## Table of Contents
+  - [Description](#description)
+  - [Created With](#created-with)
+  - [Usage Instructions](#usage)
+  - [Badges](#badges)
+  - [License Section](#license)
+  - [Contact Us](#contact-us)
 ## Description
 Do you have a spectacular item that you just don't need anymore? Are you in search of something specific but don't want to spend an inordinate amount of money or search every thrift store in the greater metropolitan area? Come check out Hawker!
-
 ## Usage
 Check out our site at [Hawker](https://frozen-caverns-58686.herokuapp.com/) and hawk your wares! The finished output:
 
