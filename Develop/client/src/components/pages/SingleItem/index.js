@@ -1,8 +1,8 @@
 import React from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_SINGLE_ITEM, QUERY_ITEMS } from '../../../utils/queries';
+import { QUERY_SINGLE_ITEM } from '../../../utils/queries';
 import { DELETE_ITEM } from '../../../utils/mutations';
-import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
+import { CButton } from '@coreui/react';
 
 function SingleItem() {
   // substring number probably will change we stop hosting on Local host
