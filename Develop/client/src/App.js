@@ -53,11 +53,11 @@ function App() {
   //   }).then(function(responseJson) {
   //     var clientSecret = responseJson.client_secret;
   //     // Call stripe.confirmCardPayment() with the client secret.
-  //   });
+  //   });'
 
   const options = {
     // passing the client secret obtained from the server
-    clientSecret: '{{CLIENT_SECRET}}'
+    clientSecret: 'sk_test_51Kr5p5HU7HWuZgLMQZb19OjHdULlM4E5vgrBTh8mMJMpN5ldYBDni2CkuUOe1agXrK9gAFkheiJofC6XAgtV4CzJ00Zjen1gxS'
   };
 
 
