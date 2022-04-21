@@ -9,6 +9,7 @@ function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
   const { data: categoryData } = useQuery(QUERY_CATEGORIES);
   const [categories, setCategories] = useState();
+  console.log(itemData)
 
   // getting item data from the database and mapping to the ui
   const getItemData = () => {

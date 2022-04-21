@@ -20,7 +20,8 @@ function OrderHistory() {
         {data.user.orders.map((e) => (
           <div key={e._id}>
             {' '}
-            Purchase Date - {e.purchaseDate} orderId - {e._id} title - {e.items[0].title}
+            {/* title - {e.items[0].title} */}
+            Purchase Date - {e.purchaseDate} orderId - {e._id} 
           </div>
         ))}
       </div>
