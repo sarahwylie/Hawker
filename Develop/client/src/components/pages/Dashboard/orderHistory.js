@@ -32,7 +32,7 @@ function OrderHistory() {
     <div>
       Order History
       <div>
-        <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>
+        <div className="itemContainer">{data ? getUserOrders() : <div>You have not placed any orders yet...</div>}</div>
         
       </div>
     </div>

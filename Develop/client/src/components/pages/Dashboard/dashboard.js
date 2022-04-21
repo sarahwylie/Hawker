@@ -41,7 +41,7 @@ function Dashboard() {
       <OrderHistory />
 
       <div>YOUR PAST LISTINGS</div>
-      <div className="itemContainer">{data ? getUserListings() : <div>Loading...</div>}</div>
+      <div className="itemContainer">{data ? getUserListings() : <div>You have not posted any items for sale yet...</div>}</div>
     </div>
   );
 }
