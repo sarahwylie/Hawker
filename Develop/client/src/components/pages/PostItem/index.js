@@ -39,10 +39,10 @@ function PostItem() {
     });
     console.info(mutationResponse);
     localStorage.removeItem('imageurl');
+    window.location.assign('/');
   };
 
   const handleChange = (event) => {
-    // console.log(event.target.value)
     const { name, value } = event.target;
     setPostForm({
       ...postForm,
@@ -51,14 +51,12 @@ function PostItem() {
   };
 
   const renderCategoryOptions = () => {
-    return categoryData.categories.map((category) => 
-       (
-        <option value={category._id} key={category._id}>
-          {category.name}
-        </option>
-      )
-    )
-  }
+    return categoryData.categories.map((category) => (
+      <option value={category._id} key={category._id} name={category.name}>
+        {category.name}
+      </option>
+    ));
+  };
 
   return (
     <div className="itemContainer">
@@ -102,12 +100,15 @@ function PostItem() {
         ></input>
 
         <label htmlFor="categoryId">Category</label>
-        <select name="categoryId" onChange={handleChange}  placeholder="Select a value">
-          {' '}
-          { categoryData ? renderCategoryOptions() : <div>Loading...</div>}
-      
+        <select name="categoryId" onChange={handleChange} defaultValue={'none'}>
+          <option value="none" disabled hidden>
+            Select An Option
+          </option>
+          {categoryData ? renderCategoryOptions() : <option>Loading...</option>}
         </select>
-        { postForm.categoryId === undefined ?  `You have not selected a category` : `You've selected a category`}
+        {postForm.categoryId === undefined
+          ? `You have not selected a category`
+          : `You've selected a category`}
         <button type="submit" className="btn-primary">
           Hawk Item
         </button>

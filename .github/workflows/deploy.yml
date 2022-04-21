@@ -1,0 +1,31 @@
+name: Heroku Continuous Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # get code from repo
+      - name: Checkout code
+        uses: actions/checkout@main
+      # install NodeJS
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@main
+        with:
+          node-version: 16.x
+      # build the app
+      - name: 🧰 install deps
+        run: npm install
+      - name: Run lint
+        run: npm run eslint
+      - name: build
+        run: npm run build
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.11
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "texas-hawker"
+          heroku_email: "nicnolen@ymail.com"

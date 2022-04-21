@@ -26,7 +26,6 @@ const Checkout = (product) => {
   function submitCheckout() {
     const id = [];
     id.push(itemIds);
-    console.log(id);
     getCheckout({
       variables: { items: id }
     });
