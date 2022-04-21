@@ -15,11 +15,12 @@ function OrderHistory() {
       <div>
         <div>
           {data.user.firstName} {data.user.lastName}'s Order History
+          {/* {console.log(data.user.orders[28].items[0].title)} */}
         </div>
         {data.user.orders.map((e) => (
           <div key={e._id}>
             {' '}
-            Purchase Date - {e.purchaseDate} orderId - {e._id}
+            Purchase Date - {e.purchaseDate} orderId - {e._id} title - {e.items[0].title}
           </div>
         ))}
       </div>

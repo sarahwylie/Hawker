@@ -18,7 +18,7 @@ function Homepage() {
         <CCardBody>
           <CCardTitle>{item.title}</CCardTitle>
           <CCardText>${item.price}</CCardText>
-          <Link to={{pathname:`/SingleItem/${item._id}`,item: item}}>
+          <Link to={{ pathname: `/SingleItem/${item._id}`, item: item }}>
             {' '}
             <CButton>See Item</CButton>
           </Link>
@@ -27,7 +27,7 @@ function Homepage() {
     ));
   };
 
-  const seState = (e) => {
+  const setState = (e) => {
     setCategories(e.target.innerText);
   };
 
@@ -39,7 +39,7 @@ function Homepage() {
 
     return newArr.map((filteredItem) => (
       <div key={filteredItem._id}>
-        <CCard >
+        <CCard>
           <CCardImage
             orientation="top"
             src={filteredItem.image}
@@ -63,7 +63,7 @@ function Homepage() {
     return (
       <ul className="cats" id="catBtn">
         {categoryData.categories.map((category) => (
-          <div key={category._id} name={category.name} onClick={seState}>
+          <div key={category._id} name={category.name} onClick={setState}>
             {category.name}
           </div>
         ))}
@@ -84,7 +84,7 @@ function Homepage() {
       return getItemData();
     } else if (categories !== undefined) {
       return filterCategory();
-    } 
+    }
   };
 
   return (
