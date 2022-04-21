@@ -53,8 +53,8 @@ const Checkout = (product) => {
       <p>Sales Tax-    {tax}</p>
       <p>Shipping-     {shipping}</p>
       <p>Total-     {total}</p>
-      <img src={details.image} alt={details.title}></img>
-      <button onClick={submitCheckout}>Checkout</button>
+      <div><img src={details.image} alt={details.title} style={{width: '10rem'}}></img></div>
+      <div><button onClick={submitCheckout}>Checkout</button></div>
     </div>
   );
 };

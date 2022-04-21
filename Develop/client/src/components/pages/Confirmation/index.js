@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { QUERY_USER } from '../../../utils/queries';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
+import { useMutation } from '@apollo/client';
 
 function Confirmation({ setOpenModal }) {
 

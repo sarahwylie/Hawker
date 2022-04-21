@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import { StoreProvider } from './utils/GlobalState';
-import PrivateRoute from './components/PrivateRoute/index';
+import PrivateRoute from './utils/PrivateRoute/index';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Login from './components/pages/Login/index';
@@ -14,7 +14,7 @@ import Checkout from './components/pages/Checkout/index';
 import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
 import NoMatch from './components/pages/NoMatch/index';
-import Success from './components/pages/Success/success'
+import Success from './components/pages/Success/success';
 import './assets/css/index.css';
 import Dashboard from './components/pages/Dashboard/dashboard';
 
@@ -99,7 +99,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-                <Route
+            <Route
               exact
               path="/success"
               element={
