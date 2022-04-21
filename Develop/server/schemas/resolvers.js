@@ -1,6 +1,6 @@
 // Import dependencies
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Item, Category, Order } = require('../models');
+const { User, Item, Category, Order, ContactInfo } = require('../models');
 const { DateTime } = require('./DateTime');
 const { signToken } = require('../utils/auth'); // Import signToken() function from utils/auth.js
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
@@ -31,6 +31,9 @@ const resolvers = {
         .populate({
           path: 'orders.items',
           populate: 'category'
+        })
+        .populate({
+          path: 'contactInfo'
         });
     },
     // Query all items
@@ -57,6 +60,9 @@ const resolvers = {
 
       console.info(user.orders[0].items);
       return user.orders.id(_id);
+    },
+    contactInfo: async () => {
+      return await ContactInfo.find();
     },
 
     checkout: async (parent, args, context) => {
@@ -104,6 +110,11 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    addContact: async (parent, args) => {
+      console.info(args);
+      const contact = await ContactInfo.create(args);
+      return contact;
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
@@ -131,6 +142,14 @@ const resolvers = {
         return userItems, item;
       }
       throw new AuthenticationError('Not logged in');
+    },
+    deleteItem: async (parent, { _id }, context) => {
+      const item = await Item.findByIdAndRemove(_id);
+
+      await Item.findByIdAndDelete(context.user._id, {
+        $pull: { items: item }
+      });
+      return item;
     },
     addOrder: async (parent, { items }, context) => {
       if (context.user) {
