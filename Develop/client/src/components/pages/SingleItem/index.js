@@ -22,6 +22,7 @@ function SingleItem() {
       variables: { id: itemId }
     });
     console.log(deleteMutation);
+    window.location.assign('/')
   };
 
 
