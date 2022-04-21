@@ -32,6 +32,25 @@ app.use(express.json());
 // Serve up static assets
 app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: 'price_1KqcVG2eZvKYlo2C6xjONUjc',
+        quantity: 1,
+      },
+    ],
+    id: 'cs_test_a1oA0jcZoS4QYUwMNvw62mym2oJ9PLQqUint0AkHBece9pWb51RKktvr7G',
+    object: 'checkout.session',
+    mode: 'payment',
+    success_url: 'https://localhost:3001/success',
+    cancel_url: 'https://localhost:3001/cancel',
+  });
+
+  res.redirect(303, session.url);
+});
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
@@ -44,21 +63,4 @@ db.once('open', () => {
   app.listen(PORT, () => {
     console.info(`API server running on port ${PORT}!`);
   });
-});
-
-app.post('/create-checkout-session', async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    Item: [
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: '{{Item.price}}',
-        quantity: 1,
-      },
-    ],
-    mode: 'payment',
-    success_url: 'https://localhost:3000/success',
-    cancel_url: 'https://localhost:3000/cancel',
-  });
-
-  res.redirect(303, session.url);
 });

@@ -54,10 +54,6 @@ const typeDefs = gql`
     user: User
   }
 
-  type Checkout {
-    session: ID
-  }
-
   type Query {
     me: User
     categories: [Category]

@@ -1,6 +1,7 @@
 # Hawker
 ## License
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+The ISC license is a permissive free software license published by the Internet Software Consortium, now called Internet Systems Consortium (ISC). Permission to use this application is granted under the ISC license. For more information, see the ISC License on the [Open Source Initiative](https://opensource.org/licenses/ISC).
 ## Table of Contents
   - [Description](#description)
   - [Created With](#created-with)
