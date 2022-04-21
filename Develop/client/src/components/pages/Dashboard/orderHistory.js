@@ -28,15 +28,11 @@ function OrderHistory() {
 
   return (
     <div>
-<<<<<<< HEAD
-     <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>
-=======
       Order History
       <div>
-        return <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>
-        ;
+        <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>
+        
       </div>
->>>>>>> 2a1b3f754def524cfe3cb29503560bc513b1cc47
     </div>
   );
 }

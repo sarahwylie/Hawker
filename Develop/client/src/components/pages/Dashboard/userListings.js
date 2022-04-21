@@ -3,6 +3,8 @@ import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_USER } from '../../../utils/queries';
 
 
+
+
 function Seller() {
     let userId = localStorage.getItem('userId');
    
@@ -12,15 +14,31 @@ function Seller() {
 
     const { data } = useQuery(QUERY_SINGLE_USER, {variables: {id: userId}})
     
+    
     const getUserListing = () => {
+
+
+        
         return (
-            <div><div>{data.user.firstName} {data.user.lastName}'s Listings</div>
             <div>
-            {data.user.items.map((x) => (<div> Title- {x.title} {' '} Price- {x.price} {' '} Description-{x.description}</div>))}
+                <div>{data.user.firstName} {data.user.lastName}'s Listings</div>
+            <div>
+            {data.user.items.map((e) => (
+          <div key={data._id}>
+              
+            {' '}
+            Title - {e.title} Price - {e.price} Description - {e.description} Qu
+            {console.log(data.user.items)}
+          </div>
+          
+        ))}
             </div>
             </div>
         );
+       
     };
+
+    
 
     return ( 
         <div>Listings
