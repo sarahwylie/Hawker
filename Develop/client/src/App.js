@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 
 import { StoreProvider } from './utils/GlobalState';
 import PrivateRoute from './components/PrivateRoute/index';
@@ -22,6 +24,7 @@ import Dashboard from './components/pages/Dashboard/dashboard';
 const httpLink = createHttpLink({
   uri: '/graphql'
 });
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
@@ -44,6 +47,10 @@ function App() {
   const toggle = (whichButton) => {
     setIsLogin(whichButton);
   };
+  const options = {
+    // passing the client secret obtained from the server
+    clientSecret: '{{CLIENT_SECRET}}',
+  };
 
   return (
     <ApolloProvider client={client}>
@@ -58,8 +65,10 @@ function App() {
               exact
               path="singleItem/checkout/:id"
               element={
-                <PrivateRoute>
-                  <Checkout />
+                <PrivateRoute>    
+                  <Elements stripe={stripePromise} options={options}>
+                <Checkout />
+              </Elements>
                 </PrivateRoute>
               }
             />
