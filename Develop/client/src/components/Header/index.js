@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
@@ -43,6 +43,7 @@ function Header({ isLogin }) {
     }
   }
 
+  /* SEARCH BAR FOR AFTER THE PROJECT */
   // const [inputText, setInputText] = useState('');
   // let inputHandler = (e) => {
   //   //convert input text to lower case

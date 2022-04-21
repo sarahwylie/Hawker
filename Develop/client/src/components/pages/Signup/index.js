@@ -24,7 +24,7 @@ const Signup = ({ toggle }) => {
         lastName: formState.lastName
       }
     });
-    console.log(mutationResponse);
+    console.info(mutationResponse);
     let userId = mutationResponse.data.addUser.user._id;
     localStorage.setItem('userId', `${userId}`);
     const token = mutationResponse.data.addUser.token;
@@ -50,7 +50,7 @@ const Signup = ({ toggle }) => {
             name="firstName"
             type="firstName"
             id="firstName"
-            className="formField" 
+            className="formField"
             onChange={handleChange}
           />
           <label htmlFor="lastName">Last Name:</label>
@@ -59,7 +59,7 @@ const Signup = ({ toggle }) => {
             name="lastName"
             type="lastName"
             id="lastName"
-            className="formField" 
+            className="formField"
             onChange={handleChange}
           />
           <label htmlFor="email">Email:</label>
@@ -68,7 +68,7 @@ const Signup = ({ toggle }) => {
             name="email"
             type="email"
             id="email"
-            className="formField" 
+            className="formField"
             onChange={handleChange}
           />
           <label htmlFor="pwd">Password:</label>
@@ -77,7 +77,7 @@ const Signup = ({ toggle }) => {
             name="password"
             type="password"
             id="pwd"
-            className="formField" 
+            className="formField"
             onChange={handleChange}
           />
           <button type="submit" className="btn-primary">
