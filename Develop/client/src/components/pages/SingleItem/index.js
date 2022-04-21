@@ -11,13 +11,13 @@ function SingleItem() {
   console.log(data);
 
   let userId = localStorage.getItem('userId')
- 
+
 
   const [deleteItem] = useMutation(DELETE_ITEM);
 
   const handleDeleteItem = async (event) => {
     event.preventDefault();
-    
+
     const deleteMutation = await deleteItem({
       variables: { id: itemId }
     });
@@ -54,10 +54,10 @@ function SingleItem() {
             <div>
               <a href={`checkout/${data.item._id}`}>
                 {' '}
-                <button onClick = {saveItem}className="btn-primary">Goto Checkout</button>
+                <button onClick = {saveItem}className="btn-primary">Go To Checkout</button>
               </a>
               {data.item.user._id === userId ? <CButton onClick={handleDeleteItem}>Delete Item</CButton> : <span/>}
-              
+
             </div>
           </div>
         </div>

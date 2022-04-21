@@ -43,12 +43,12 @@ function Header({ isLogin }) {
     }
   }
 
-  const [inputText, setInputText] = useState('');
-  let inputHandler = (e) => {
-    //convert input text to lower case
-    var lowerCase = e.target.value.toLowerCase();
-    setInputText(lowerCase);
-  };
+  // const [inputText, setInputText] = useState('');
+  // let inputHandler = (e) => {
+  //   //convert input text to lower case
+  //   var lowerCase = e.target.value.toLowerCase();
+  //   setInputText(lowerCase);
+  // };
 
   return (
     <header className="head">
@@ -61,7 +61,7 @@ function Header({ isLogin }) {
                 <img src={Hawker} alt="logo" className="photo" id="logo" />
               </span>
             </a>
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <Form.Control
                 type="search"
                 placeholder="Search"
@@ -72,7 +72,7 @@ function Header({ isLogin }) {
               <button input={inputText} className="btn-primary">
                 Search
               </button>
-            </Form>
+            </Form> */}
           </div>
           <div className="col">{loggedIn()}</div>
         </div>
