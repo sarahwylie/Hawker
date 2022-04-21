@@ -55,11 +55,10 @@ const Checkout = () => {
     <p>Shipping-     {shipping}</p>
     <p>Total-     {total}</p>
     <div><img src={details.image} alt={details.title} style={{width: '10rem'}}></img></div>
-    <div><button onClick={submitCheckout}>Checkout</button>
-    <div>
-    <ExternalLink href="https://buy.stripe.com/test_28o9CgcqlgDD7vO7ss">
+    <div><button onClick={submitCheckout}><ExternalLink href="https://buy.stripe.com/test_28o9CgcqlgDD7vO7ss">
       <span>Checkout</span>
-    </ExternalLink>
+    </ExternalLink></button>
+    <div>
     {/* <form onSubmit={handleSubmit}>
       <PaymentElement />
       <button onClick={!stripe}>Checkout</button>
