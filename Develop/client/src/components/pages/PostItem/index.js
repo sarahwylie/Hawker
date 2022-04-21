@@ -63,7 +63,7 @@ function PostItem() {
       <form onSubmit={handleFormSubmit} className="form-container">
         <UploadForm />
 
-        <div>
+        
         <label htmlFor="itemTitle">Item Title</label>
         <input
           type="text"
@@ -73,7 +73,7 @@ function PostItem() {
           onChange={handleChange}
         ></input>
 
-        <div>
+        
         <label htmlFor="price">Price</label>
         <input
           type="text"
@@ -114,6 +114,7 @@ function PostItem() {
         <button type="submit" className="btn-primary">
           Hawk Item
         </button>
+        
       </form>
     </div>
   );

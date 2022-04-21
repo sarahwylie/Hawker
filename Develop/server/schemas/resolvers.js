@@ -111,22 +111,8 @@ const resolvers = {
       return { token, user };
     },
     addContact: async (parent, args) => {
-<<<<<<< HEAD
-      // console.log(args);
-=======
-      console.info(args);
->>>>>>> 88147924ed02dd100d40c6d0baa1f5b6f57ade76
-      const contact = await ContactInfo.create(args);
-      return contact;
-    },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
-      if (!user) {
         throw new AuthenticationError('Incorrect credentials');
-      }
-
       const correctPw = await user.isCorrectPassword(password);
-
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');
       }
