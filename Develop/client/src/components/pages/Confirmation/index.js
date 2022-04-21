@@ -1,7 +1,8 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { QUERY_USER } from '../../../utils/queries';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
+
 // import { useMutation } from '@apollo/client';
 
 function Confirmation({ setOpenModal }) {
@@ -15,12 +16,13 @@ function Confirmation({ setOpenModal }) {
   const [phonenumber, setShippingPhoneNumber] = useState('');
 
   const { itemData } = useQuery(QUERY_ITEMS);
+
   console.info(itemData);
   const { data } =useQuery(QUERY_USER)
     console.info(data)
 
-  const handleInputChange = (e) => {
 
+  const handleInputChange = (e) => {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
@@ -43,7 +45,6 @@ function Confirmation({ setOpenModal }) {
   };
 
   const handleFormSubmit = (e) => {
-
     e.preventDefault();
 
     setShippingFullName('');
@@ -54,39 +55,33 @@ function Confirmation({ setOpenModal }) {
     setShippingZip('');
   };
 
-
   const [setShow] = useState(false);
   const handleShow = () => setShow(true);
 
-
   return (
+
     <div >
       <button className='modalButton' onClick={handleShow}>
       <form className="formModal">
+
           <p>Full Name</p>
           <input
-          value={fullName}
-          name="fullName"
-          onChange={handleInputChange}
-          type="fullname"
-          placeholder="Full Name"
-        />
-         <p>Shipping Address:</p>
-        <input
-          value={address}
-          name="address"
-          onChange={handleInputChange}
-          type="address"
-          placeholder="Address"
-        />
-        <input
-          value={state}
-          name="state"
-          onChange={handleInputChange}
-          type="state"
-          placeholder="State"
-        />
+            value={fullName}
+            name="fullName"
+            onChange={handleInputChange}
+            type="fullname"
+            placeholder="Full Name"
+          />
+          <p>Shipping Address:</p>
           <input
+            value={address}
+            name="address"
+            onChange={handleInputChange}
+            type="address"
+            placeholder="Address"
+          />
+          <input
+
           value={city}
           name="city"
           onChange={handleInputChange}
@@ -113,12 +108,10 @@ function Confirmation({ setOpenModal }) {
         <button onClick={() => {  setOpenModal(false) }}  id="cancelBtn">Cancel</button>
         <button type="button" onClick={handleFormSubmit}>Confirm</button>
       </form>
+
       </button>
     </div>
   );
 }
-
-
-
 
 export default Confirmation;

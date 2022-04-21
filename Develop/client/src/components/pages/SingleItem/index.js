@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_SINGLE_ITEM } from '../../../utils/queries';
 import { DELETE_ITEM } from '../../../utils/mutations';
-import { CButton } from '@coreui/react';
+
 
 function SingleItem() {
   // substring number probably will change we stop hosting on Local host
@@ -10,7 +10,9 @@ function SingleItem() {
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   console.info(data);
 
+
   let userId = localStorage.getItem('userId')
+
 
 
   const [deleteItem] = useMutation(DELETE_ITEM);
@@ -24,11 +26,9 @@ function SingleItem() {
     console.info(deleteMutation);
   };
 
-
-  const saveItem = function() {
-    localStorage.setItem("itemData",JSON.stringify(data))
-  }
-
+  const saveItem = function () {
+    localStorage.setItem('itemData', JSON.stringify(data));
+  };
 
   const getSingleItemData = () => {
     return (
@@ -37,7 +37,6 @@ function SingleItem() {
           <div className="singleCard">
             <img orientation="top" src={data.item.image} alt={data.item.title} />
           </div>
-
           <div className="info">
             <div>
               <p>{data.item.title}</p>
@@ -54,9 +53,18 @@ function SingleItem() {
             <div>
               <a href={`checkout/${data.item._id}`}>
                 {' '}
-                <button onClick = {saveItem}className="btn-primary">Go To Checkout</button>
+
+                <button onClick={saveItem} className="btn-primary">
+                  Goto Checkout
+                </button>
               </a>
-              {data.item.user._id === userId ? <CButton onClick={handleDeleteItem}>Delete Item</CButton> : <span/>}
+              {data.item.user._id === userId ? (
+                <button onClick={handleDeleteItem} className="btn-primary">
+                  Delete Item
+                </button>
+              ) : (
+                null
+              )}
 
             </div>
           </div>

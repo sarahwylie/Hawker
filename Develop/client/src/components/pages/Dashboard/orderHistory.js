@@ -12,10 +12,10 @@ function OrderHistory() {
   console.info(data);
   const getUserOrders = () => {
     return (
-      <div>
-        <div>
+      <div className="itemContainer">
+        
           {data.user.firstName} {data.user.lastName}'s Order History
-        </div>
+
         {data.user.orders.map((e) => (
           <div key={e._id}>
             {' '}
@@ -30,10 +30,12 @@ function OrderHistory() {
   return (
     <div>
       Order History
-      <div>
-        <div className="itemContainer">{data ? getUserOrders() : <div>You have not placed any orders yet...</div>}</div>
 
-      </div>
+      
+        <div>{data ? getUserOrders() : <div>You have not placed any orders yet...</div>}</div>
+        
+      
+
     </div>
   );
 }
