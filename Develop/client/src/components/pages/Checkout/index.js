@@ -6,12 +6,14 @@ import Confirmation from '../Confirmation';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
-const Checkout = (product) => {
-  let itemId = window.location.href.substring(42);
+const Checkout = () => {
+  let itemId = window.location.href.substring(47);
   const itemIds = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-  console.log(data);
-  const details = JSON.parse(localStorage.getItem('itemData')).item;
+
+  console.info(data)
+  const details = JSON.parse(localStorage.getItem("itemData")).item
+
 
   const [modalOpen, setModalOpen] = useState(false);
 
