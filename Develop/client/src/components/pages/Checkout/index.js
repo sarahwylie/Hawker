@@ -1,3 +1,10 @@
+// import React from 'react';
+// import { ExternalLink } from 'react-external-link';
+// import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
+
+
+// const Checkout = () => {
+
 import React, { useEffect, useState } from 'react';
 import { useLazyQuery, useQuery  } from '@apollo/client';
 import { QUERY_CHECKOUT, QUERY_SINGLE_ITEM } from '../../../utils/queries';
