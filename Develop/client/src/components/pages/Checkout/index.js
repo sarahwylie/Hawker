@@ -1,7 +1,6 @@
 import React from 'react';
 import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
 
-
 const Checkout = () => {
   const stripe = useStripe();
   const elements = useElements();
@@ -16,6 +15,12 @@ const Checkout = () => {
       // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
+    
+    // const paymentIntent = await stripe.paymentIntents.create({
+    //   amount: 1099,
+    //   currency: 'usd',
+    //   payment_method_types: ['card'],
+    // });
 
     const result = await stripe.confirmPayment({
       //`Elements` instance that was used to create the Payment Element

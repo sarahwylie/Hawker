@@ -47,10 +47,19 @@ function App() {
   const toggle = (whichButton) => {
     setIsLogin(whichButton);
   };
+  
+  // var response = fetch('/secret').then(function(response) {
+  //     return response.json();
+  //   }).then(function(responseJson) {
+  //     var clientSecret = responseJson.client_secret;
+  //     // Call stripe.confirmCardPayment() with the client secret.
+  //   });
+
   const options = {
     // passing the client secret obtained from the server
-    clientSecret: '{{CLIENT_SECRET}}',
+    clientSecret: '{{CLIENT_SECRET}}'
   };
+
 
   return (
     <ApolloProvider client={client}>
