@@ -58,6 +58,16 @@ const typeDefs = gql`
     session: ID
   }
 
+  type shippingDetails {
+    fullname: String
+    phoneNo: String
+    street: String
+    city: String
+    state: String
+    zipcode: String
+    user: ID!
+  }
+
   type Query {
     me: User
     categories: [Category]
@@ -98,6 +108,16 @@ const typeDefs = gql`
       zipcode: String
       user: ID!
     ): ContactInfo
+
+    addShipping(
+      fullname: String
+      phoneNo: String
+      street: String
+      city: String
+      state: String
+      zipcode: String
+      user: ID!
+    ): shippingDetails
   }
 `;
 

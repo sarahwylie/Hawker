@@ -23,15 +23,15 @@ function Confirmation({ setOpenModal }) {
 
     if (inputType === 'address') {
       setShippingAddress(inputValue);
-    } else if (inputType === 'fullName') {
+    } else if (inputType === 'fullname') {
       setShippingFullName(inputValue);
     } else if (inputType === 'phonenumber') {
       setShippingPhoneNumber(inputValue);
     } else if (inputType === 'state') {
       setShippingState(inputValue);
-    } else if (inputType === 'city') {
+    }  else if (inputType === 'city') {
       setShippingCity(inputValue);
-    } else if (inputType === 'zip') {
+    }else if (inputType === 'zip') {
       setShippingZip(inputValue);
     }
   };
@@ -54,12 +54,11 @@ function Confirmation({ setOpenModal }) {
   return (
     <div>
       <button className="modalButton" onClick={handleShow}>
-        {/* onClick={handleShow} */}
         <form className="formModal">
           <p>Full Name</p>
           <input
             value={fullName}
-            name="fullName"
+            name="fullname"
             onChange={handleInputChange}
             type="fullname"
             placeholder="Full Name"
@@ -104,17 +103,18 @@ function Confirmation({ setOpenModal }) {
 
           <p></p>
           <div>
-            <button
-              onClick={() => {
-                setOpenModal(false);
-              }}
-              className="btn-primary"
-            >
-              Cancel
-            </button>
-            <button type="button" onClick={handleFormSubmit} className="btn-primary">
-              Confirm
-            </button>
+          <button
+           className="btn-primary"
+            onClick={() => {
+              setOpenModal(false);
+            }}
+            id="cancelBtn"
+          >
+            Cancel
+          </button>
+          <button type="button" onClick={handleFormSubmit} className="btn-primary">
+            Confirm
+          </button>
           </div>
         </form>
       </button>

@@ -1,8 +1,9 @@
 // Import dependencies
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Item, Category, Order, ContactInfo } = require('../models');
+const { User, Item, Category, Order, ContactInfo, ShippingDetails } = require('../models');
 const { DateTime } = require('./DateTime');
-const { signToken } = require('../utils/auth'); // Import signToken() function from utils/auth.js
+const { signToken } = require('../utils/auth');
+
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
@@ -114,6 +115,10 @@ const resolvers = {
       console.info(args);
       const contact = await ContactInfo.create(args);
       return contact;
+    },
+    addShipping: async (parent, args) => {
+      const shipping = await ShippingDetails.create(args);
+      return shipping;
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
