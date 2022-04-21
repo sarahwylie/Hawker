@@ -6,18 +6,21 @@ function Success() {
   const [addOrder] = useMutation(ADD_ORDER);
 
   const itemData = JSON.parse(localStorage.getItem('itemData'));
+  let userId = localStorage.getItem('userId');
+  console.log(userId)
   let itemId = itemData.item._id;
   console.log(itemData.item._id);
 
   const saveOrder = () => {
     const { data } = addOrder({ variables: { id: itemId,
+      user: userId
      } });
     console.log(data);
 
-    setTimeout(() => {
-      localStorage.removeItem('itemData');
-      window.location.assign('/');
-    }, 5000);
+    // setTimeout(() => {
+    //   localStorage.removeItem('itemData');
+    //   window.location.assign('/');
+    // }, 5000);
   };
 
   return (
