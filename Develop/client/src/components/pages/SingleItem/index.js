@@ -8,20 +8,20 @@ function SingleItem() {
   // substring number probably will change we stop hosting on Local host
   let itemId = window.location.href.substring(33);
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
-  console.log(data);
+  console.info(data);
 
   let userId = localStorage.getItem('userId')
- 
+
 
   const [deleteItem] = useMutation(DELETE_ITEM);
 
   const handleDeleteItem = async (event) => {
     event.preventDefault();
-    
+
     const deleteMutation = await deleteItem({
       variables: { id: itemId }
     });
-    console.log(deleteMutation);
+    console.info(deleteMutation);
   };
 
 
@@ -54,10 +54,10 @@ function SingleItem() {
             <div>
               <a href={`checkout/${data.item._id}`}>
                 {' '}
-                <button onClick = {saveItem}className="btn-primary">Goto Checkout</button>
+                <button onClick = {saveItem}className="btn-primary">Go To Checkout</button>
               </a>
               {data.item.user._id === userId ? <CButton onClick={handleDeleteItem}>Delete Item</CButton> : <span/>}
-              
+
             </div>
           </div>
         </div>

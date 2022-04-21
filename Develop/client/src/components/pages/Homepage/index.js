@@ -9,7 +9,7 @@ function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
   const { data: categoryData } = useQuery(QUERY_CATEGORIES);
   const [categories, setCategories] = useState();
-  console.log(itemData)
+  console.info(itemData);
 
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
@@ -33,10 +33,7 @@ function Homepage() {
   };
 
   const filterCategory = () => {
-    console.log(itemData.items);
-    console.log(categories);
     const newArr = itemData.items.filter((e) => e.category.name === categories);
-    console.log(newArr);
 
     return newArr.map((filteredItem) => (
       <div key={filteredItem._id}>

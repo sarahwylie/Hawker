@@ -13,7 +13,7 @@ function Dashboard() {
   }
 
   const { data } = useQuery(QUERY_SINGLE_USER, { variables: { id: userId } });
-  console.log(data);
+  console.info(data);
 
   const getUserListings = () => {
     return (

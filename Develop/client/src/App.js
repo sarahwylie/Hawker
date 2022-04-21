@@ -6,7 +6,7 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
 import { StoreProvider } from './utils/GlobalState';
-import PrivateRoute from './utils/PrivateRoute/index';
+import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Login from './components/pages/Login/index';
@@ -43,6 +43,7 @@ const client = new ApolloClient({
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
+  // const [filterTerm, setFilterTerm] = useState('');
 
   const toggle = (whichButton) => {
     setIsLogin(whichButton);
@@ -61,13 +62,17 @@ function App() {
   };
 
 
+  // const handleChange = (event) => {
+  //   setFilterTerm(event);
+  // };
+
   return (
     <ApolloProvider client={client}>
-      <Header isLogin={isLogin} />
       <Router>
+        <Header isLogin={isLogin} /*handleChange={handleChange}*/ />
         <StoreProvider>
           <Routes>
-            <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/" element={<Homepage /*filterTerm={filterTerm} */ />} />
             <Route exact path="/login" element={<Login toggle={toggle} />} />
             <Route exact path="/signup" element={<Signup toggle={toggle} />} />
             <Route

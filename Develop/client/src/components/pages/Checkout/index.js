@@ -1,42 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLazyQuery, useQuery  } from '@apollo/client';
+import { QUERY_CHECKOUT, QUERY_SINGLE_ITEM } from '../../../utils/queries';
+import { loadStripe } from '@stripe/stripe-js';
+import Confirmation from '../Confirmation';
 import { ExternalLink } from 'react-external-link';
-// import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
 
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Checkout = () => {
-  // const stripe = useStripe();
-  // const elements = useElements();
+  let itemId = window.location.href.substring(42);
+  const itemIds = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  console.info(data)
+  const details = JSON.parse(localStorage.getItem("itemData")).item
 
-  // const handleSubmit = async (event) => {
-  //   // We don't want to let default form submission happen here,
-  //   // which would refresh the page.
-  //   event.preventDefault();
+  const [modalOpen, setModalOpen] = useState(false);
 
-  //   if (!stripe || !elements) {
-  //     // Stripe.js has not yet loaded.
-  //     // Make sure to disable form submission until Stripe.js has loaded.
-  //     return;
-  //   }
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
 
-  //   const result = await stripe.confirmPayment({
-  //     //`Elements` instance that was used to create the Payment Element
-  //     elements,
-  //     confirmParams: {
-  //       return_url: "https://example.com/order/123/complete",
-  //     },
-  //   });
+  function submitCheckout() {
+    const id = [];
+    id.push(itemIds);
+    getCheckout({
+      variables: { items: id }
+    });
+  }
 
-  //   if (result.error) {
-  //     // Show error to your customer (for example, payment details incomplete)
-  //     console.log(result.error.message);
-  //   } else {
-  //     // Your customer will be redirected to your `return_url`. For some payment
-  //     // methods like iDEAL, your customer will be redirected to an intermediate
-  //     // site first to authorize the payment, then redirected to the `return_url`.
-  //   }
-  // };
+  const tax = (8.25 / 100) * details.price;
+  const shipping = (5 / 100) * details.price;
+  const total = details.price + tax + shipping;
 
   return (
+    <div>
+    <div>
+    <h1>Purchase Confirmation</h1>
+    <h3>Shipping Details</h3>
+    <button className='openModalBtn'
+    onClick={() => {
+      setModalOpen(true);
+    }}
+    >
+      Add
+    </button>
+    {modalOpen && <Confirmation setModalOpen={setModalOpen} /> }
+    </div>
+    <p>Item Price-   {details.price}</p>
+    <p>Sales Tax-    {tax}</p>
+    <p>Shipping-     {shipping}</p>
+    <p>Total-     {total}</p>
+    <div><img src={details.image} alt={details.title} style={{width: '10rem'}}></img></div>
+    <div><button onClick={submitCheckout}>Checkout</button>
     <div>
     <ExternalLink href="https://buy.stripe.com/test_28o9CgcqlgDD7vO7ss">
       <span>Checkout</span>
@@ -46,6 +65,8 @@ const Checkout = () => {
       <button onClick={!stripe}>Checkout</button>
     </form> */}
     </div>
+    </div>
+  </div>
   );
 };
 
