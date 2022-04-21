@@ -3,17 +3,13 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_SINGLE_ITEM } from '../../../utils/queries';
 import { DELETE_ITEM } from '../../../utils/mutations';
 
-
 function SingleItem() {
   // substring number probably will change we stop hosting on Local host
-  let itemId = window.location.href.substring(27);
+  let itemId = window.location.href.substring(46);
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   console.info(data);
 
-
   let userId = localStorage.getItem('userId')
-
-
 
   const [deleteItem] = useMutation(DELETE_ITEM);
 
@@ -23,7 +19,8 @@ function SingleItem() {
     const deleteMutation = await deleteItem({
       variables: { id: itemId }
     });
-    console.info(deleteMutation);
+    console.log(deleteMutation);
+    window.location.assign('/')
   };
 
   const saveItem = function () {
