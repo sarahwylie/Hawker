@@ -6,7 +6,10 @@ function SingleItem() {
   // substring number probably will change we stop hosting on Local host
   let itemId = window.location.href.substring(33);
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
-
+  console.log(data);
+  const saveItem = function() {
+    localStorage.setItem("itemData",JSON.stringify(data))
+  }
   const getSingleItemData = () => {
     return (
       <div className="itemContainer">
@@ -31,7 +34,7 @@ function SingleItem() {
             <div>
               <a href={`checkout/${data.item._id}`}>
                 {' '}
-                <button className="btn-primary">Go to Checkout</button>
+                <button onClick = {saveItem}className="btn-primary">Goto Checkout</button>
               </a>
             </div>
           </div>

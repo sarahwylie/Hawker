@@ -44,8 +44,8 @@ app.post('/create-checkout-session', async (req, res) => {
     id: 'cs_test_a1oA0jcZoS4QYUwMNvw62mym2oJ9PLQqUint0AkHBece9pWb51RKktvr7G',
     object: 'checkout.session',
     mode: 'payment',
-    success_url: 'https://localhost:3001/success',
-    cancel_url: 'https://localhost:3001/cancel',
+    success_url: `https://localhost:${PORT}/success`,
+    cancel_url: `https://localhost:${PORT}/cancel`,
   });
 
   res.redirect(303, session.url);
@@ -56,7 +56,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../client'));
 });
 
 db.once('open', () => {
