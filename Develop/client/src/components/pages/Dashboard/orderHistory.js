@@ -8,7 +8,7 @@ function OrderHistory() {
     userId = userId.replace(/^"(.*)"$/, '$1');
   }
 
-  const { error, loading, data } = useQuery(QUERY_SINGLE_USER, { variables: { id: userId } });
+  const { data } = useQuery(QUERY_SINGLE_USER, { variables: { id: userId } });
 
   const getUserOrders = () => {
     return (

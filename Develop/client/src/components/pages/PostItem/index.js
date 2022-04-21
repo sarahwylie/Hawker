@@ -2,100 +2,118 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_ITEM } from '../../../utils/mutations';
 import UploadForm from '../uploadFile/uploadFile';
-
+import { useQuery } from '@apollo/client';
+import { QUERY_CATEGORIES } from '../../../utils/queries';
 
 function PostItem() {
   const [postForm, setPostForm] = useState('');
-  // const[category, setCategory] = useState('');
+  const { data: categoryData } = useQuery(QUERY_CATEGORIES);
   const [addItem] = useMutation(ADD_ITEM);
+
+  console.log(categoryData);
 
   // Category id values depend on object id created when categories are seeded in mongo database
   // if you reseed your database you need to come here and change these values if not you'll have the wrong id when it posts to the server
-  const categories = [
-    { name: 'Outdoor', id: '625f5d489bc07a05755440da' },
-    { name: 'Auto', id: '625f5d489bc07a05755440db' },
-    { name: 'Tech', id: '625f5d489bc07a05755440dc' },
-    { name: 'Clothing', id: '625f5d489bc07a05755440dd' },
-    { name: 'Home', id: '625f5d489bc07a05755440de' }
-  ];
 
-let itemImage = localStorage.getItem('imageurl')
-let userId = localStorage.getItem('userId');
-if(itemImage) {
-  itemImage = itemImage.replace(/^"(.*)"$/, '$1');
-}
-if(userId) {
-  userId = userId.replace(/^"(.*)"$/, '$1');
-}
+  let itemImage = localStorage.getItem('imageurl');
+  let userId = localStorage.getItem('userId');
+  if (itemImage) {
+    itemImage = itemImage.replace(/^"(.*)"$/, '$1');
+  }
+  if (userId) {
+    userId = userId.replace(/^"(.*)"$/, '$1');
+  }
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     const mutationResponse = await addItem({
       variables: {
-        'title': postForm.itemTitle,
-        'description': postForm.description,
-        'image': itemImage,
-        'price': parseInt(postForm.price),
-        'quantity': parseInt(postForm.Quantity),
-        'category': postForm.categoryId,
-        'user': userId
-
+        title: postForm.itemTitle,
+        description: postForm.description,
+        image: itemImage,
+        price: parseInt(postForm.price),
+        quantity: parseInt(postForm.Quantity),
+        category: postForm.categoryId,
+        user: userId
       }
     });
     console.info(mutationResponse);
     localStorage.removeItem('imageurl');
+    window.location.assign('/');
   };
 
-
-
   const handleChange = (event) => {
-    // console.log(event.target.value)
     const { name, value } = event.target;
     setPostForm({
       ...postForm,
       [name]: value
     });
+  };
 
+  const renderCategoryOptions = () => {
+    return categoryData.categories.map((category) => (
+      <option value={category._id} key={category._id} name={category.name}>
+        {category.name}
+      </option>
+    ));
   };
 
   return (
-    <div className='itemContainer'>
+    <div className="itemContainer">
       <form onSubmit={handleFormSubmit} className="form-container">
-        <UploadForm/>
+        <UploadForm />
 
         <div>
         <label htmlFor="itemTitle">Item Title</label>
-        <input type="text" name="itemTitle" placeholder="Title" className="formField" onChange={handleChange}></input>
-        </div>
+        <input
+          type="text"
+          name="itemTitle"
+          placeholder="Title"
+          className="formField"
+          onChange={handleChange}
+        ></input>
 
         <div>
         <label htmlFor="price">Price</label>
-        <input type="text" name="price" placeholder="Price of Item" className="formField" onChange={handleChange}></input>
-        </div>
+        <input
+          type="text"
+          name="price"
+          placeholder="Price of Item"
+          className="formField"
+          onChange={handleChange}
+        ></input>
 
-        <div>
-          <label htmlFor="description">Description</label>
-            <input
-              type="text"
-              name="description"
-              placeholder="Description"
-              className="formField"
-              onChange={handleChange}
-            ></input>
-        </div>
+        <label htmlFor="description">Description</label>
+        <input
+          type="text"
+          name="description"
+          placeholder="Description"
+          className="formField"
+          onChange={handleChange}
+        ></input>
 
-        <div>
-          <label htmlFor="description">Quantity</label>
-          <input type="Number" name="Quantity" placeholder="Quantity" className="formField" onChange={handleChange}></input>
-        </div>
+        <label htmlFor="description">Quantity</label>
+        <input
+          type="Number"
+          name="Quantity"
+          placeholder="Quantity"
+          className="formField"
+          onChange={handleChange}
+        ></input>
 
-        <div>
-          <label htmlFor="categoryId">Category</label>
-          <select  name='categoryId' onChange={handleChange}> {categories.map((category) => { return <option  value={category.id} key={category.id}>{category.name + ' - ' +  category.id}</option>})}</select>
-       </div>
-
-        <button type="submit" className='btn-primary'>Hawk Item</button>
-        
+        <label htmlFor="categoryId">Category</label>
+        <select name="categoryId" onChange={handleChange} defaultValue={'none'}>
+          <option value="none" disabled hidden>
+            Select An Option
+          </option>
+          {categoryData ? renderCategoryOptions() : <option>Loading...</option>}
+        </select>
+        {postForm.categoryId === undefined
+          ? `You have not selected a category`
+          : `You've selected a category`}
+        <button type="submit" className="btn-primary">
+          Hawk Item
+        </button>
       </form>
     </div>
   );
