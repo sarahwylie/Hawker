@@ -3,8 +3,7 @@ import OrderHistory from './orderHistory';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_USER } from '../../../utils/queries';
-import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react';
-import { Link } from 'react-router-dom';
+import { CCard, CCardImage, CCardBody, CCardTitle, CCardText } from '@coreui/react';
 
 function Dashboard() {
   let userId = localStorage.getItem('userId');
@@ -14,7 +13,7 @@ function Dashboard() {
   }
 
   const { data } = useQuery(QUERY_SINGLE_USER, { variables: { id: userId } });
-  console.log(data);
+  console.info(data);
 
   const getUserListings = () => {
     return (

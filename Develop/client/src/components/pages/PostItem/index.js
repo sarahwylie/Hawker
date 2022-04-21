@@ -10,10 +10,7 @@ function PostItem() {
   const { data: categoryData } = useQuery(QUERY_CATEGORIES);
   const [addItem] = useMutation(ADD_ITEM);
 
-  console.log(categoryData);
-
-  // Category id values depend on object id created when categories are seeded in mongo database
-  // if you reseed your database you need to come here and change these values if not you'll have the wrong id when it posts to the server
+  console.info(categoryData);
 
   let itemImage = localStorage.getItem('imageurl');
   let userId = localStorage.getItem('userId');
