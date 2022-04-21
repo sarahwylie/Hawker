@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Form from 'react-bootstrap/Form';
-import Hawker from '../../assets/images/icons/hawkER.svg';
+import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
