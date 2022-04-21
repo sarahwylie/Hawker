@@ -72,9 +72,7 @@ function Header({ isLogin }) {
                 className="me-2 formField"
                 aria-label="Search"
               />
-              <button input={inputText} className="btn-primary">
-                Search
-              </button>
+              <button name={inputText} className="btn-primary">Search</button>
             </Form>
           </div>
         </div>
