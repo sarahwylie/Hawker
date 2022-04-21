@@ -9,10 +9,7 @@ function SingleItem() {
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   console.info(data);
 
-
   let userId = localStorage.getItem('userId')
-
-
 
   const [deleteItem] = useMutation(DELETE_ITEM);
 
