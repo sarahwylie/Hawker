@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_ORDER } from '../../../utils/mutations';
 
@@ -11,7 +11,10 @@ function Success() {
   let itemId = itemData.item._id;
   console.log(itemData.item._id);
 
-  const saveOrder = async() => {
+  useEffect(() => {
+
+
+      const saveOrder = async() => {
     const  data  = await addOrder({ variables: { item: itemId,
       user: userId
      } });
@@ -22,13 +25,16 @@ function Success() {
       window.location.assign('/');
     }, 5000);
   };
+  saveOrder();
+  }, [addOrder, itemId, userId])
+
 
   return (
     <div>
       <h1>Success!</h1>
       <h2>Thank you for your purchase!</h2>
       <h2>You will now be redirected to the home page</h2>
-      {saveOrder()}
+      
     </div>
   );
 }

@@ -78,13 +78,13 @@ const typeDefs = gql`
     addOrder(purchaseDate: DateTime, items: ID!, users: ID!): Order
 
     addItem(
-      title: String
-      description: String
-      image: String
-      price: Float
-      quantity: Int
-      category: ID
-      user: ID
+      title: String!
+      description: String!
+      image: String!
+      price: Float!
+      quantity: Int!
+      category: ID!
+      user: ID!
     ): Item
 
     deleteItem(_id: ID!): Item

@@ -25,12 +25,12 @@ export const LOGIN_USER = gql`
 export const ADD_ITEM = gql`
   mutation addItem(
     $title: String!
-    $description: String
-    $image: String
-    $price: Float
-    $quantity: Int
-    $category: ID
-    $user: ID
+    $description: String!
+    $image: String!
+    $price: Float!
+    $quantity: Int!
+    $category: ID!
+    $user: ID!
   ) {
     addItem(
       title: $title

@@ -25,10 +25,6 @@ function Dashboard() {
             <CCardBody>
               <CCardTitle>{e.title}</CCardTitle>
               <CCardText>${e.price}</CCardText>
-              <Link to={`/SingleItem/${e._id}`}>
-                {' '}
-                <CButton>See Item</CButton>
-              </Link>
             </CCardBody>
           </CCard>
         ))}
@@ -41,7 +37,9 @@ function Dashboard() {
       <OrderHistory />
 
       <div>YOUR PAST LISTINGS</div>
-      <div className="itemContainer">{data ? getUserListings() : <div>You have not posted any items for sale yet...</div>}</div>
+      <div className="itemContainer">
+        {data ? getUserListings() : <div>You have not posted any items for sale yet...</div>}
+      </div>
     </div>
   );
 }
