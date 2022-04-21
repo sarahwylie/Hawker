@@ -30,6 +30,7 @@ function SingleItem() {
   const getSingleItemData = () => {
     return (
       <div className="itemContainer">
+        {console.info(data.item._id)}
         <div className="itemDiv">
           <div className="singleCard">
             <img orientation="top" src={data.item.image} alt={data.item.title} />
