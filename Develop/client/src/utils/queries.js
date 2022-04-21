@@ -86,17 +86,13 @@ export const QUERY_ITEMS = gql`
         _id
         name
       }
+      user {
+        _id
+        firstName
+      }
     }
   }
 `
-
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($items: [ID]!) {
-    checkout(items: $items) {
-      session
-    }
-  }
-`;
 export const QUERY_SINGLE_ITEM = gql`
   query item($id: ID!) {
     item(_id: $id) {
@@ -116,6 +112,14 @@ export const QUERY_SINGLE_ITEM = gql`
         firstName
         lastName
       }
+    }
+  }
+`;
+
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($items: [ID]!) {
+    checkout(items: $items) {
+      session
     }
   }
 `;

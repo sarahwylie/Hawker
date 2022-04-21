@@ -66,7 +66,7 @@ function Login({ toggle }) {
         
           {loading ? (
             <div>
-              <p className="loading-text">Loading...</p>
+              <p className="loading-text">Incorrect credentials</p>
             </div>
           ) : null}
           {error ? (

@@ -143,6 +143,14 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
+    deleteItem: async (parent, { _id }, context) => {
+      const item = await Item.findByIdAndRemove(_id);
+
+      await Item.findByIdAndDelete(context.user._id, {
+        $pull: { items: item }
+      });
+      return item;
+    },
     addOrder: async (parent, { items }, context) => {
       if (context.user) {
         const order = new Order({ items });

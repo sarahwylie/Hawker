@@ -6,7 +6,7 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
 import { StoreProvider } from './utils/GlobalState';
-import PrivateRoute from './components/PrivateRoute/index';
+import PrivateRoute from './utils/PrivateRoute/index';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Login from './components/pages/Login/index';

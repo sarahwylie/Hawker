@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { QUERY_USER } from '../../../utils/queries';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
+import { useMutation } from '@apollo/client';
 
 function Confirmation({ setOpenModal }) {
 
@@ -33,6 +34,8 @@ function Confirmation({ setOpenModal }) {
       setShippingPhoneNumber(inputValue);
     } else if (inputType === 'state') {
       setShippingState(inputValue);
+    } else if (inputType === 'city') {
+      setShippingCity(inputValue);
     } else if (inputType === 'zip') {
       setShippingZip(inputValue);
     }
@@ -65,7 +68,7 @@ function Confirmation({ setOpenModal }) {
           <p>Full Name</p>
           <input
           value={fullName}
-          name="fullname"
+          name="fullName"
           onChange={handleInputChange}
           type="fullname"
           placeholder="Full Name"
