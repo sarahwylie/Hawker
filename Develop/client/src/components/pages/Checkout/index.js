@@ -1,40 +1,46 @@
-import React from 'react';
-import { ExternalLink } from 'react-external-link';
+// import React from 'react';
+// import { ExternalLink } from 'react-external-link';
 // import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
 
 
 const Checkout = () => {
-  // const stripe = useStripe();
-  // const elements = useElements();
 
-  // const handleSubmit = async (event) => {
-  //   // We don't want to let default form submission happen here,
-  //   // which would refresh the page.
-  //   event.preventDefault();
+import React, { useEffect, useState } from 'react';
+import { useLazyQuery, useQuery  } from '@apollo/client';
+import { QUERY_CHECKOUT, QUERY_SINGLE_ITEM } from '../../../utils/queries';
+import { loadStripe } from '@stripe/stripe-js';
+import Confirmation from '../Confirmation';
 
-  //   if (!stripe || !elements) {
-  //     // Stripe.js has not yet loaded.
-  //     // Make sure to disable form submission until Stripe.js has loaded.
-  //     return;
-  //   }
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
-  //   const result = await stripe.confirmPayment({
-  //     //`Elements` instance that was used to create the Payment Element
-  //     elements,
-  //     confirmParams: {
-  //       return_url: "https://example.com/order/123/complete",
-  //     },
-  //   });
+const Checkout = () => {
+  let itemId = window.location.href.substring(42);
+  const itemIds = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  console.info(data)
+  const details = JSON.parse(localStorage.getItem("itemData")).item
 
-  //   if (result.error) {
-  //     // Show error to your customer (for example, payment details incomplete)
-  //     console.log(result.error.message);
-  //   } else {
-  //     // Your customer will be redirected to your `return_url`. For some payment
-  //     // methods like iDEAL, your customer will be redirected to an intermediate
-  //     // site first to authorize the payment, then redirected to the `return_url`.
-  //   }
-  // };
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
+
+  function submitCheckout() {
+    const id = [];
+    id.push(itemIds);
+    getCheckout({
+      variables: { items: id }
+    });
+  }
+
+  const tax = (8.25 / 100) * details.price;
+  const shipping = (5 / 100) * details.price;
+  const total = details.price + tax + shipping;
 
   return (
     <div>
