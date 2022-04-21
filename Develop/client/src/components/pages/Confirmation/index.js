@@ -3,6 +3,8 @@ import { QUERY_USER } from '../../../utils/queries';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
 
+// import { useMutation } from '@apollo/client';
+
 function Confirmation({ setOpenModal }) {
   const [fullName, setShippingFullName] = useState('');
   const [address, setShippingAddress] = useState('');
@@ -12,9 +14,10 @@ function Confirmation({ setOpenModal }) {
   const [phonenumber, setShippingPhoneNumber] = useState('');
 
   const { itemData } = useQuery(QUERY_ITEMS);
-  console.log(itemData);
+
+  console.info(itemData);
   const { data } = useQuery(QUERY_USER);
-  console.log(data);
+  console.info(data);
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -29,9 +32,9 @@ function Confirmation({ setOpenModal }) {
       setShippingPhoneNumber(inputValue);
     } else if (inputType === 'state') {
       setShippingState(inputValue);
-    }  else if (inputType === 'city') {
+    } else if (inputType === 'city') {
       setShippingCity(inputValue);
-    }else if (inputType === 'zip') {
+    } else if (inputType === 'zip') {
       setShippingZip(inputValue);
     }
   };
@@ -48,7 +51,6 @@ function Confirmation({ setOpenModal }) {
   };
 
   const [setShow] = useState(false);
-  //const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
@@ -70,13 +72,6 @@ function Confirmation({ setOpenModal }) {
             onChange={handleInputChange}
             type="address"
             placeholder="Address"
-          />
-          <input
-            value={state}
-            name="state"
-            onChange={handleInputChange}
-            type="state"
-            placeholder="State"
           />
           <input
             value={city}
@@ -102,9 +97,7 @@ function Confirmation({ setOpenModal }) {
           />
 
           <p></p>
-          <div>
           <button
-           className="btn-primary"
             onClick={() => {
               setOpenModal(false);
             }}
@@ -112,10 +105,9 @@ function Confirmation({ setOpenModal }) {
           >
             Cancel
           </button>
-          <button type="button" onClick={handleFormSubmit} className="btn-primary">
+          <button type="button" onClick={handleFormSubmit}>
             Confirm
           </button>
-          </div>
         </form>
       </button>
     </div>
