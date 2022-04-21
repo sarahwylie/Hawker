@@ -17,8 +17,24 @@ label
   font-weight: bold
 
 input[type=file]::file-selector-button
+  padding: .5rem
+  margin: .5rem
+  background-color: $dark
+  border-radius: 10px
+  color: white
+  text-decoration: none
+  border: 1px solid $light-blue
+  font-size: medium
+  letter-spacing: .1em
   &:hover
+    transition: all .2s
+    box-shadow: 5px 5px 5px $offset
+    border: 1px solid $offset
+    color: $searchfill
     cursor: pointer
+  &:not(:hover)
+    transition: all .3s 
+  
 
 .form-container
   margin-bottom: 6rem

@@ -24,6 +24,9 @@ const Signup = ({ toggle }) => {
         lastName: formState.lastName
       }
     });
+    console.log(mutationResponse);
+    let userId = mutationResponse.data.addUser.user._id;
+    localStorage.setItem('userId', `${userId}`);
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
   };

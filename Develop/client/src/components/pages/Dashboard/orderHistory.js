@@ -9,17 +9,19 @@ function OrderHistory() {
   }
 
   const { data } = useQuery(QUERY_SINGLE_USER, { variables: { id: userId } });
-
+  console.log(data);
   const getUserOrders = () => {
     return (
-      <div>
-        <div>
+      <div className="itemContainer">
+        
           {data.user.firstName} {data.user.lastName}'s Order History
-        </div>
+          {/* {console.log(data.user.orders[28].items[0].title)} */}
+        
         {data.user.orders.map((e) => (
           <div key={e._id}>
             {' '}
-            Purchase Date - {e.purchaseDate} orderId - {e._id}
+            {/* title - {e.items[0].title} */}
+            Purchase Date - {e.purchaseDate} orderId - {e._id} 
           </div>
         ))}
       </div>
@@ -29,10 +31,10 @@ function OrderHistory() {
   return (
     <div>
       Order History
-      <div>
-        return <div className="itemContainer">{data ? getUserOrders() : <div>Loading...</div>}</div>
-        ;
-      </div>
+      
+        <div>{data ? getUserOrders() : <div>You have not placed any orders yet...</div>}</div>
+        
+      
     </div>
   );
 }
