@@ -25,8 +25,9 @@ function Seller() {
             <div>
             {data.user.items.map((e) => (
           <div key={e._id}> 
+          
             {' '}
-            Title - {e.title} Price - {e.price} Description - {e.description}
+            Title - {e.title} Price - {e.price} Description - {e.description}   
           </div>
         ))}
             </div>
