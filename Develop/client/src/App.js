@@ -65,6 +65,15 @@ function App() {
 
             <Route
               exact
+              path="/success"
+              element={
+                <PrivateRoute>
+                  <Success />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
               path="/singleItem/:id"
               element={
                 <PrivateRoute>
