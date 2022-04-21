@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
-import { useLazyQuery, useQuery } from '@apollo/client';
+import React, { useEffect, useState } from 'react';
+import { useLazyQuery, useQuery  } from '@apollo/client';
 import { QUERY_CHECKOUT, QUERY_SINGLE_ITEM } from '../../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import Confirmation from '../Confirmation';
-import { getInclusionDirectives } from '@apollo/client/utilities';
-import { useLocation } from 'react-router-dom'
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Checkout = (product) => {
+  let itemId = window.location.href.substring(42);
+  const itemIds = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-
+  console.log(data)
   const details = JSON.parse(localStorage.getItem("itemData")).item
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -54,7 +54,7 @@ const Checkout = (product) => {
       <p>Sales Tax-    {tax}</p>
       <p>Shipping-     {shipping}</p>
       <p>Total-     {total}</p>
-      <img src={details.image}></img>
+      <img src={details.image} alt={details.title}></img>
       <button onClick={submitCheckout}>Checkout</button>
     </div>
   );

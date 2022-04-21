@@ -1,11 +1,7 @@
 import React,{useState} from 'react';
-import { QUERY_CHECKOUT } from '../../../utils/queries';
-import { loadStripe } from '@stripe/stripe-js';
 import { QUERY_USER } from '../../../utils/queries';
-import { useLazyQuery, useQuery } from '@apollo/client';
-import { selectionSetMatchesResult } from '@apollo/client/cache/inmemory/helpers';
+import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
-import Modal from 'react-modal';
 
 function Confirmation({ setOpenModal }) {
 
@@ -56,8 +52,8 @@ function Confirmation({ setOpenModal }) {
   };
 
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const [setShow] = useState(false);
+  //const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
 
@@ -88,7 +84,14 @@ function Confirmation({ setOpenModal }) {
           onChange={handleInputChange}
           type="state"
           placeholder="State"
-        />      
+        />
+          <input
+          value={city}
+          name="city"
+          onChange={handleInputChange}
+          type="city"
+          placeholder="City"
+        />           
         <input
           value={zip}
           name="zip"

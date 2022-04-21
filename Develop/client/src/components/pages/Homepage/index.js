@@ -27,7 +27,7 @@ function Homepage() {
     ));
   };
 
-  const seState = (e) => {
+  const setState = (e) => {
     setCategories(e.target.innerText);
   };
 
