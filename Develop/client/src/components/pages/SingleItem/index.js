@@ -6,7 +6,7 @@ import { CButton } from '@coreui/react';
 
 function SingleItem() {
   // substring number probably will change we stop hosting on Local host
-  let itemId = window.location.href.substring(27);
+  let itemId = window.location.href.substring(46);
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   console.info(data);
 
