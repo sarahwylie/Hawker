@@ -27,6 +27,9 @@ function Header({ isLogin }) {
     if (Auth.loggedIn()) {
       return (
         <div className="log">
+          <a href="/">
+            <button className="btn-primary">Home</button>
+          </a>
           <a href="/postItem">
             <button className="btn-primary">Hawk Item</button>
           </a>

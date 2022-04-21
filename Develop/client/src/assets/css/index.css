@@ -142,6 +142,12 @@
   transition: all .3s;
 }
 
+@media (max-width: 768px) {
+  .photo {
+    width: 100%;
+  }
+}
+
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
