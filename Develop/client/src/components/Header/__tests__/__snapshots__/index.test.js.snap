@@ -11,53 +11,7 @@ exports[`Header component matches snapshot DOM node structure 1`] = `
       >
         <div
           class="col title"
-        >
-          <button
-            class="btn-primary"
-          >
-            Categories
-          </button>
-          <ul
-            class="cats"
-            id="catBtn"
-          >
-            <li>
-              <a
-                href="/auto"
-              >
-                Auto
-              </a>
-            </li>
-            <li>
-              <a
-                href="/clothing"
-              >
-                Clothing
-              </a>
-            </li>
-            <li>
-              <a
-                href="/household"
-              >
-                Household
-              </a>
-            </li>
-            <li>
-              <a
-                href="/outdoor"
-              >
-                Outdoor
-              </a>
-            </li>
-            <li>
-              <a
-                href="/tech"
-              >
-                Tech
-              </a>
-            </li>
-          </ul>
-        </div>
+        />
         <div
           class="col"
         >
@@ -90,6 +44,9 @@ exports[`Header component matches snapshot DOM node structure 1`] = `
             >
               Search
             </button>
+            <div>
+              SearchList
+            </div>
           </form>
         </div>
         <div
@@ -99,7 +56,7 @@ exports[`Header component matches snapshot DOM node structure 1`] = `
             href="/login"
           >
             <button
-              class="btn-primary"
+              class="btn-primary loginBtn"
             >
               Login
             </button>

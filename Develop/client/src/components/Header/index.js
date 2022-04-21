@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
+import React from 'react';
+
+// import Form from 'react-bootstrap/Form';
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
-import '../../assets/css/index.css';
-import SearchList from '../SearchList';
 
 function Header({ isLogin }) {
   const showButtons = () => {
@@ -27,7 +26,7 @@ function Header({ isLogin }) {
   function loggedIn() {
     if (Auth.loggedIn()) {
       return (
-        <div className='log'>
+        <div className="log">
           <a href="/postItem">
             <button className="btn-primary">Hawk Item</button>
           </a>
@@ -44,52 +43,26 @@ function Header({ isLogin }) {
     }
   }
 
-  function showDiv() {
-    if(document.getElementById('catBtn').style.display === ""){
-      document.getElementById('catBtn').style.display = "block"
-    } else {
-      document.getElementById('catBtn').style.display = ""
-    }
-    
-  }
-  const [inputText, setInputText] = useState("");
-  let inputHandler = (e) => {
-    //convert input text to lower case
-    var lowerCase = e.target.value.toLowerCase();
-    setInputText(lowerCase);
-  };
+  /* SEARCH BAR FOR AFTER THE PROJECT */
+  // const [inputText, setInputText] = useState('');
+  // let inputHandler = (e) => {
+  //   //convert input text to lower case
+  //   var lowerCase = e.target.value.toLowerCase();
+  //   setInputText(lowerCase);
+  // };
 
   return (
     <header className="head">
       <nav>
         <div className="row">
-          <div className="col title">
-            <button className="btn-primary" onClick={showDiv}>Categories</button> 
-            <ul className="cats" id="catBtn">
-              <li>
-                <a href="/auto">Auto</a>
-              </li>
-              <li>
-                <a href="/clothing">Clothing</a>
-              </li>
-              <li>
-                <a href="/household">Household</a>
-              </li>
-              <li>
-                <a href="/outdoor">Outdoor</a>
-              </li>
-              <li>
-                <a href="/tech">Tech</a>
-              </li>
-            </ul>
-          </div>
+          <div className="col title"></div>
           <div className="col">
             <a href="/">
               <span role="img" aria-label="img-name">
                 <img src={Hawker} alt="logo" className="photo" id="logo" />
               </span>
             </a>
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <Form.Control
                 type="search"
                 placeholder="Search"
@@ -97,9 +70,10 @@ function Header({ isLogin }) {
                 className="me-2 formField"
                 aria-label="Search"
               />
-              <button className="btn-primary">Search</button>
-              <SearchList input={inputText} />
-            </Form>
+              <button input={inputText} className="btn-primary">
+                Search
+              </button>
+            </Form> */}
           </div>
           <div className="col">{loggedIn()}</div>
         </div>
