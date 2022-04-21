@@ -5,7 +5,6 @@ import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
 import Auth from '../../utils/auth';
-import SearchList from '../SearchList';
 
 function Header({ isLogin }) {
   const showButtons = () => {
@@ -70,8 +69,9 @@ function Header({ isLogin }) {
                 className="me-2 formField"
                 aria-label="Search"
               />
-              <button className="btn-primary">Search</button>
-              <SearchList className="SearchList" input={inputText} />
+              <button input={inputText} className="btn-primary">
+                Search
+              </button>
             </Form>
           </div>
           <div className="col">{loggedIn()}</div>

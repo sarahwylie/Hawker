@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/nicnolen/hawker/issues"
   },
-  "homepage": "https://github.com/nicnolen/hawker#readme",
+  "homepage": "https://texas-hawker.herokuapp.com/",
   "devDependencies": {
     "concurrently": "^7.1.0",
     "eslint": "^8.12.0",
