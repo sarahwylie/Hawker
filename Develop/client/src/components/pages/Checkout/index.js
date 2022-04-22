@@ -7,7 +7,7 @@ import Confirmation from '../Confirmation';
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Checkout = () => {
-  let itemId = window.location.href.substring(55);
+  let itemId = window.location.href.substring(47);
   const itemIds = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
@@ -26,11 +26,13 @@ const Checkout = () => {
   }, [data]);
 
   function submitCheckout() {
-    const id = [];
-    id.push(itemIds);
-    getCheckout({
-      variables: { items: id }
-    });
+    window.location.assign('/success');
+    // const id = [];
+    // id.push(itemIds);
+    // getCheckout({
+    //   variables: { items: id }
+    // });
+   
   }
 
   const tax = (8.25 / 100) * details.price;
