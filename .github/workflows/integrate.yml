@@ -5,7 +5,7 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  test_pull_request
+  test_pull_request:
     runs-on: ubuntu-latest
     steps:
       # get code from repo
