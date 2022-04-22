@@ -40,7 +40,7 @@ const Checkout = () => {
       <div>
       <h1>Purchase Confirmation</h1>
       <h3>Shipping Details</h3>
-      <button className='openModalBtn'
+      <button className='openModalBtn btn-primary'
       onClick={() => {
         setModalOpen(true);
       }}

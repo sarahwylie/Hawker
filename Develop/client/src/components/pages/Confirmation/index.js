@@ -110,8 +110,8 @@ function Confirmation({ setOpenModal }) {
         />
 
         <p></p>
-        <button onClick={() => {  setOpenModal(false) }}  id="cancelBtn">Cancel</button>
-        <button type="button" onClick={handleFormSubmit}>Confirm</button>
+        <button onClick={() => {  setOpenModal(false) }}  className="btn-primary" id="cancelBtn">Cancel</button>
+        <button className="btn-primary" type="button" onClick={handleFormSubmit}>Confirm</button>
       </form>
       </button>
     </div>
