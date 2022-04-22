@@ -27,11 +27,11 @@ const Checkout = () => {
 
   function submitCheckout() {
     window.location.assign('/success');
-    // const id = [];
-    // id.push(itemIds);
-    // getCheckout({
-    //   variables: { items: id }
-    // });
+    const id = [];
+    id.push(itemIds);
+    getCheckout({
+      variables: { items: id }
+    });
    
   }
 
