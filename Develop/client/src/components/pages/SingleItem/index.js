@@ -52,7 +52,7 @@ function SingleItem() {
                 {' '}
 
                 <button onClick={saveItem} className="btn-primary">
-                  Goto Checkout
+                  Checkout
                 </button>
               </a>
               {data.item.user._id === userId ? (
