@@ -14,8 +14,7 @@ function Confirmation({ setOpenModal }) {
   const [phonenumber, setShippingPhoneNumber] = useState('');
 
   const { itemData } = useQuery(QUERY_ITEMS);
-
-  console.info(itemData);
+  console.log(itemData);
   const { data } = useQuery(QUERY_USER);
   console.info(data);
 
@@ -32,9 +31,9 @@ function Confirmation({ setOpenModal }) {
       setShippingPhoneNumber(inputValue);
     } else if (inputType === 'state') {
       setShippingState(inputValue);
-    } else if (inputType === 'city') {
+    }  else if (inputType === 'city') {
       setShippingCity(inputValue);
-    } else if (inputType === 'zip') {
+    }else if (inputType === 'zip') {
       setShippingZip(inputValue);
     }
   };
@@ -72,6 +71,13 @@ function Confirmation({ setOpenModal }) {
             onChange={handleInputChange}
             type="address"
             placeholder="Address"
+          />
+          <input
+            value={state}
+            name="state"
+            onChange={handleInputChange}
+            type="state"
+            placeholder="State"
           />
           <input
             value={city}

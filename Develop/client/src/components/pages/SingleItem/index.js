@@ -5,11 +5,11 @@ import { DELETE_ITEM } from '../../../utils/mutations';
 
 function SingleItem() {
   // substring number probably will change we stop hosting on Local host
-  let itemId = window.location.href.substring(33);
+  let itemId = window.location.href.substring(46);
   const { data } = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   console.info(data);
 
-  let userId = localStorage.getItem('userId');
+  let userId = localStorage.getItem('userId')
 
   const [deleteItem] = useMutation(DELETE_ITEM);
 
@@ -20,7 +20,7 @@ function SingleItem() {
       variables: { id: itemId }
     });
     console.log(deleteMutation);
-    window.location.assign('/');
+    window.location.assign('/')
   };
 
   const saveItem = function () {

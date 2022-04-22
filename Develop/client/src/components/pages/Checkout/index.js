@@ -7,7 +7,7 @@ import Confirmation from '../Confirmation';
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Checkout = () => {
-  let itemId = window.location.href.substring(42);
+  let itemId = window.location.href.substring(55);
   const itemIds = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
