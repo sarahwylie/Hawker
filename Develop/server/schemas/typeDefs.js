@@ -80,6 +80,10 @@ const typeDefs = gql`
     checkout(items: [ID]!): Checkout
     contactInfo: [ContactInfo]
   }
+  
+  type Checkout {
+    session: ID
+  }
 
   type Mutation {
     login(email: String!, password: String!): Auth

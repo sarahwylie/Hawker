@@ -1,8 +1,16 @@
+// import React from 'react';
+// import { ExternalLink } from 'react-external-link';
+// import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
+
+
+// const Checkout = () => {
+
 import React, { useEffect, useState } from 'react';
 import { useLazyQuery, useQuery } from '@apollo/client';
 import { QUERY_CHECKOUT, QUERY_SINGLE_ITEM } from '../../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import Confirmation from '../Confirmation';
+import { ExternalLink } from 'react-external-link';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -38,35 +46,35 @@ const Checkout = () => {
   const total = details.price + tax + shipping;
 
   return (
-    <div className="itemContainer">
-      <div className="row">
-        <div className='address'>
-          <h1>Purchase Confirmation</h1>
-          <h3>Shipping Details</h3>
-          <button
-            className="btn-primary"
-            onClick={() => {
-              setModalOpen(true);
-            }}
-          >
-            Add
-          </button>
-          <div>{modalOpen && <Confirmation setModalOpen={setModalOpen} />}</div>
-        </div>
-        <div className='itemInfo'>
-          <p>Item Price-${details.price}</p>
-          <p>Sales Tax-${tax}</p>
-          <p>Shipping-${shipping}</p>
-          <p>Total-${total}</p>
-          <div className='imgDiv'>
-            <img src={details.image} alt={details.title}></img>
-          </div>
-          <div>
-            <button onClick={submitCheckout} className="btn-primary">Checkout</button>
-          </div>
-        </div>
-      </div>
+    <div>
+    <div>
+    <h1>Purchase Confirmation</h1>
+    <h3>Shipping Details</h3>
+    <button className='openModalBtn'
+    onClick={() => {
+      setModalOpen(true);
+    }}
+    >
+      Add
+    </button>
+    {modalOpen && <Confirmation setModalOpen={setModalOpen} /> }
     </div>
+    <p>Item Price-   {details.price}</p>
+    <p>Sales Tax-    {tax}</p>
+    <p>Shipping-     {shipping}</p>
+    <p>Total-     {total}</p>
+    <div><img src={details.image} alt={details.title} style={{width: '10rem'}}></img></div>
+    <div><button onClick={submitCheckout}><ExternalLink href="https://buy.stripe.com/test_28o9CgcqlgDD7vO7ss">
+      <span>Checkout</span>
+    </ExternalLink></button>
+    <div>
+    {/* <form onSubmit={handleSubmit}>
+      <PaymentElement />
+      <button onClick={!stripe}>Checkout</button>
+    </form> */}
+    </div>
+    </div>
+  </div>
   );
 };
 
