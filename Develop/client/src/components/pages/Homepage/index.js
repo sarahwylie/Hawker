@@ -36,30 +36,28 @@ function Homepage() {
     const newArr = itemData.items.filter((e) => e.category.name === categories);
 
     return newArr.map((filteredItem) => (
-      
-        <CCard key={filteredItem._id}>
-          <CCardImage
-            orientation="top"
-            src={filteredItem.image}
-            alt={filteredItem.title}
-            width="100%"
-          />
-          <CCardBody>
-            <CCardTitle>{filteredItem.title}</CCardTitle>
-            <CCardText>${filteredItem.price}</CCardText>
-            <Link to={`/SingleItem/${filteredItem._id}`}>
-              {' '}
-              <CButton>See Item</CButton>
-            </Link>
-          </CCardBody>
-        </CCard>
-      
+      <CCard key={filteredItem._id}>
+        <CCardImage
+          orientation="top"
+          src={filteredItem.image}
+          alt={filteredItem.title}
+          width="100%"
+        />
+        <CCardBody>
+          <CCardTitle>{filteredItem.title}</CCardTitle>
+          <CCardText>${filteredItem.price}</CCardText>
+          <Link to={`/SingleItem/${filteredItem._id}`}>
+            {' '}
+            <CButton>See Item</CButton>
+          </Link>
+        </CCardBody>
+      </CCard>
     ));
   };
 
   const getCategoryData = () => {
     return (
-      <div id="catBtn" className='cats' >
+      <div id="catBtn" className="cats">
         {categoryData.categories.map((category) => (
           <div key={category._id} name={category.name} onClick={setState}>
             {category.name}
@@ -91,8 +89,10 @@ function Homepage() {
         <button className="btn-primary" onClick={showDiv}>
           Categories
         </button>
-        <div>{categoryData ? getCategoryData() : <div>Loading...</div>}</div>
-      </div>
+        </div>
+        
+          <div>{categoryData ? getCategoryData() : <div>Loading...</div>}</div>
+        
       <div className="itemContainer">{itemData ? renderCards() : <div>Loading...</div>}</div>
     </div>
   );

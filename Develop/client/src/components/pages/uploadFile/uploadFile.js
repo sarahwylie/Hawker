@@ -34,7 +34,7 @@ function UploadForm() {
   return (
     <div>
       <h1 className="title">Upload File</h1>
-      <div>
+      <div className='fileImg'>
         <input type="file" onChange={handleFileChange} value={fileInputState} />
         {previewSource && (
           <img src={previewSource} alt="chosen" style={{ width: '100px', height: '100px' }} />

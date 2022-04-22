@@ -6,7 +6,7 @@
   color: $dark
   position: fixed
   left: 0
-  bottom: -1.75rem
+  bottom: 0rem
   width: 100%
   text-align: center
   &:hover
@@ -14,15 +14,16 @@
     bottom: 0
   &:not(:hover)
     transition: all .5s
-  @media (max-width: $bp-tablet)
-    bottom: -3.25rem
-  @media (max-width: $bp-phone)
-    bottom: -4rem
+    
 
 .legalese
   font-size: xx-small
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   &:hover
     transition: all .5s
     font-size: medium
+    white-space: inherit
   &:not(:hover)
     transition: all .5s
