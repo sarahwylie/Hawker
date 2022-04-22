@@ -10,10 +10,7 @@ exports[`Header component matches snapshot DOM node structure 1`] = `
         class="row"
       >
         <div
-          class="col title"
-        />
-        <div
-          class="col"
+          id="logo"
         >
           <a
             href="/"
@@ -25,32 +22,13 @@ exports[`Header component matches snapshot DOM node structure 1`] = `
               <img
                 alt="logo"
                 class="photo"
-                id="logo"
                 src="Hawker.svg"
               />
             </span>
           </a>
-          <form
-            class="d-flex"
-          >
-            <input
-              aria-label="Search"
-              class="me-2 formField form-control"
-              placeholder="Search"
-              type="search"
-            />
-            <button
-              class="btn-primary"
-            >
-              Search
-            </button>
-            <div>
-              SearchList
-            </div>
-          </form>
         </div>
         <div
-          class="col"
+          class="colNav"
         >
           <a
             href="/login"

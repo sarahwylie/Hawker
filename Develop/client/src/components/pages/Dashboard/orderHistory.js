@@ -12,7 +12,7 @@ function OrderHistory() {
   console.info(data);
   const getUserOrders = () => {
     return (
-      <div>
+      <div className="itemContainer">
         <div>
           {data.user.firstName} {data.user.lastName}'s Order History
         </div>
@@ -31,8 +31,9 @@ function OrderHistory() {
     <div>
       Order History
       <div>
-        <div className="itemContainer">{data ? getUserOrders() : <div>You have not placed any orders yet...</div>}</div>
-
+        <div className="itemContainer">
+          {data ? getUserOrders() : <div>You have not placed any orders yet...</div>}
+        </div>
       </div>
     </div>
   );
