@@ -25,6 +25,7 @@ function SingleItem() {
 
   const saveItem = function () {
     localStorage.setItem('itemData', JSON.stringify(data));
+    window.location.assign('/success')
   };
 
   const getSingleItemData = () => {
