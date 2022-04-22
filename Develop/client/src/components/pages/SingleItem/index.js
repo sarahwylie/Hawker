@@ -25,6 +25,7 @@ function SingleItem() {
 
   const saveItem = function () {
     localStorage.setItem('itemData', JSON.stringify(data));
+    window.location.assign('/success')
   };
 
   const getSingleItemData = () => {
@@ -52,7 +53,7 @@ function SingleItem() {
                 {' '}
 
                 <button onClick={saveItem} className="btn-primary">
-                  Goto Checkout
+                  Checkout
                 </button>
               </a>
               {data.item.user._id === userId ? (

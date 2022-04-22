@@ -1,0 +1,27 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      # get code from repo
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # install NodeJS
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      # build the app
+      - name: 🧰 install deps
+        run: npm install
+      - name: Run lint
+        run: npm run eslint
+      - name: Run tests
+        run: npm run test
+      - name: build
+        run: npm run build
