@@ -19,9 +19,6 @@ function Seller() {
         
         return (
             <div>
-                <div>
-                    {data.user.firstName} {data.user.lastName}'s Listings
-                </div>
             <div>
             {data.user.items.map((e) => (
           <div key={e._id}> 

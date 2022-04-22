@@ -15,9 +15,6 @@ function OrderHistory() {
   const getUserOrders = () => {
     return (
       <div>
-        <div>
-          {data.user.firstName} {data.user.lastName}'s Order History
-        </div>
         {data.user.orders.map((e) => (
           <div key={e._id}>
             {' '}
