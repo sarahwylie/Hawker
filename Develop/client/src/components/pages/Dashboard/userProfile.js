@@ -14,12 +14,23 @@ function userProfile() {
 
     const { data } = useQuery(QUERY_SINGLE_USER, {variables: {id: userId}})
 
+    const getUsername = () => {
+
     return (
         <div>
             <div>
-                    {data.user.firstName} {data.user.lastName}'s Listings
+                    {data.user.firstName} {data.user.lastName}'s Dashboard
             </div>
        </div>
+    );
+  }
+
+  return ( 
+    <div>
+        <div> 
+            <div className='itemContainer'>{ data ? getUsername() : <div>Loading...</div>}</div>
+        </div>
+    </div>
     );
 }
 
