@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import { StoreProvider } from './utils/GlobalState';
-import PrivateRoute from './components/PrivateRoute/index';
+import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Login from './components/pages/Login/index';
@@ -14,7 +14,7 @@ import Checkout from './components/pages/Checkout/index';
 import PostItem from './components/pages/PostItem/index';
 import SingleItem from './components/pages/SingleItem/index';
 import NoMatch from './components/pages/NoMatch/index';
-import Success from './components/pages/Success/success'
+import Success from './components/pages/Success/success';
 import './assets/css/index.css';
 import Dashboard from './components/pages/Dashboard/dashboard';
 
@@ -39,18 +39,23 @@ const client = new ApolloClient({
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
+  // const [filterTerm, setFilterTerm] = useState('');
 
   const toggle = (whichButton) => {
     setIsLogin(whichButton);
   };
 
+  // const handleChange = (event) => {
+  //   setFilterTerm(event);
+  // };
+
   return (
     <ApolloProvider client={client}>
-      <Header isLogin={isLogin} />
       <Router>
+        <Header isLogin={isLogin} /*handleChange={handleChange}*/ />
         <StoreProvider>
           <Routes>
-            <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/" element={<Homepage /*filterTerm={filterTerm} */ />} />
             <Route exact path="/login" element={<Login toggle={toggle} />} />
             <Route exact path="/signup" element={<Signup toggle={toggle} />} />
             <Route
@@ -63,6 +68,15 @@ function App() {
               }
             />
 
+            <Route
+              exact
+              path="/success"
+              element={
+                <PrivateRoute>
+                  <Success />
+                </PrivateRoute>
+              }
+            />
             <Route
               exact
               path="/singleItem/:id"
@@ -90,7 +104,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-                <Route
+            <Route
               exact
               path="/success"
               element={

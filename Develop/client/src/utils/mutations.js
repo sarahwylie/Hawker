@@ -25,12 +25,12 @@ export const LOGIN_USER = gql`
 export const ADD_ITEM = gql`
   mutation addItem(
     $title: String!
-    $description: String
-    $image: String
-    $price: Float
-    $quantity: Int
-    $category: ID
-    $user: ID
+    $description: String!
+    $image: String!
+    $price: Float!
+    $quantity: Int!
+    $category: ID!
+    $user: ID!
   ) {
     addItem(
       title: $title
@@ -52,6 +52,14 @@ export const ADD_ITEM = gql`
       }
     }
   }
+`;
+
+export const DELETE_ITEM = gql`
+mutation deleteItem($id: ID!) {
+  deleteItem(_id: $id) {
+    _id
+  }
+}
 `;
 
 export const ADD_ORDER = gql`
