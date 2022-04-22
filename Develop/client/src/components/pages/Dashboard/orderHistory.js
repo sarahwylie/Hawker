@@ -1,6 +1,8 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_USER } from '../../../utils/queries';
+
+
 function OrderHistory() {
   let userId = localStorage.getItem('userId');
 
