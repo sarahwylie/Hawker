@@ -2,7 +2,7 @@ name: Coninuous Integration
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
   test_pull_request
