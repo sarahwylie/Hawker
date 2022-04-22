@@ -11,6 +11,7 @@ The ISC license is a permissive free software license published by the Internet 
   - [Contact Us](#contact-us)
 ## Description
 Do you have a spectacular item that you just don't need anymore? Are you in search of something specific but don't want to spend an inordinate amount of money or search every thrift store in the greater metropolitan area? Come check out Hawker!
+
 ## Usage
 Check out our site at [Hawker](https://texas-hawker.herokuapp.com/) and hawk your wares! The finished output:
 

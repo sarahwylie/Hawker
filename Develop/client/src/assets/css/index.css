@@ -24,6 +24,12 @@
   transition: all 0.5s;
   bottom: 0;
 }
+
+.footer:not(:hover) {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 @media (max-width: 768px) {
   .footer {
     bottom: -3.25rem;
@@ -43,6 +49,11 @@
   font-size: medium;
 }
 
+.legalese:not(:hover) {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
@@ -59,36 +70,68 @@
   box-shadow: 0px 5px 8px #6d6a75;
 }
 
-.cats {
-  list-style: none;
-  text-decoration: none;
-  color: #023047;
-  display: none;
-  padding: 0;
-  font-size: large;
-}
-.cats a {
-  text-decoration: none;
-  color: #023047;
-}
-.cats a:hover {
-  color: #6d6a75;
-}
-
 .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
 
-.log {
+.colNav, .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.searchList {
-  display: none;
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .search {
+    display: none;
+  }
+}
+
+.photo {
+  width: 25%;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 5px #282c34;
+          box-shadow: 5px 5px 5px #282c34;
+  margin: 1rem;
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+}
+
+.photo:hover {
+  -webkit-transform: rotate(3deg);
+          transform: rotate(3deg);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-box-shadow: -5px 5px 5px #282c34;
+          box-shadow: -5px 5px 5px #282c34;
+}
+
+.photo:not(:hover) {
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 /* VARIABLES */
@@ -108,6 +151,7 @@ form {
 .formParent {
   text-align: center;
   margin: 2rem 0 2rem 0;
+  width: 50%;
   background-color: #219EBC;
   border-radius: 15px;
   box-shadow: 5px 5px 8px #6d6a75;
@@ -132,6 +176,11 @@ form {
   box-shadow: 8px 5px 5px #6d6a75;
   transform: rotate(2deg);
   transition: all 0.3s;
+}
+
+.card:not(:hover) {
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .card-img-top {
@@ -160,6 +209,33 @@ form {
   text-shadow: 2px 2px 5px #023047;
 }
 
+#catBtn {
+  display: none;
+}
+
+#catBtn div {
+  padding: 0 1rem;
+}
+
+#catBtn div:hover {
+  color: #6d6a75;
+  text-shadow: 2px 2px 3px #6d6a75;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.selectCat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /* VARIABLES */
 /* Foreground Colors */
 /* Background Colors */
@@ -170,9 +246,14 @@ select, .formField {
   height: 2.25rem;
   border-radius: 15px;
   background-color: white;
+  width: 50%;
 }
 select:focus, .formField:focus {
   background-color: #eae6e5;
+}
+
+select:hover {
+  cursor: pointer;
 }
 
 label {
@@ -180,9 +261,37 @@ label {
   font-weight: bold;
 }
 
+input[type=file]::file-selector-button {
+  padding: .5rem;
+  margin: .5rem;
+  background-color: #023047;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #61dafb;
+  font-size: medium;
+  letter-spacing: .1em;
+}
+
+input[type=file]::file-selector-button:hover {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-box-shadow: 5px 5px 5px #6d6a75;
+          box-shadow: 5px 5px 5px #6d6a75;
+  border: 1px solid #6d6a75;
+  color: #eae6e5;
+  cursor: pointer;
+}
+
+input[type=file]::file-selector-button:not(:hover) {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
 .form-container {
   margin-bottom: 6rem;
   margin-top: 3rem;
+  width: 50%;
   background-color: #219EBC;
   padding: 0 1rem 1rem 1rem;
   border-radius: 15px;
@@ -256,6 +365,87 @@ label {
   }
 }
 
+/* VARIABLES */
+/* Foreground Colors */
+/* Background Colors */
+/* Spacing */
+/* GRID */
+/* Breakpoints */
+.modalButton {
+  width: 100%;
+  background-color: #219EBC;
+  border-radius: 15px;
+}
+
+.modalButton input {
+  height: 2.25rem;
+  border-radius: 15px;
+  background-color: white;
+  width: 100%;
+}
+
+.modalButton input:focus {
+  background-color: #eae6e5;
+}
+
+.itemInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.itemInfo .imgDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.itemInfo .imgDiv img {
+  width: 50%;
+  border-radius: 15px;
+}
+
+.address {
+  margin: 0 auto;
+}
+
+.success {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -303,12 +493,20 @@ main {
   color: white;
   text-decoration: none;
   border: 1px solid #61dafb;
+  font-size: medium;
+  letter-spacing: .1em;
 }
 .btn-primary:hover {
   transition: all 0.2s;
   box-shadow: 5px 5px 5px #6d6a75;
   border: 1px solid #6d6a75;
   color: #eae6e5;
+  cursor: pointer;
+}
+
+.btn-primary:not(:hover) {
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .itemContainer {

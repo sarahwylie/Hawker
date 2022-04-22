@@ -6,7 +6,7 @@
 // const Checkout = () => {
 
 import React, { useEffect, useState } from 'react';
-import { useLazyQuery, useQuery  } from '@apollo/client';
+import { useLazyQuery, useQuery } from '@apollo/client';
 import { QUERY_CHECKOUT, QUERY_SINGLE_ITEM } from '../../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import Confirmation from '../Confirmation';
@@ -15,11 +15,13 @@ import { ExternalLink } from 'react-external-link';
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Checkout = () => {
-  let itemId = window.location.href.substring(42);
+  let itemId = window.location.href.substring(55);
   const itemIds = useQuery(QUERY_SINGLE_ITEM, { variables: { id: itemId } });
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
   console.info(data)
   const details = JSON.parse(localStorage.getItem("itemData")).item
+
 
   const [modalOpen, setModalOpen] = useState(false);
 
