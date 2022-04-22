@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Form from 'react-bootstrap/Form';
+
+// import Form from 'react-bootstrap/Form';
+
 import Hawker from '../../assets/images/icons/Hawker.svg';
 import Signup from '../pages/Signup/index';
 import Login from '../pages/Login/index';
@@ -27,6 +29,9 @@ function Header({ isLogin }) {
     if (Auth.loggedIn()) {
       return (
         <div className="log">
+          <a href="/">
+            <button className="btn-primary">Home</button>
+          </a>
           <a href="/postItem">
             <button className="btn-primary">Hawk Item</button>
           </a>
@@ -43,25 +48,29 @@ function Header({ isLogin }) {
     }
   }
 
-  const [inputText, setInputText] = useState('');
-  let inputHandler = (e) => {
-    //convert input text to lower case
-    var lowerCase = e.target.value.toLowerCase();
-    setInputText(lowerCase);
-  };
+
+  /* SEARCH BAR FOR AFTER THE PROJECT */
+  // const [inputText, setInputText] = useState('');
+  // let inputHandler = (e) => {
+  //   //convert input text to lower case
+  //   var lowerCase = e.target.value.toLowerCase();
+  //   setInputText(lowerCase);
+  // };
+
 
   return (
     <header className="head">
       <nav>
         <div className="row">
-          <div className="col title"></div>
-          <div className="col">
+        
+          <div id="logo">
             <a href="/">
               <span role="img" aria-label="img-name">
-                <img src={Hawker} alt="logo" className="photo" id="logo" />
+                <img src={Hawker} alt="logo" className="photo" />
               </span>
             </a>
-            <Form className="d-flex">
+
+            {/* <Form className="d-flex">
               <Form.Control
                 type="search"
                 placeholder="Search"
@@ -72,9 +81,10 @@ function Header({ isLogin }) {
               <button input={inputText} className="btn-primary">
                 Search
               </button>
-            </Form>
+            </Form> */}
+
           </div>
-          <div className="col">{loggedIn()}</div>
+          <div className="colNav">{loggedIn()}</div>
         </div>
       </nav>
     </header>

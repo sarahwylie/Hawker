@@ -7,14 +7,12 @@ function Success() {
 
   const itemData = JSON.parse(localStorage.getItem('itemData'));
   let userId = localStorage.getItem('userId');
-  console.log(userId);
   let itemId = itemData.item._id;
-  console.log(itemData.item._id);
 
   useEffect(() => {
     const saveOrder = async () => {
       const data = await addOrder({ variables: { item: itemId, user: userId } });
-      console.log(data);
+      console.info(data);
 
       setTimeout(() => {
         localStorage.removeItem('itemData');
@@ -25,7 +23,7 @@ function Success() {
   }, [addOrder, itemId, userId]);
 
   return (
-    <div>
+    <div className='success'>
       <h1>Success!</h1>
       <h2>Thank you for your purchase!</h2>
       <h2>You will now be redirected to the home page</h2>

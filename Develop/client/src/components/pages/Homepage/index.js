@@ -9,7 +9,7 @@ function Homepage() {
   const { data: itemData } = useQuery(QUERY_ITEMS);
   const { data: categoryData } = useQuery(QUERY_CATEGORIES);
   const [categories, setCategories] = useState();
-  console.log(itemData)
+  console.info(itemData);
 
   // getting item data from the database and mapping to the ui
   const getItemData = () => {
@@ -33,14 +33,11 @@ function Homepage() {
   };
 
   const filterCategory = () => {
-    console.log(itemData.items);
-    console.log(categories);
     const newArr = itemData.items.filter((e) => e.category.name === categories);
-    console.log(newArr);
 
     return newArr.map((filteredItem) => (
-      <div key={filteredItem._id}>
-        <CCard>
+      
+        <CCard key={filteredItem._id}>
           <CCardImage
             orientation="top"
             src={filteredItem.image}
@@ -56,27 +53,27 @@ function Homepage() {
             </Link>
           </CCardBody>
         </CCard>
-      </div>
+      
     ));
   };
 
   const getCategoryData = () => {
     return (
-      <ul className="cats" id="catBtn">
+      <div id="catBtn" className='cats' >
         {categoryData.categories.map((category) => (
           <div key={category._id} name={category.name} onClick={setState}>
             {category.name}
           </div>
         ))}
-      </ul>
+      </div>
     );
   };
 
   const showDiv = () => {
-    if (document.getElementById('catBtn').style.display === '') {
-      document.getElementById('catBtn').style.display = 'block';
+    if (document.querySelector('#catBtn').style.display === '') {
+      document.querySelector('#catBtn').style.display = 'flex';
     } else {
-      document.getElementById('catBtn').style.display = '';
+      document.querySelector('#catBtn').style.display = '';
     }
   };
 
@@ -89,14 +86,14 @@ function Homepage() {
   };
 
   return (
-    <div className="itemContainer">
-      <button className="btn-primary" onClick={showDiv}>
-        Categories
-      </button>
-      <div className="itemContainer">
-        {categoryData ? getCategoryData() : <div>Loading...</div>}
+    <div>
+      <div className="selectCat">
+        <button className="btn-primary" onClick={showDiv}>
+          Categories
+        </button>
+        <div>{categoryData ? getCategoryData() : <div>Loading...</div>}</div>
       </div>
-      {itemData ? renderCards() : <div>Loading...</div>}
+      <div className="itemContainer">{itemData ? renderCards() : <div>Loading...</div>}</div>
     </div>
   );
 }

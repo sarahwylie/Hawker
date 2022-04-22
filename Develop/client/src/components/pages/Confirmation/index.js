@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { QUERY_USER } from '../../../utils/queries';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../../utils/queries';
-import { useMutation } from '@apollo/client';
+
+// import { useMutation } from '@apollo/client';
 
 function Confirmation({ setOpenModal }) {
   const [fullName, setShippingFullName] = useState('');
@@ -49,7 +50,6 @@ function Confirmation({ setOpenModal }) {
   };
 
   const [setShow] = useState(false);
-  //const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
