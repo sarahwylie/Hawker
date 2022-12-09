@@ -7,12 +7,14 @@
   top: 0
   width: 100%
   text-align: center
-  flex: in-line
   box-shadow: 0px 5px 8px $offset
 
 .row
   display: grid
   grid-template-columns: 1fr 1fr
+  @media ( max-width: $bp-phone )
+    grid-template-columns: 1fr
+    
   
   
 .colNav, .search
@@ -20,15 +22,16 @@
   justify-content: center
   align-items: flex-end
   flex-direction: row
+  
+.log
+  @media ( max-width: $bp-phone )
+    display: grid
+    grid-template-columns: 1fr 1fr
 
 .d-flex
   display: flex
   flex-direction: row
   width: 100%
-
-.search
-  @media ( max-width: $bp-phone )
-    display: none
 
 .photo
   width: 25%

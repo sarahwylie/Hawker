@@ -36,7 +36,7 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'contactInfo'
   },
-  shippingDetails: {
+  shipping: {
     type: Schema.Types.ObjectId,
     ref: 'contactInfo'
   }

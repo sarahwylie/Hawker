@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicnolen/hawker.git"
+    "url": "git+https://github.com/sarahwylie/hawker.git"
   },
   "keywords": [
     "marketplace",
@@ -26,9 +26,9 @@
   "author": "Nicholas Nolen, Craig Jensen, Jide Ogunbanjo, Nigel Loch, Samantha Chavez, Sarah Wylie",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nicnolen/hawker/issues"
+    "url": "https://github.com/sarahwylie/hawker/issues"
   },
-  "homepage": "https://texas-hawker.herokuapp.com/",
+  "homepage": "https://hawker-tau.vercel.app/",
   "devDependencies": {
     "concurrently": "^7.1.0",
     "eslint": "^8.12.0",

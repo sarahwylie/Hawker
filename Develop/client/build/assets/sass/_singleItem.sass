@@ -1,0 +1,44 @@
+@import './_variables'
+@import './_responsive'
+
+.itemDiv
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+  height: 70vh
+  @media (max-width: $bp-tablet)
+    flex-direction: column
+
+.singleCard
+  width: 50%
+  display: flex
+  justify-content: center
+  align-items: center
+  img
+    width: 80%
+    border-radius: 15px
+    box-shadow: 5px 5px 8px $offset
+    transform: rotate(-3.5deg)
+  @media (max-width: $bp-tablet)
+    margin-top: 4rem
+  @media (max-width: $bp-phone)
+    width: 90%
+    margin-top: 1rem
+
+.info
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  background-color: $background
+  border-radius: 15px
+  padding: 1rem
+  border: 1px solid $light-blue
+  box-shadow: 5px 5px 8px $offset
+  text-shadow: 2px 2px 5px $dark
+  @media (max-width: $bp-tablet)
+    width: 50%
+    margin-top: 1.5rem
+  @media (max-width: $bp-phone)
+    width: 75%
+    margin-top: 1.5rem

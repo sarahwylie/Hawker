@@ -103,9 +103,11 @@ function PostItem() {
           </option>
           {categoryData ? renderCategoryOptions() : <option>Loading...</option>}
         </select>
-        {postForm.categoryId === undefined
-          ? `You have not selected a category`
-          : `You've selected a category`}
+        <div className='confirm'>
+          {postForm.categoryId === undefined
+            ? `You have not selected a category`
+            : `You've selected a category`}
+        </div>
         <button type="submit" className="btn-primary">
           Hawk Item
         </button>

@@ -1,6 +1,7 @@
 # Hawker
-
-![MIT License](https://img.shields.io/badge/license-MIT-important)
+## License
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+The ISC license is a permissive free software license published by the Internet Software Consortium, now called Internet Systems Consortium (ISC). Permission to use this application is granted under the ISC license. For more information, see the ISC License on the [Open Source Initiative](https://opensource.org/licenses/ISC).
 ## Table of Contents
   - [Description](#description)
   - [Created With](#created-with)
@@ -10,11 +11,15 @@
   - [Contact Us](#contact-us)
 ## Description
 Do you have a spectacular item that you just don't need anymore? Are you in search of something specific but don't want to spend an inordinate amount of money or search every thrift store in the greater metropolitan area? Come check out Hawker!
-## Created With:
-React, Sass, GraphQL, HTML, JavaScript, Faker.js, dotenv, bcrypt, Faker.js, Jest, React Router, JWT, Stripe, YAML, Webpack
+
 ## Usage
 Check out our site at [Hawker](https://texas-hawker.herokuapp.com/) and hawk your wares! The finished output:
+
 ![screenshot](Develop/client/src/assets/images/screenshots/hawker-home.png)
+
+## Created with:
+React, React-Router, Sass, GraphQL, Apollo, Stripe, JWT, CoreUI, Jest, Prettier, ESLint, Heroku, bcrypt, Faker.js, JavaScript.
+
 ## Badges
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -38,10 +43,8 @@ Check out our site at [Hawker](https://texas-hawker.herokuapp.com/) and hawk you
 ![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white)
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
-## License
-Permission to use this application is granted under the MIT license.
-Click on the link for more information: [MIT License Information](https://opensource.org/licenses/MIT)
-### Contact Us
-*Made with a whole lot of :heart: by:*
+
+### Made with a whole lot of :heart: by
 Nicholas Nolen [(@nicnolen)](https://github.com/nicnolen), Craig Jensen [(@CraigMJensen)](https://github.com/CraigMJensen), Jide Ogunbanjo [(@JideOgun)](https://github.com/JideOgun), Nigel Loch [(@nigelloch)](https://github.com/nigelloch), Samantha Chavez [(@Sammychvz17)](https://github.com/Sammychvz17), Sarah Wylie [(@sarahwylie)](https://github.com/sarahwylie)
+
 <sup>©</sup> 2022

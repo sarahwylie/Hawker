@@ -14,9 +14,9 @@ function Confirmation({ setOpenModal }) {
   const [phonenumber, setShippingPhoneNumber] = useState('');
 
   const { itemData } = useQuery(QUERY_ITEMS);
-  console.log(itemData);
+  console.info(itemData);
   const { data } = useQuery(QUERY_USER);
-  console.log(data);
+  console.info(data);
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -31,9 +31,9 @@ function Confirmation({ setOpenModal }) {
       setShippingPhoneNumber(inputValue);
     } else if (inputType === 'state') {
       setShippingState(inputValue);
-    }  else if (inputType === 'city') {
+    } else if (inputType === 'city') {
       setShippingCity(inputValue);
-    }else if (inputType === 'zip') {
+    } else if (inputType === 'zip') {
       setShippingZip(inputValue);
     }
   };
@@ -103,17 +103,20 @@ function Confirmation({ setOpenModal }) {
           />
 
           <p></p>
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            id="cancelBtn"
-          >
-            Cancel
-          </button>
-          <button type="button" onClick={handleFormSubmit}>
-            Confirm
-          </button>
+          <div>
+            <button
+              className="btn-primary"
+              onClick={() => {
+                setOpenModal(false);
+              }}
+              id="cancelBtn"
+            >
+              Cancel
+            </button>
+            <button type="button" className="btn-primary" onClick={handleFormSubmit}>
+              Confirm
+            </button>
+          </div>
         </form>
       </button>
     </div>

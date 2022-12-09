@@ -39,15 +39,26 @@
 
 #catBtn
   display: none
+  flex-wrap: wrap
+  justify-content: center
   div
     padding: 0 1rem
+    
+
     &:hover
       color: $offset
       text-shadow: 2px 2px 3px $offset
       transition: all .3s 
-    
+   
 
 .selectCat
   display: flex
   justify-content: center
-  align-items: center 
+  align-items: center
+  flex-wrap: wrap
+  
+.search
+  background-color: $background
+  padding: .5rem 0 .5rem 0
+  box-shadow: 0px 5px 8px $offset
+

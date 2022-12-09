@@ -8,6 +8,9 @@ select, .formField
   width: 50%
   &:focus
     background-color: $searchfill
+  @media ( max-width: $bp-phone )
+    width: 90%
+    
   
 select:hover
   cursor: pointer
@@ -37,10 +40,27 @@ input[type=file]::file-selector-button
   
 
 .form-container
-  margin-bottom: 6rem
   margin-top: 3rem
   width: 50%
+  margin-bottom: 3rem
   background-color: $background
   padding: 0 1rem 1rem 1rem
   border-radius: 15px
   box-shadow: 5px 5px 8px $offset
+  @media ( max-width: $bp-phone )
+    width: 90%
+  @media ( max-width: $bp-tablet )
+    width: 90%
+
+.confirm
+  @media ( max-width: $bp-phone )
+    text-align: center
+    margin: .5rem
+
+.fileImg
+  @media ( max-width: $bp-phone )
+    text-align: center
+    margin: .5rem
+  @media ( max-width: $bp-tablet )
+    text-align: center
+    margin: .5rem

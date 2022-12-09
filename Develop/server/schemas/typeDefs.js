@@ -26,6 +26,7 @@ const typeDefs = gql`
     items: [Item]
     category: Category
     contactInfo: [ContactInfo]
+    shipping: ShippingDetails
   }
 
   type ContactInfo {
@@ -47,6 +48,7 @@ const typeDefs = gql`
     users: User
     _id: ID
     category: Category
+    shipping: ShippingDetails
   }
 
   type Auth {
@@ -58,7 +60,7 @@ const typeDefs = gql`
     session: ID
   }
 
-  type shippingDetails {
+  type ShippingDetails {
     fullname: String
     phoneNo: String
     street: String
@@ -79,6 +81,11 @@ const typeDefs = gql`
     order(_id: ID!): Order
     checkout(items: [ID]!): Checkout
     contactInfo: [ContactInfo]
+    shipping: ShippingDetails
+  }
+  
+  type Checkout {
+    session: ID
   }
 
   type Mutation {
@@ -117,7 +124,7 @@ const typeDefs = gql`
       state: String
       zipcode: String
       user: ID!
-    ): shippingDetails
+    ): ShippingDetails
   }
 `;
 

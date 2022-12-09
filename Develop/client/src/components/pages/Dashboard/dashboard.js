@@ -5,7 +5,6 @@ import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_USER } from '../../../utils/queries';
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText } from '@coreui/react';
 
-
 function Dashboard() {
   let userId = localStorage.getItem('userId');
 
@@ -33,16 +32,16 @@ function Dashboard() {
   };
 
   return (
-   
+
     <div>
       <OrderHistory />
-
-      <div>YOUR PAST LISTINGS</div>
-      <div className="itemContainer">
-        {data ? getUserListings() : <div>You have not posted any items for sale yet...</div>}
+      <div className='container'>
+        <div className="orderTitle">YOUR PAST LISTINGS</div>
+        <div className='orderDiv'>
+          {data ? getUserListings() : <div>You have not posted any items for sale yet...</div>}
+        </div>
       </div>
     </div>
-    
   );
 }
 

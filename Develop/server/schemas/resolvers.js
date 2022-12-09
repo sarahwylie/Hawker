@@ -117,6 +117,7 @@ const resolvers = {
       return contact;
     },
     addShipping: async (parent, args) => {
+      console.info(args);
       const shipping = await ShippingDetails.create(args);
       return shipping;
     },

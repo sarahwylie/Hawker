@@ -1,0 +1,64 @@
+/* GENERAL STYLES */
+@import './_variables'
+@import './_responsive'
+@import './_Footer'
+@import './_Header'
+@import './_Login'
+@import './_Homepage'
+@import './_postItem'
+@import './_singleItem'
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  padding: 0
+  font-weight: 600
+  line-height: 1.5
+  font-size: 18px
+  letter-spacing: .1em
+  color: $dark
+
+html,
+body
+  min-height: 100%
+
+code
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+main
+  margin: 0 auto
+  max-width: 100%
+
+.title
+  margin: .25rem 0
+  font-size: x-large
+  font-weight: bolder
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+.btn-primary
+  padding: .5rem
+  margin: .5rem
+  background-color: $dark
+  border-radius: 10px
+  color: white
+  text-decoration: none
+  border: 1px solid $light-blue
+  &:hover
+    transition: all .2s
+    box-shadow: 5px 5px 5px $offset
+    border: 1px solid $offset
+    color: $searchfill
+
+.itemContainer
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin-bottom: 4rem
+  @media (max-width: $bp-tablet) and (max-width: $bp-phone)
+    margin-top: 1.5rem
